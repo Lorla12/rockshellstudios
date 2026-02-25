@@ -1,16 +1,223 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Rock Shell Studios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Rock Shell Studios — Morris Game</title>
+  <meta name="description" content="Rock Shell Studios presents Morris Game — a classic strategy board game experience for Android." />
+
+  <meta property="og:title" content="Rock Shell Studios — Morris Game" />
+  <meta property="og:description" content="Download Morris Game on Google Play. A classic strategy board game experience." />
+  <meta property="og:type" content="website" />
+  <!-- Optional: add after you upload an image -->
+  <!-- <meta property="og:image" content="https://lorla12.github.io/rockshellstudios/assets/shot1.jpg" /> -->
+
+  <style>
+    :root{
+      --bg:#0b0f19;
+      --card:#111827;
+      --muted:#94a3b8;
+      --text:#e5e7eb;
+      --brand:#22c55e;
+      --brand2:#38bdf8;
+      --line:rgba(255,255,255,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(56,189,248,.18), transparent),
+                  radial-gradient(900px 500px at 80% 0%, rgba(34,197,94,.15), transparent),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .wrap{max-width:1050px;margin:0 auto;padding:24px}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 0;border-bottom:1px solid var(--line);gap:12px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px;
+    }
+    .logo{
+      width:38px;height:38px;border-radius:12px;
+      background:linear-gradient(135deg,var(--brand2),var(--brand));
+      box-shadow:0 10px 30px rgba(56,189,248,.12);
+      display:grid;place-items:center;font-weight:900;
+    }
+    .navlinks{display:flex;gap:14px;flex-wrap:wrap}
+    .navlinks a{color:var(--muted);text-decoration:none}
+    .navlinks a:hover{color:var(--text)}
+    .hero{
+      padding:34px 0 18px;
+      display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center;
+    }
+    .tag{
+      display:inline-flex;gap:10px;align-items:center;
+      background:rgba(255,255,255,.06);border:1px solid var(--line);
+      padding:8px 12px;border-radius:999px;color:var(--muted);font-size:14px;
+    }
+    h1{margin:14px 0 8px;font-size:44px;line-height:1.1}
+    .sub{color:var(--muted);font-size:16px;max-width:60ch}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:12px 14px;border-radius:14px;border:1px solid var(--line);
+      text-decoration:none;font-weight:650;
+      background:rgba(255,255,255,.06);
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(56,189,248,.22), rgba(34,197,94,.22));
+      border-color:rgba(56,189,248,.28);
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .card{
+      background:rgba(17,24,39,.78);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      box-shadow:0 18px 40px rgba(0,0,0,.25);
+    }
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin:18px 0 26px}
+    .col6{grid-column:span 6}
+    .col4{grid-column:span 4}
+    .col8{grid-column:span 8}
+    .col12{grid-column:span 12}
+    .kpi{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:14px}
+    .kpi span{padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04)}
+    .shots{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;
+    }
+    .shot{
+      border-radius:16px;overflow:hidden;border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      aspect-ratio: 9 / 16;
+      display:grid;place-items:center;color:var(--muted);font-size:13px;
+    }
+    .shot img{width:100%;height:100%;object-fit:cover;display:block}
+    ul{margin:10px 0 0 18px;color:var(--muted)}
+    .footer{
+      border-top:1px solid var(--line);
+      padding:18px 0;color:var(--muted);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      h1{font-size:36px}
+      .shots{grid-template-columns:1fr 1fr}
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Rock Shell Studios</h1>
-  <p>Welcome 👋</p>
-  <p>
-    <a href="https://play.google.com/store/apps/details?id=com.rockshellstudios.morrisgame1">
-      Download Morris Game on Play Store
-    </a>
-  </p>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">RS</div>
+        <div>
+          <div>Rock Shell Studios</div>
+          <div style="color:var(--muted);font-size:13px;margin-top:-2px;">Official Site</div>
+        </div>
+      </div>
+      <div class="navlinks">
+        <a href="#game">Game</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <section class="hero" id="game">
+      <div>
+        <div class="tag">🎮 Now on Google Play • Morris Game</div>
+        <h1>Morris Game</h1>
+        <p class="sub">
+          A classic strategy board game experience built by Rock Shell Studios.
+          Plan your moves, outsmart opponents, and enjoy clean, fast gameplay on Android.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.morrisgame1" target="_blank" rel="noopener">
+            ✅ Download on Play Store
+          </a>
+          <a class="btn" href="#screenshots">🖼️ View Screenshots</a>
+        </div>
+
+        <div class="kpi">
+          <span>🧠 Strategy</span>
+          <span>⚡ Fast matches</span>
+          <span>📱 Android</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 8px;">About the Game</h3>
+        <p style="margin:0;color:var(--muted);">
+          Morris Game is inspired by the classic board game style where every move matters.
+          It’s designed for smooth play, simple controls, and competitive fun.
+        </p>
+
+        <h4 style="margin:14px 0 6px;">Features</h4>
+        <ul>
+          <li>Clean UI and simple controls</li>
+          <li>Strategic gameplay that rewards skill</li>
+          <li>Regular improvements and updates</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid" id="screenshots">
+      <div class="card col12">
+        <h2 style="margin:0 0 6px;">Screenshots</h2>
+        <p style="margin:0;color:var(--muted);">
+          Upload your screenshots to <b>assets/</b> and they will show here automatically.
+        </p>
+
+        <div class="shots">
+          <!-- Replace these file names with your real images -->
+          <div class="shot">
+            <img src="assets/shot1.jpg" alt="Morris Game screenshot 1" onerror="this.remove();">
+            <span>Upload assets/shot1.jpg</span>
+          </div>
+          <div class="shot">
+            <img src="assets/shot2.jpg" alt="Morris Game screenshot 2" onerror="this.remove();">
+            <span>Upload assets/shot2.jpg</span>
+          </div>
+          <div class="shot">
+            <img src="assets/shot3.jpg" alt="Morris Game screenshot 3" onerror="this.remove();">
+            <span>Upload assets/shot3.jpg</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card col6" id="contact">
+        <h2 style="margin:0 0 6px;">Contact</h2>
+        <p style="margin:0;color:var(--muted);">Want to collaborate or give feedback?</p>
+        <div class="cta" style="margin-top:12px;">
+          <!-- Replace with your real email -->
+          <a class="btn" href="mailto:rockshellstudios@gmail.com">✉️ Email</a>
+          <!-- Replace with your WhatsApp number (international format) -->
+          <a class="btn" href="https://wa.me/233XXXXXXXXX" target="_blank" rel="noopener">💬 WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="card col6">
+        <h2 style="margin:0 0 6px;">What’s Next</h2>
+        <p style="margin:0;color:var(--muted);">
+          Next upgrades could include a dedicated <b>games.html</b> page, a devlog, and a custom domain later.
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Rock Shell Studios</div>
+      <div>Built with GitHub Pages ⚡</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
