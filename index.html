@@ -4,14 +4,64 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Rockshell Studios — Morris Games</title>
-  <meta name="description" content="Rockshell Studios presents Morris Games — a classic strategy board game experience for Android. Built by Gadese Samuel in Dzodze, Ghana." />
+  <!-- SEO: Core -->
+  <title>Morris Games – Strategy Board Game | Rockshell Studios Ghana</title>
+  <meta name="description" content="Morris Games is a strategic board game for Android developed by Rockshell Studios in Ghana. Play smart, plan ahead, and enjoy smooth gameplay. Download now on Google Play." />
+  <meta name="keywords" content="Morris Games, Rockshell Studios, board game, strategy game, Android game, Ghana game developer, Dzodze, Gadese Samuel" />
+  <meta name="author" content="Gadese Samuel - Rockshell Studios" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lorla12.github.io/rockshellstudios/" />
 
-  <!-- Social preview -->
-  <meta property="og:title" content="Rockshell Studios — Morris Games" />
-  <meta property="og:description" content="Download Morris Games on Google Play. A classic strategy board game experience." />
+  <!-- Social Preview (Open Graph / Twitter) -->
+  <meta property="og:title" content="Morris Games – Strategy Board Game | Rockshell Studios" />
+  <meta property="og:description" content="Download Morris Games on Google Play. A classic strategy board game experience built by Rockshell Studios in Ghana." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lorla12.github.io/rockshellstudios/" />
   <meta property="og:image" content="https://lorla12.github.io/rockshellstudios/assets/MainIcon.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon (uses your app icon) -->
+  <link rel="icon" href="assets/MainIcon.png" type="image/png" />
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Rockshell Studios",
+    "url": "https://lorla12.github.io/rockshellstudios/",
+    "logo": "https://lorla12.github.io/rockshellstudios/assets/Developerlogo.png",
+    "founder": { "@type": "Person", "name": "Gadese Samuel" },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dzodze",
+      "addressCountry": "GH"
+    },
+    "sameAs": [
+      "https://www.youtube.com/@RockshellStudios",
+      "https://www.tiktok.com/@rockshell_studios?is_from_webapp=1&sender_device=pc"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: Video Game -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Morris Games",
+    "genre": "Strategy",
+    "applicationCategory": "Game",
+    "operatingSystem": "Android",
+    "creator": { "@type": "Organization", "name": "Rockshell Studios" },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://play.google.com/store/apps/details?id=com.rockshellstudios.morrisgame1",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
 
   <style>
     :root{
@@ -131,9 +181,7 @@
 
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin:18px 0 26px}
     .col12{grid-column:span 12}
-    .col8{grid-column:span 8}
     .col6{grid-column:span 6}
-    .col4{grid-column:span 4}
 
     /* Hero */
     .hero{
@@ -222,23 +270,16 @@
       font-size:13px;font-weight:700;
     }
 
-    /* Lists */
     ul{margin:10px 0 0 18px;color:var(--muted)}
     li{margin:6px 0}
 
-    /* Premium Divider */
     .divider{
       height:1px;background:linear-gradient(to right, transparent, rgba(255,255,255,.16), transparent);
       margin:14px 0;
     }
 
     /* Carousel */
-    .carouselWrap{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:12px;
-    }
-
+    .carouselWrap{display:grid;grid-template-columns: 1fr;gap:12px}
     .carousel{
       position:relative;
       border-radius:18px;
@@ -248,20 +289,13 @@
       box-shadow: 0 20px 50px rgba(0,0,0,.35);
       aspect-ratio: 16 / 9;
     }
-
     .slides{
       display:flex;
       width:100%;
       height:100%;
       transition: transform .75s cubic-bezier(.2,.85,.2,1);
     }
-
-    .slide{
-      min-width:100%;
-      height:100%;
-      position:relative;
-    }
-
+    .slide{min-width:100%;height:100%;position:relative}
     .slide img{
       width:100%;
       height:100%;
@@ -269,29 +303,19 @@
       background: rgba(0,0,0,.35);
       display:block;
     }
-
     .slide:after{
       content:"";
       position:absolute; inset:0;
       background: linear-gradient(to top, rgba(0,0,0,.45), transparent 60%);
       pointer-events:none;
     }
-
     .carouselUI{
-      position:absolute;
-      inset:auto 0 0 0;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:12px;
-      gap:10px;
+      position:absolute; inset:auto 0 0 0;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px;gap:10px;
       pointer-events:none;
     }
-
-    .dots{
-      display:flex; gap:8px; align-items:center; justify-content:center;
-      pointer-events:auto;
-    }
+    .dots{display:flex; gap:8px; align-items:center; justify-content:center; pointer-events:auto}
     .dot{
       width:10px;height:10px;border-radius:999px;
       border:1px solid rgba(255,255,255,.22);
@@ -304,10 +328,7 @@
       background: linear-gradient(135deg, rgba(56,189,248,.8), rgba(34,197,94,.7));
       border-color: rgba(56,189,248,.35);
     }
-
-    .navBtnRow{
-      display:flex;gap:8px; pointer-events:auto;
-    }
+    .navBtnRow{display:flex;gap:8px; pointer-events:auto}
     .iconBtn{
       width:42px;height:42px;border-radius:14px;
       border:1px solid rgba(255,255,255,.12);
@@ -319,7 +340,6 @@
     }
     .iconBtn:hover{transform:translateY(-2px)}
     .iconBtn:active{transform:translateY(0px) scale(.99)}
-
     .caption{
       position:absolute;
       top:12px; left:12px;
@@ -333,16 +353,13 @@
       backdrop-filter: blur(8px);
     }
 
-    /* Footer */
     .footer{
       border-top:1px solid var(--line);
       padding:18px 0;color:var(--muted);
       display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
       align-items:center;
     }
-    .social{
-      display:flex;gap:10px;flex-wrap:wrap;
-    }
+    .social{display:flex;gap:10px;flex-wrap:wrap}
 
     /* Reveal animation */
     .reveal{
@@ -428,7 +445,7 @@
 
         <div class="divider"></div>
 
-        <h3 style="margin:0 0 6px;">Highlights</h3>
+        <h2 style="margin:0 0 6px; font-size:18px;">Highlights</h2>
         <ul>
           <li>Simple controls with a clean UI</li>
           <li>Skill-based gameplay that rewards smart moves</li>
@@ -438,7 +455,7 @@
 
       <div class="card reveal" style="display:flex;flex-direction:column;justify-content:space-between;">
         <div>
-          <h3 style="margin:0 0 6px;">Official Links</h3>
+          <h2 style="margin:0 0 6px; font-size:18px;">Official Links</h2>
           <p style="margin:0;color:var(--muted);">
             Follow Rockshell Studios for updates, behind-the-scenes, and future releases.
           </p>
@@ -513,7 +530,7 @@
 
         <div class="divider"></div>
 
-        <h3 style="margin:0 0 6px;">Mission</h3>
+        <h2 style="margin:0 0 6px; font-size:18px;">Mission</h2>
         <p style="margin:0;color:var(--muted);">
           Create fun, accessible games and improve them continuously through community feedback.
         </p>
@@ -530,12 +547,6 @@
           <a class="btn" href="https://www.youtube.com/@RockshellStudios" target="_blank" rel="noopener">▶️ YouTube</a>
           <a class="btn" href="https://www.tiktok.com/@rockshell_studios?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">🎵 TikTok</a>
         </div>
-
-        <div class="divider"></div>
-
-        <p style="margin:0;color:var(--muted);font-size:14px;">
-          Tip: If you want an email button too, tell me your studio email and I’ll add it.
-        </p>
       </div>
     </section>
 
@@ -556,9 +567,7 @@
     // Reveal on scroll (premium animation)
     const revealEls = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add("show");
-      });
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
     }, { threshold: 0.12 });
     revealEls.forEach(el => io.observe(el));
 
@@ -623,9 +632,7 @@
       if (timer) clearInterval(timer);
       timer = null;
     }
-    function restartAuto() {
-      startAuto();
-    }
+    function restartAuto() { startAuto(); }
 
     // Pause on hover/touch
     carouselEl.addEventListener("mouseenter", stopAuto);
