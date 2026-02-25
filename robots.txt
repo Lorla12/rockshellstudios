@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lorla12.github.io/rockshellstudios/sitemap.xml
