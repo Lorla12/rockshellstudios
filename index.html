@@ -5,22 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- SEO: Core -->
-  <title>Morris Games – Strategy Board Game | Rockshell Studios Ghana</title>
-  <meta name="description" content="Morris Games is a strategic board game for Android developed by Rockshell Studios in Ghana. Play smart, plan ahead, and enjoy smooth gameplay. Download now on Google Play." />
-  <meta name="keywords" content="Morris Games, Rockshell Studios, board game, strategy game, Android game, Ghana game developer, Dzodze, Gadese Samuel" />
+  <title>Rockshell Studios – Indie Game Studio | Board Games for Android</title>
+  <meta name="description" content="Rockshell Studios is an indie game studio based in Dzodze, Ghana. Download Morris Games and King's Rules Ludo — strategic board games for Android on Google Play." />
+  <meta name="keywords" content="Rockshell Studios, Morris Games, King's Rules Ludo, board game, strategy game, Ludo game, Android game, Ghana game developer, Dzodze, Gadese Samuel" />
   <meta name="author" content="Gadese Samuel - Rockshell Studios" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://lorla12.github.io/rockshellstudios/" />
 
   <!-- Social Preview (Open Graph / Twitter) -->
-  <meta property="og:title" content="Morris Games – Strategy Board Game | Rockshell Studios" />
-  <meta property="og:description" content="Download Morris Games on Google Play. A classic strategy board game experience built by Rockshell Studios in Ghana." />
+  <meta property="og:title" content="Rockshell Studios – Strategy Board Games for Android" />
+  <meta property="og:description" content="Download Morris Games and King's Rules Ludo on Google Play. Classic strategy board game experiences built by Rockshell Studios in Ghana." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lorla12.github.io/rockshellstudios/" />
-  <meta property="og:image" content="https://lorla12.github.io/rockshellstudios/assets/MainIcon.png" />
+  <meta property="og:image" content="https://lorla12.github.io/rockshellstudios/assets/Developerlogo.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon (uses your app icon) -->
+  <!-- Favicon -->
   <link rel="icon" href="assets/MainIcon.png" type="image/png" />
 
   <!-- Structured Data: Organization -->
@@ -44,22 +44,44 @@
   }
   </script>
 
-  <!-- Structured Data: Video Game -->
+  <!-- Structured Data: ItemList of Games -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "VideoGame",
-    "name": "Morris Games",
-    "genre": "Strategy",
-    "applicationCategory": "Game",
-    "operatingSystem": "Android",
-    "creator": { "@type": "Organization", "name": "Rockshell Studios" },
-    "offers": {
-      "@type": "Offer",
-      "url": "https://play.google.com/store/apps/details?id=com.rockshellstudios.morrisgame1",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "@type": "ItemList",
+    "name": "Rockshell Studios Games",
+    "itemListElement": [
+      {
+        "@type": "VideoGame",
+        "position": 1,
+        "name": "Morris Games",
+        "genre": "Strategy",
+        "applicationCategory": "Game",
+        "operatingSystem": "Android",
+        "creator": { "@type": "Organization", "name": "Rockshell Studios" },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://play.google.com/store/apps/details?id=com.rockshellstudios.morrisgame1",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "VideoGame",
+        "position": 2,
+        "name": "King's Rules Ludo",
+        "genre": "Board Game",
+        "applicationCategory": "Game",
+        "operatingSystem": "Android",
+        "creator": { "@type": "Organization", "name": "Rockshell Studios" },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://play.google.com/store/apps/details?id=com.rockshellstudios.kingsrulesludo",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
   }
   </script>
 
@@ -74,7 +96,6 @@
       --brand:#22c55e;
       --brand2:#38bdf8;
       --warn:#fbbf24;
-
       --shadow: 0 22px 60px rgba(0,0,0,.35);
       --radius: 18px;
     }
@@ -124,7 +145,6 @@
       background: linear-gradient(to bottom, rgba(7,10,18,.78), rgba(7,10,18,.50));
       z-index:20;
     }
-
     .brand{
       display:flex;align-items:center;gap:12px;
       min-width: 240px;
@@ -138,7 +158,6 @@
       flex:0 0 auto;
     }
     .logo img{width:100%;height:100%;object-fit:cover;display:block}
-
     .brandtext{display:flex;flex-direction:column;gap:2px}
     .brandtext .name{font-weight:850;letter-spacing:.3px}
     .brandtext .sub{color:var(--muted);font-size:13px;margin-top:-2px}
@@ -159,7 +178,7 @@
       transform:translateY(-1px);
     }
 
-    /* Sections & Cards */
+    /* Cards */
     .card{
       background: linear-gradient(180deg, var(--card), var(--card2));
       border:1px solid var(--line);
@@ -179,33 +198,88 @@
     }
     .card > *{position:relative; z-index:1}
 
+    /* Warm accent card variant for Ludo */
+    .card.warm:before{
+      background: radial-gradient(600px 200px at 10% 0%, rgba(251,191,36,.16), transparent 55%),
+                  radial-gradient(600px 200px at 90% 0%, rgba(239,68,68,.12), transparent 55%);
+    }
+
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin:18px 0 26px}
     .col12{grid-column:span 12}
     .col6{grid-column:span 6}
 
-    /* Hero */
-    .hero{
-      padding:26px 0 14px;
-      display:grid;grid-template-columns:1.15fr .85fr;
-      gap:18px;align-items:stretch;
+    /* Studio Hero */
+    .studioHero{
+      padding:20px 0 6px;
+      text-align:center;
     }
-
-    .tag{
+    .studioHero .tag{
       display:inline-flex;gap:10px;align-items:center;
       background:rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.10);
       padding:8px 12px;border-radius:999px;
       color:var(--muted);font-size:14px;
-      width:fit-content;
       animation: popIn .7s ease both;
     }
     @keyframes popIn{
       from{opacity:0;transform:translateY(8px)}
       to{opacity:1;transform:translateY(0)}
     }
+    .studioHero h1{
+      margin:14px 0 0;
+      font-size:48px;line-height:1.08;
+      letter-spacing:.2px;
+      animation: fadeSlide .8s ease both;
+    }
+    @keyframes fadeSlide{
+      from{opacity:0;transform:translateY(10px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    .studioHero h1 span{
+      background: linear-gradient(135deg, var(--brand2), var(--brand));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .studioHero .subtext{
+      margin:10px auto 0;
+      color:var(--muted);
+      max-width: 60ch;
+      font-size:16px;
+      animation: fadeSlide .9s ease both;
+    }
+
+    /* Section Title */
+    .sectionLabel{
+      display:inline-flex;gap:8px;align-items:center;
+      color:var(--muted);font-size:13px;font-weight:750;
+      text-transform:uppercase;letter-spacing:1.2px;
+      margin-bottom:4px;
+    }
+
+    /* Game Cards Grid */
+    .gamesGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      margin:18px 0 26px;
+    }
+
+    .gameCard{
+      display:flex;flex-direction:column;
+      min-height: 380px;
+    }
+    .gameCard .tag{
+      display:inline-flex;gap:10px;align-items:center;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      padding:8px 12px;border-radius:999px;
+      color:var(--muted);font-size:14px;
+      width:fit-content;
+    }
 
     .titleRow{
-      display:flex;align-items:center;gap:14px;margin-top:12px;
+      display:flex;align-items:center;gap:14px;margin-top:14px;
     }
     .appIcon{
       width:74px;height:74px;border-radius:18px;overflow:hidden;
@@ -222,22 +296,16 @@
       50%{transform:translateY(-6px)}
     }
 
-    h1{
+    .gameCard h1{
       margin:0;
-      font-size:46px;line-height:1.08;
+      font-size:34px;line-height:1.10;
       letter-spacing:.2px;
-      animation: fadeSlide .8s ease both;
     }
-    @keyframes fadeSlide{
-      from{opacity:0;transform:translateY(10px)}
-      to{opacity:1;transform:translateY(0)}
-    }
-    .subtext{
+
+    .gameCard .subtext{
       margin:10px 0 0;
       color:var(--muted);
-      max-width: 68ch;
-      font-size:16px;
-      animation: fadeSlide .9s ease both;
+      font-size:15px;
     }
 
     .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
@@ -249,10 +317,15 @@
       background:rgba(255,255,255,.06);
       transition: all .18s ease;
       will-change: transform;
+      font-size:14px;
     }
     .btn.primary{
       border-color:rgba(56,189,248,.25);
       background:linear-gradient(135deg, rgba(56,189,248,.20), rgba(34,197,94,.18));
+    }
+    .btn.warm{
+      border-color:rgba(251,191,36,.25);
+      background:linear-gradient(135deg, rgba(251,191,36,.20), rgba(239,68,68,.16));
     }
     .btn.alt{
       border-color:rgba(251,191,36,.22);
@@ -276,6 +349,19 @@
     .divider{
       height:1px;background:linear-gradient(to right, transparent, rgba(255,255,255,.16), transparent);
       margin:14px 0;
+    }
+
+    .gameFooter{
+      margin-top:auto;
+      padding-top:14px;
+    }
+
+    /* Info Cards Row */
+    .infoRow{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      margin:0 0 26px;
     }
 
     /* Carousel */
@@ -372,14 +458,34 @@
       transform: translateY(0);
     }
 
+    /* New badge */
+    .newBadge{
+      display:inline-flex;align-items:center;gap:5px;
+      padding:3px 9px;border-radius:999px;
+      background:linear-gradient(135deg, rgba(34,197,94,.25), rgba(56,189,248,.18));
+      border:1px solid rgba(34,197,94,.30);
+      color:#22c55e;
+      font-size:11px;font-weight:800;
+      text-transform:uppercase;letter-spacing:.8px;
+      margin-left:8px;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%,100%{opacity:1}
+      50%{opacity:.65}
+    }
+
     @media (max-width: 980px){
-      .hero{grid-template-columns:1fr}
-      h1{font-size:38px}
+      .gamesGrid{grid-template-columns:1fr}
+      .infoRow{grid-template-columns:1fr}
+      .studioHero h1{font-size:38px}
+      .gameCard h1{font-size:30px}
       .brand{min-width:auto}
       .carousel{aspect-ratio: 4 / 3;}
     }
     @media (max-width: 520px){
-      h1{font-size:34px}
+      .studioHero h1{font-size:32px}
+      .gameCard h1{font-size:26px}
       .appIcon{width:64px;height:64px}
       .navlinks{gap:10px}
       .navlinks a{padding:7px 9px}
@@ -403,7 +509,7 @@
       </div>
 
       <div class="navlinks">
-        <a href="#game">Game</a>
+        <a href="#games">Games</a>
         <a href="#screenshots">Screenshots</a>
         <a href="#about">Studio</a>
         <a href="#contact">Contact</a>
@@ -412,9 +518,21 @@
       </div>
     </div>
 
-    <section class="hero" id="game">
-      <div class="card reveal">
-        <div class="tag">🎮 Available on Google Play • Morris Games</div>
+    <!-- Studio Hero -->
+    <section class="studioHero reveal" id="games">
+      <div class="tag">🎮 Indie Game Studio from Ghana</div>
+      <h1>Play Our <span>Board Games</span></h1>
+      <p class="subtext">
+        Strategic, fun, and built for Android. Explore our growing collection of board games — each one crafted with care by Rockshell Studios.
+      </p>
+    </section>
+
+    <!-- Two Game Cards -->
+    <div class="gamesGrid">
+
+      <!-- Morris Games -->
+      <div class="card gameCard reveal">
+        <div class="tag">🧠 Strategy • Morris Games</div>
 
         <div class="titleRow">
           <div class="appIcon">
@@ -424,65 +542,83 @@
         </div>
 
         <p class="subtext">
-          A classic strategy board game experience built by Rockshell Studios.
-          Think ahead, outsmart opponents, and enjoy clean, smooth gameplay on Android.
+          A classic strategy board game experience. Think ahead, outsmart opponents, and enjoy clean, smooth gameplay on Android.
         </p>
 
         <div class="cta">
           <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.morrisgame1" target="_blank" rel="noopener">
             ✅ Download on Play Store
           </a>
-          <a class="btn" href="#screenshots">🖼️ View Screenshots</a>
-          <a class="btn alt" href="https://wa.me/233550519473" target="_blank" rel="noopener">
-            💬 WhatsApp
-          </a>
+          <a class="btn" href="#screenshots">🖼️ Screenshots</a>
         </div>
 
         <div class="kpi">
           <span class="pill">🧠 Strategy</span>
           <span class="pill">⚡ Fast matches</span>
           <span class="pill">📱 Android</span>
-          <span class="pill">🛠️ Updates ongoing</span>
         </div>
 
-        <div class="divider"></div>
-
-        <h2 style="margin:0 0 6px; font-size:18px;">Highlights</h2>
-        <ul>
-          <li>Simple controls with a clean UI</li>
-          <li>Skill-based gameplay that rewards smart moves</li>
-          <li>Optimized for smooth performance</li>
-        </ul>
-      </div>
-
-      <div class="card reveal" style="display:flex;flex-direction:column;justify-content:space-between;">
-        <div>
-          <h2 style="margin:0 0 6px; font-size:18px;">Official Links</h2>
-          <p style="margin:0;color:var(--muted);">
-            Follow Rockshell Studios for updates, behind-the-scenes, and future releases.
-          </p>
-
-          <div class="cta" style="margin-top:12px;">
-            <a class="btn" href="https://www.youtube.com/@RockshellStudios" target="_blank" rel="noopener">▶️ YouTube</a>
-            <a class="btn" href="https://www.tiktok.com/@rockshell_studios?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">🎵 TikTok</a>
-          </div>
-        </div>
-
-        <div style="margin-top:14px;">
+        <div class="gameFooter">
           <div class="divider"></div>
-          <p style="margin:0;color:var(--muted);font-size:14px;">
-            CEO: <b style="color:var(--text);">Gadese Samuel</b><br/>
-            Location: <b style="color:var(--text);">Dzodze, Ghana</b>
-          </p>
+          <h2 style="margin:0 0 4px; font-size:16px;">Highlights</h2>
+          <ul>
+            <li>Simple controls with a clean UI</li>
+            <li>Skill-based gameplay that rewards smart moves</li>
+            <li>Optimized for smooth performance</li>
+          </ul>
         </div>
       </div>
-    </section>
 
+      <!-- King's Rules Ludo -->
+      <div class="card warm gameCard reveal">
+        <div class="tag">🎲 Board Game • King's Rules Ludo <span class="newBadge">New</span></div>
+
+        <div class="titleRow">
+          <div class="appIcon">
+            <img src="assets/icon.png" alt="King's Rules Ludo app icon">
+          </div>
+          <h1>King's Rules Ludo</h1>
+        </div>
+
+        <p class="subtext">
+          A fresh take on the classic Ludo board game. Roll the dice, race your tokens, and dominate the board with King's Rules.
+        </p>
+
+        <div class="cta">
+          <a class="btn warm" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.kingsrulesludo" target="_blank" rel="noopener">
+            👑 Download on Play Store
+          </a>
+          <a class="btn" href="https://wa.me/233550519473" target="_blank" rel="noopener">
+            💬 Feedback
+          </a>
+        </div>
+
+        <div class="kpi">
+          <span class="pill">🎲 Ludo</span>
+          <span class="pill">👑 King's Rules</span>
+          <span class="pill">📱 Android</span>
+        </div>
+
+        <div class="gameFooter">
+          <div class="divider"></div>
+          <h2 style="margin:0 0 4px; font-size:16px;">Highlights</h2>
+          <ul>
+            <li>Classic Ludo with unique King's Rules twist</li>
+            <li>Fun for all ages — easy to learn, hard to master</li>
+            <li>Smooth and responsive gameplay</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Screenshots (Morris Games) -->
     <section class="grid" id="screenshots">
       <div class="card col12 reveal">
-        <h2 style="margin:0 0 6px;">Screenshots</h2>
-        <p style="margin:0;color:var(--muted);">
-          Auto-sliding preview (you can also click dots/arrows). 📸✨
+        <div class="sectionLabel">📸 Morris Games — Screenshots</div>
+        <h2 style="margin:0 0 4px;">Game Preview</h2>
+        <p style="margin:0 0 4px;color:var(--muted);">
+          Auto-sliding preview (you can also click dots/arrows).
         </p>
 
         <div style="height:12px;"></div>
@@ -521,8 +657,10 @@
       </div>
     </section>
 
-    <section class="grid" id="about">
-      <div class="card col6 reveal">
+    <!-- About & Contact -->
+    <section class="infoRow" id="about">
+      <div class="card reveal">
+        <div class="sectionLabel">🏢 About</div>
         <h2 style="margin:0 0 6px;">About Rockshell Studios</h2>
         <p style="margin:0;color:var(--muted);">
           Rockshell Studios is an indie game studio based in Dzodze, Ghana, led by
@@ -536,10 +674,19 @@
         <p style="margin:0;color:var(--muted);">
           Create fun, accessible games and improve them continuously through community feedback.
         </p>
+
+        <div class="divider"></div>
+
+        <h2 style="margin:0 0 6px; font-size:18px;">Our Games</h2>
+        <ul>
+          <li><b style="color:var(--text);">Morris Games</b> — Classic strategy board game</li>
+          <li><b style="color:var(--text);">King's Rules Ludo</b> — Ludo with a royal twist</li>
+        </ul>
       </div>
 
-      <div class="card col6 reveal" id="contact">
-        <h2 style="margin:0 0 6px;">Contact</h2>
+      <div class="card reveal" id="contact">
+        <div class="sectionLabel">📬 Contact</div>
+        <h2 style="margin:0 0 6px;">Get in Touch</h2>
         <p style="margin:0;color:var(--muted);">
           Feedback, partnerships, or support — reach us directly:
         </p>
@@ -549,6 +696,13 @@
           <a class="btn" href="https://www.youtube.com/@RockshellStudios" target="_blank" rel="noopener">▶️ YouTube</a>
           <a class="btn" href="https://www.tiktok.com/@rockshell_studios?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">🎵 TikTok</a>
         </div>
+
+        <div class="divider"></div>
+
+        <p style="margin:0;color:var(--muted);font-size:14px;">
+          CEO: <b style="color:var(--text);">Gadese Samuel</b><br/>
+          Location: <b style="color:var(--text);">Dzodze, Ghana</b>
+        </p>
       </div>
     </section>
 
@@ -560,7 +714,8 @@
       </div>
     
       <div class="social">
-        <a class="btn" style="padding:10px 12px;border-radius:12px;" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.morrisgame1" target="_blank" rel="noopener">📲 Play Store</a>
+        <a class="btn" style="padding:10px 12px;border-radius:12px;" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.morrisgame1" target="_blank" rel="noopener">🧠 Morris Games</a>
+        <a class="btn warm" style="padding:10px 12px;border-radius:12px;" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.kingsrulesludo" target="_blank" rel="noopener">👑 King's Rules Ludo</a>
         <a class="btn" style="padding:10px 12px;border-radius:12px;" href="https://www.youtube.com/@RockshellStudios" target="_blank" rel="noopener">▶️ YouTube</a>
         <a class="btn" style="padding:10px 12px;border-radius:12px;" href="https://www.tiktok.com/@rockshell_studios?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">🎵 TikTok</a>
       </div>
@@ -571,7 +726,7 @@
     // Year
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    // Reveal on scroll (premium animation)
+    // Reveal on scroll
     const revealEls = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
@@ -618,7 +773,6 @@
     nextBtn.addEventListener("click", next);
     prevBtn.addEventListener("click", prev);
 
-    // Keyboard controls
     window.addEventListener("keydown", (e) => {
       if (e.key === "ArrowRight") next();
       if (e.key === "ArrowLeft") prev();
@@ -641,13 +795,11 @@
     }
     function restartAuto() { startAuto(); }
 
-    // Pause on hover/touch
     carouselEl.addEventListener("mouseenter", stopAuto);
     carouselEl.addEventListener("mouseleave", startAuto);
     carouselEl.addEventListener("touchstart", stopAuto, { passive: true });
     carouselEl.addEventListener("touchend", startAuto, { passive: true });
 
-    // Initialize
     updateUI();
     startAuto();
   </script>
