@@ -6,15 +6,15 @@
 
   <!-- SEO: Core -->
   <title>Rockshell Studios – Indie Game Studio | Board Games for Android</title>
-  <meta name="description" content="Rockshell Studios is an indie game studio based in Dzodze, Ghana. Download Morris Games and King's Rules Ludo — strategic board games with unique rules like Back Kick, Line Kick, Prison, and Safe Tiles on Google Play." />
-  <meta name="keywords" content="Rockshell Studios, Morris Games, King's Rules Ludo, board game, strategy game, Ludo game, Android game, Ghana game developer, Dzodze, Gadese Samuel, Back Kick, Line Kick, Home Kick, Prison Ludo, Safe Tiles" />
+  <meta name="description" content="Rockshell Studios is an indie game studio based in Dzodze, Ghana. Download Morris Games and King's Rules Ludo — strategic board games with unique rules like Back Kick, Line Kick, Home Kick, Double Dice, Prison, Safe Tiles, Wall system, offline AI mode, and online multiplayer on Google Play." />
+  <meta name="keywords" content="Rockshell Studios, Morris Games, King's Rules Ludo, board game, strategy game, Ludo game, Android game, Ghana game developer, Dzodze, Gadese Samuel, Back Kick, Line Kick, Home Kick, Prison Ludo, Safe Tiles, Double Dice, Wall system, offline Ludo, AI Ludo, online Ludo" />
   <meta name="author" content="Gadese Samuel - Rockshell Studios" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://lorla12.github.io/rockshellstudios/" />
 
   <!-- Social Preview -->
   <meta property="og:title" content="Rockshell Studios – Strategy Board Games for Android" />
-  <meta property="og:description" content="Download Morris Games and King's Rules Ludo on Google Play. Unique rules like Back Kick, Line Kick, Prison system, and Safe Tiles — built by Rockshell Studios in Ghana." />
+  <meta property="og:description" content="Download Morris Games and King's Rules Ludo on Google Play. Unique rules like Back Kick, Line Kick, Home Kick, Double Dice, Prison, Safe Tiles, Wall system, offline AI, and online multiplayer — built by Rockshell Studios in Ghana." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lorla12.github.io/rockshellstudios/" />
   <meta property="og:image" content="https://lorla12.github.io/rockshellstudios/assets/Developerlogo.png" />
@@ -72,7 +72,13 @@
         "genre": "Board Game",
         "applicationCategory": "Game",
         "operatingSystem": "Android",
-        "description": "Ludo with unique King's Rules: Back Kick, Line Kick, Home Kick, Prison system, Bonus captures, Safe Tiles, and online multiplayer chat.",
+        "playMode": ["SinglePlayer", "MultiPlayer"],
+        "numberOfPlayers": {
+          "@type": "QuantitativeValue",
+          "minValue": 2,
+          "maxValue": 4
+        },
+        "description": "Ludo with unique King's Rules: Back Kick, Line Kick, Home Kick, Double Dice, Prison system, Bonus captures, Safe Tiles, Wall protection, smart AI opponents, in-game tutorial, coins & XP rewards, and online multiplayer with per-color chat.",
         "creator": { "@type": "Organization", "name": "Rockshell Studios" },
         "offers": {
           "@type": "Offer",
@@ -135,7 +141,6 @@
       50%{transform:translateY(14px)}
     }
 
-    /* Navbar */
     .nav{
       display:flex;align-items:center;justify-content:space-between;
       padding:14px 0;gap:14px;
@@ -178,7 +183,6 @@
       transform:translateY(-1px);
     }
 
-    /* Cards */
     .card{
       background: linear-gradient(180deg, var(--card), var(--card2));
       border:1px solid var(--line);
@@ -203,7 +207,6 @@
                   radial-gradient(600px 200px at 90% 0%, rgba(239,68,68,.12), transparent 55%);
     }
 
-    /* Studio Hero */
     .studioHero{
       padding:20px 0 6px;
       text-align:center;
@@ -251,7 +254,6 @@
       margin-bottom:4px;
     }
 
-    /* Game Cards Grid */
     .gamesGrid{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -350,7 +352,6 @@
       padding-top:14px;
     }
 
-    /* Info Cards Row */
     .infoRow{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -358,7 +359,6 @@
       margin:0 0 26px;
     }
 
-    /* Carousel */
     .carouselWrap{display:grid;grid-template-columns: 1fr;gap:12px}
     .carousel{
       position:relative;
@@ -408,7 +408,6 @@
       background: linear-gradient(135deg, rgba(56,189,248,.8), rgba(34,197,94,.7));
       border-color: rgba(56,189,248,.35);
     }
-    /* Warm dots for Ludo carousel */
     .carousel.warm .dot.active{
       background: linear-gradient(135deg, rgba(251,191,36,.85), rgba(239,68,68,.7));
       border-color: rgba(251,191,36,.40);
@@ -472,7 +471,6 @@
       50%{opacity:.65}
     }
 
-    /* Feature chips (Ludo card) */
     .featureChips{
       display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;
     }
@@ -484,8 +482,33 @@
       font-size:12px;font-weight:700;
       letter-spacing:.2px;
     }
+    .featureChip.cool{
+      border-color:rgba(56,189,248,.18);
+      background:linear-gradient(135deg, rgba(56,189,248,.08), rgba(34,197,94,.06));
+      color:var(--brand2);
+    }
+    .featureChip.green{
+      border-color:rgba(34,197,94,.18);
+      background:linear-gradient(135deg, rgba(34,197,94,.08), rgba(34,197,94,.04));
+      color:var(--brand);
+    }
 
-    /* Screenshot sections spacing */
+    .modeRow{
+      display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;
+    }
+    .modeBadge{
+      padding:8px 14px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      font-size:13px;font-weight:700;
+      display:flex;align-items:center;gap:8px;
+    }
+    .modeBadge .modeIcon{
+      font-size:20px;
+    }
+    .modeBadge .modeLabel{color:var(--text)}
+    .modeBadge .modeSub{color:var(--muted);font-size:12px;font-weight:500}
+
     .ss-section{margin:0 0 26px}
 
     @media (max-width: 980px){
@@ -595,17 +618,36 @@
         </div>
 
         <p class="subtext">
-          Ludo reimagined with unique King's Rules. Unlock special attacks on your first 6 — Back Kick, Line Kick, Home Kick — plus Prison, Bonuses, and Safe Tiles.
+          Ludo reimagined with unique King's Rules. Unlock special attacks on your first 6 — Back Kick, Line Kick, Home Kick — plus Double Dice, Prison, Bonuses, Walls, and Safe Tiles. Play offline vs AI or online with friends.
         </p>
+
+        <!-- Game Modes -->
+        <div class="modeRow">
+          <div class="modeBadge">
+            <span class="modeIcon">🤖</span>
+            <div>
+              <div class="modeLabel">Offline</div>
+              <div class="modeSub">Play vs smart AI</div>
+            </div>
+          </div>
+          <div class="modeBadge">
+            <span class="modeIcon">🌐</span>
+            <div>
+              <div class="modeLabel">Online</div>
+              <div class="modeSub">Multiplayer + Chat</div>
+            </div>
+          </div>
+        </div>
 
         <div class="featureChips">
           <span class="featureChip">⬅️ Back Kick</span>
           <span class="featureChip">📏 Line Kick</span>
           <span class="featureChip">🏠 Home Kick</span>
+          <span class="featureChip">🎲🎲 Double Dice</span>
           <span class="featureChip">🚓 Prison</span>
           <span class="featureChip">🎁 Bonus</span>
           <span class="featureChip">🛡️ Safe Tiles</span>
-          <span class="featureChip">🌐 Online</span>
+          <span class="featureChip">🧱 Walls</span>
         </div>
 
         <div class="cta">
@@ -618,7 +660,7 @@
         <div class="kpi">
           <span class="pill">🎲 Ludo</span>
           <span class="pill">👑 King's Rules</span>
-          <span class="pill">🌐 Multiplayer</span>
+          <span class="pill">🤖 AI + 🌐 Online</span>
           <span class="pill">📱 Android</span>
         </div>
 
@@ -629,10 +671,14 @@
             <li><b style="color:var(--warn);">Back Kick</b> — Move backward by dice roll to capture enemies</li>
             <li><b style="color:var(--warn);">Line Kick</b> — Dash parallel onto enemy tokens to capture</li>
             <li><b style="color:var(--warn);">Home Kick</b> — Interact between home-path and board tokens</li>
+            <li><b style="color:var(--warn);">Double Dice</b> — Roll two dice per turn, choose which to use first; double 6s grant two extra turns</li>
             <li><b style="color:var(--warn);">Prison</b> — Captured tokens jailed; roll a 6 to release</li>
-            <li><b style="color:var(--warn);">Bonus</b> — Earn bonus actions on successful captures</li>
-            <li><b style="color:var(--warn);">Safe Tiles</b> — Protected zones immune to normal captures</li>
-            <li><b style="color:var(--brand2);">Online Chat</b> — Per-color messaging in multiplayer</li>
+            <li><b style="color:var(--warn);">Bonus</b> — Earn bonus rolls on successful captures</li>
+            <li><b style="color:var(--warn);">Safe Tiles</b> — Star tiles immune to normal captures</li>
+            <li><b style="color:var(--brand2);">Walls</b> — 2+ tokens on same tile form a wall, blocking enemy movement and captures</li>
+            <li><b style="color:var(--brand);">Smart AI</b> — Strategic AI that prioritizes captures, releases, and optimal token advancement</li>
+            <li><b style="color:var(--brand);">In-Game Tutorial</b> — Context-sensitive guided tour for new players</li>
+            <li><b style="color:var(--brand2);">Online Chat</b> — Per-color messaging in multiplayer matches</li>
           </ul>
         </div>
       </div>
@@ -688,7 +734,7 @@
         <div class="sectionLabel" style="color:var(--warn);">📸 King's Rules Ludo — Screenshots</div>
         <h2 style="margin:0 0 4px;">Game Preview</h2>
         <p style="margin:0 0 4px;color:var(--muted);">
-          See the King's Rules in action — special kicks, prison, safe tiles, and more.
+          See the King's Rules in action — double dice, special kicks, prison, safe tiles, walls, and more.
         </p>
 
         <div style="height:12px;"></div>
@@ -751,7 +797,7 @@
         <h2 style="margin:0 0 6px; font-size:18px;">Our Games</h2>
         <ul>
           <li><b style="color:var(--text);">Morris Games</b> — Classic strategy board game</li>
-          <li><b style="color:var(--text);">King's Rules Ludo</b> — Ludo with Back Kick, Line Kick, Home Kick, Prison, Bonuses, Safe Tiles &amp; Online Multiplayer</li>
+          <li><b style="color:var(--text);">King's Rules Ludo</b> — Ludo with Back Kick, Line Kick, Home Kick, Double Dice, Prison, Bonuses, Safe Tiles, Wall system, smart AI opponents, in-game tutorial, coins &amp; XP rewards, and online multiplayer with per-color chat</li>
         </ul>
       </div>
 
@@ -794,19 +840,13 @@
   </div>
 
   <script>
-    // Year
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    // Reveal on scroll
     const revealEls = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
     }, { threshold: 0.12 });
     revealEls.forEach(el => io.observe(el));
-
-    // ── Multi-carousel system ──
-    // Each carousel is found by [data-carousel] and runs independently.
-    // Arrow keys control whichever carousel is most visible on screen.
 
     const carousels = [];
 
@@ -821,7 +861,6 @@
       const total = slidesEl.children.length;
       let index = 0;
 
-      // Create dots
       const dots = [];
       for (let i = 0; i < total; i++) {
         const d = document.createElement("button");
@@ -850,7 +889,6 @@
       prevBtn.addEventListener("click", prev);
       nextBtn.addEventListener("click", next);
 
-      // Auto slide
       let timer = null;
       const INTERVAL = 4000;
 
@@ -881,10 +919,8 @@
       }});
     });
 
-    // Arrow keys: control the most-visible carousel
     window.addEventListener("keydown", (e) => {
       if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
-      // Find the most visible carousel
       let best = null;
       let bestDist = Infinity;
       for (const c of carousels) {
