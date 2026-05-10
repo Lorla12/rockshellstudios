@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Privacy Policy | Arena Shooter – Rockshell Studios</title>
+  <meta name="description" content="Privacy Policy for Arena Shooter by Rockshell Studios." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lorla12.github.io/rockshellstudios/arena-shooter-privacy.html" />
+  <link rel="icon" href="assets/MainIcon.png" type="image/png" />
+
+  <style>
+    :root{
+      --bg:#070a12;
+      --card:rgba(17,24,39,.72);
+      --card2:rgba(15,23,42,.62);
+      --line:rgba(255,255,255,.10);
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --shadow: 0 22px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --neon:#00e5ff;
+      --red:#ff5f6d;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 650px at 20% -10%, rgba(0,229,255,.18), transparent 60%),
+        radial-gradient(950px 600px at 85% 5%, rgba(255,95,109,.14), transparent 60%),
+        radial-gradient(900px 650px at 60% 120%, rgba(114,64,201,.10), transparent 60%),
+        var(--bg);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:22px}
+
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 0;gap:14px;
+      border-bottom:1px solid var(--line);
+      backdrop-filter: blur(10px);
+      position:sticky; top:0;
+      background: linear-gradient(to bottom, rgba(7,10,18,.78), rgba(7,10,18,.50));
+      z-index:20;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;
+      text-decoration:none;
+    }
+    .logo{
+      width:44px;height:44px;border-radius:14px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      flex:0 0 auto;
+    }
+    .logo img{width:100%;height:100%;object-fit:cover;display:block}
+    .brandtext{display:flex;flex-direction:column;gap:2px}
+    .brandtext .name{font-weight:850;letter-spacing:.3px}
+    .brandtext .sub{color:var(--muted);font-size:13px;margin-top:-2px}
+
+    .navlinks{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+    .navlinks a{
+      color:var(--muted);text-decoration:none;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid transparent;
+      transition: all .2s ease;
+      font-weight:650;
+      font-size:14px;
+    }
+    .navlinks a:hover{
+      color:var(--text);
+      border-color:rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      transform:translateY(-1px);
+    }
+
+    .card{
+      background: linear-gradient(180deg, var(--card), var(--card2));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    h1{margin:0 0 6px; font-size:34px; line-height:1.15}
+    h2{margin:22px 0 8px; font-size:18px}
+    p{margin:0 0 10px; color:var(--muted)}
+    ul{margin:10px 0 0 18px; color:var(--muted)}
+    li{margin:6px 0}
+
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 10px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-size:13px;font-weight:700;
+      margin:10px 10px 0 0;
+    }
+    .pill.cyan{border-color:rgba(0,229,255,.25);color:var(--neon)}
+    .pill.red{border-color:rgba(255,95,109,.25);color:var(--red)}
+
+    .highlight-box{
+      background:rgba(0,229,255,.06);
+      border:1px solid rgba(0,229,255,.15);
+      border-radius:12px;
+      padding:14px 16px;
+      margin:14px 0;
+    }
+    .highlight-box p{margin:0;color:var(--text);font-size:15px}
+
+    .footer{
+      border-top:1px solid var(--line);
+      padding:18px 0;color:var(--muted);
+      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      align-items:center;
+      margin-top:18px;
+    }
+
+    code{
+      padding:2px 6px;border-radius:10px;background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.10);
+      color:rgba(255,255,255,.88);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="index.html" aria-label="Back to home">
+        <div class="logo">
+          <img src="assets/Developerlogo.png" alt="Rockshell Studios logo">
+        </div>
+        <div class="brandtext">
+          <div class="name">Rockshell Studios</div>
+          <div class="sub">Arena Shooter – Privacy Policy</div>
+        </div>
+      </a>
+
+      <div class="navlinks">
+        <a href="index.html">🏠 Home</a>
+      </div>
+    </div>
+
+    <section class="card">
+      <h1>Privacy Policy</h1>
+      <p><strong style="color:var(--text)">Effective date:</strong> <span id="effectiveDate"></span></p>
+
+      <span class="pill cyan">📱 Mobile Game</span>
+      <span class="pill">🔒 Offline Only</span>
+      <span class="pill red">🚫 No Accounts</span>
+      <span class="pill">💾 Local Save Data</span>
+
+      <div class="highlight-box">
+        <p>🎯 <strong>Arena Shooter</strong> is a fully offline, single-player game. We do <strong>not</strong> collect personal information, create accounts, or transmit your data to servers. All progress is stored locally on your device.</p>
+      </div>
+
+      <h2>1) Who we are</h2>
+      <p>
+        This Privacy Policy applies to <strong style="color:var(--text)">Arena Shooter</strong> developed by
+        <strong style="color:var(--text)">Rockshell Studios</strong> (Ghana). If you have questions, contact us using the details below.
+      </p>
+
+      <h2>2) Information we collect</h2>
+      <p><strong style="color:var(--text)">Short answer: Nothing personal.</strong></p>
+      <p>All game data is stored <strong style="color:var(--text)">locally on your device only</strong>. This includes:</p>
+      <ul>
+        <li><strong style="color:var(--text)">Game progress:</strong> level completion, stars earned, high scores</li>
+        <li><strong style="color:var(--text)">In-game currency:</strong> coins, diamonds, XP</li>
+        <li><strong style="color:var(--text)">Unlocks:</strong> purchased skins, bullet types, shields, backgrounds, trails</li>
+        <li><strong style="color:var(--text)">Settings:</strong> difficulty preference, audio volume, screen shake toggle</li>
+      </ul>
+      <p><strong style="color:var(--neon)">We do NOT collect:</strong></p>
+      <ul>
+        <li>❌ Names, emails, or any personal identifiers</li>
+        <li>❌ Location data</li>
+        <li>❌ Device identifiers (no Advertising ID collection)</li>
+        <li>❌ Contact lists or phone information</li>
+        <li>❌ Any data transmitted to external servers</li>
+      </ul>
+
+      <h2>3) How we use information</h2>
+      <p>We don't "use" your data externally. The local data exists solely to:</p>
+      <ul>
+        <li>Remember your progress when you return to the game</li>
+        <li>Keep your unlocks and currency between sessions</li>
+        <li>Save your settings preferences</li>
+      </ul>
+
+      <h2>4) Third-party services</h2>
+      <p><strong style="color:var(--text)">Arena Shooter does not integrate any third-party analytics, advertising, or tracking SDKs.</strong></p>
+      <ul>
+        <li>❌ No Google AdMob</li>
+        <li>❌ No Google Analytics / Firebase</li>
+        <li>❌ No Facebook SDK</li>
+        <li>❌ No crash reporting services</li>
+        <li>❌ No social login or cloud save</li>
+      </ul>
+      <p>The game runs 100% offline with zero network requests.</p>
+
+      <h2>5) No accounts or sign-in</h2>
+      <p>
+        Arena Shooter does not have user accounts, profiles, login screens, or sign-in buttons.
+        There is no way to "sign up" because the game doesn't need any of your information.
+      </p>
+
+      <h2>6) No multiplayer or chat</h2>
+      <p>
+        Arena Shooter is a single-player experience. There is no online multiplayer, no chat system,
+        no leaderboards, and no social features. No data is shared with other players because there are no other players.
+      </p>
+
+      <h2>7) Data retention</h2>
+      <p>
+        Your game data stays on your device until you delete it. We have no copies on any server because
+        we don't have servers.
+      </p>
+
+      <h2>8) Data deletion</h2>
+      <p>To delete all your Arena Shooter data:</p>
+      <ul>
+        <li><strong style="color:var(--text)">Method 1:</strong> Go to Android Settings → Apps → Arena Shooter → Storage → Clear Data</li>
+        <li><strong style="color:var(--text)">Method 2:</strong> Uninstall the app — this removes all local save files</li>
+        <li><strong style="color:var(--text)">Method 3:</strong> In-game reset (if added in a future update)</li>
+      </ul>
+      <p><strong style="color:var(--neon)">No email request needed — you control your own data.</strong></p>
+
+      <h2>9) Children's privacy</h2>
+      <p>
+        Arena Shooter is suitable for all ages. Since we collect zero personal data, have no accounts,
+        no chat, and no ads, there are no COPPA or GDPR-K concerns. The game cannot identify or contact any child.
+      </p>
+
+      <h2>10) Security</h2>
+      <p>
+        Since all data is local and never transmitted, the risk of data interception is effectively zero.
+        Your save file is stored in Android's private app storage, which other apps cannot access.
+      </p>
+
+      <h2>11) Policy changes</h2>
+      <p>
+        If we update this policy (for example, if we add optional cloud save or ads in a future version),
+        we will update the effective date above. We recommend checking this page after major app updates.
+      </p>
+
+      <h2>12) Contact</h2>
+      <p>
+        Questions about this policy? Contact us:
+        <br />
+        <strong style="color:var(--text)">Rockshell Studios</strong>
+        <br />
+        Email: <a href="mailto:rockshellgames.studio@gmail.com"><code>rockshellgames.studio@gmail.com</code></a>
+        <br />
+        Email: <a href="mailto:gadesesamuel35@gmail.com"><code>gadesesamuel35@gmail.com</code></a>
+      </p>
+
+      <div class="footer">
+        <div>© <span id="y"></span> Rockshell Studios</div>
+        <div><a href="index.html">Back to Home</a></div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+    const d = new Date();
+    document.getElementById("effectiveDate").textContent =
+      d.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+  </script>
+</body>
+</html>
