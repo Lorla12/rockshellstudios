@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Data Deletion | Arena Shooter – Rockshell Studios</title>
+  <meta name="description" content="How to delete Arena Shooter game data and progress." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lorla12.github.io/rockshellstudios/arena-shooter-delete-data.html" />
+  <link rel="icon" href="assets/MainIcon.png" type="image/png" />
+
+  <style>
+    :root{
+      --bg:#070a12;
+      --card:rgba(17,24,39,.72);
+      --card2:rgba(15,23,42,.62);
+      --line:rgba(255,255,255,.10);
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --shadow:0 22px 60px rgba(0,0,0,.35);
+      --radius:18px;
+      --neon:#00e5ff;
+      --green:#4ade80;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 650px at 20% -10%, rgba(0,229,255,.18), transparent 60%),
+        radial-gradient(950px 600px at 85% 5%, rgba(74,222,128,.14), transparent 60%),
+        var(--bg);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:22px}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 0;gap:14px;
+      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(10px);
+      position:sticky;top:0;
+      background:linear-gradient(to bottom, rgba(7,10,18,.78), rgba(7,10,18,.50));
+      z-index:20;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;
+      text-decoration:none;
+    }
+    .logo{
+      width:44px;height:44px;border-radius:14px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      flex:0 0 auto;
+    }
+    .logo img{width:100%;height:100%;object-fit:cover;display:block}
+    .brandtext{display:flex;flex-direction:column;gap:2px}
+    .brandtext .name{font-weight:850;letter-spacing:.3px}
+    .brandtext .sub{color:var(--muted);font-size:13px;margin-top:-2px}
+    .navlinks{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+    .navlinks a{
+      color:var(--muted);text-decoration:none;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid transparent;
+      transition:all .2s ease;
+      font-weight:650;font-size:14px;
+    }
+    .navlinks a:hover{
+      color:var(--text);
+      border-color:rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      transform:translateY(-1px);
+    }
+    .card{
+      background:linear-gradient(180deg, var(--card), var(--card2));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:var(--shadow);
+      margin-top:18px;
+    }
+    h1{margin:0 0 8px;font-size:34px;line-height:1.15}
+    h2{margin:22px 0 8px;font-size:18px}
+    p{margin:0 0 10px;color:var(--muted)}
+    ul{margin:10px 0 0 18px;color:var(--muted)}
+    li{margin:6px 0}
+    code{
+      padding:2px 6px;border-radius:10px;background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.10);
+      color:rgba(255,255,255,.88);
+    }
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 10px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-size:13px;font-weight:700;
+      margin:10px 10px 0 0;
+    }
+    .pill.green{border-color:rgba(74,222,128,.25);color:var(--green)}
+    .footer{
+      border-top:1px solid var(--line);
+      padding:18px 0;color:var(--muted);
+      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      align-items:center;
+      margin-top:18px;
+    }
+
+    .step-box{
+      background:rgba(0,229,255,.04);
+      border:1px solid rgba(0,229,255,.12);
+      border-radius:14px;
+      padding:16px 18px;
+      margin:14px 0;
+    }
+    .step-box h3{
+      margin:0 0 8px;
+      font-size:16px;
+      color:var(--neon);
+    }
+    .step-box ol{
+      margin:6px 0 0 20px;
+      color:var(--muted);
+    }
+    .step-box li{margin:4px 0}
+
+    .quick-box{
+      background:rgba(74,222,128,.06);
+      border:1px solid rgba(74,222,128,.15);
+      border-radius:12px;
+      padding:14px 16px;
+      margin:14px 0;
+    }
+    .quick-box p{margin:0;color:var(--text);font-size:15px}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="index.html" aria-label="Back to home">
+        <div class="logo">
+          <img src="assets/Developerlogo.png" alt="Rockshell Studios logo">
+        </div>
+        <div class="brandtext">
+          <div class="name">Rockshell Studios</div>
+          <div class="sub">Arena Shooter – Data Deletion</div>
+        </div>
+      </a>
+
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="arena-shooter-privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+
+    <section class="card">
+      <h1>Data Deletion</h1>
+      <p>
+        Arena Shooter stores all data <strong style="color:var(--text)">locally on your device</strong>.
+        There are no accounts, no servers, and no cloud saves — so deleting your data is simple and instant.
+      </p>
+
+      <span class="pill green">✅ No Email Required</span>
+      <span class="pill">📱 Local Data Only</span>
+      <span class="pill">⚡ Instant Deletion</span>
+
+      <div class="quick-box">
+        <p>🚀 <strong>Quickest method:</strong> Just uninstall the app. All data is deleted automatically.</p>
+      </div>
+
+      <h2>What data exists</h2>
+      <ul>
+        <li><strong style="color:var(--text)">Game progress:</strong> completed levels, stars earned</li>
+        <li><strong style="color:var(--text)">Currency:</strong> coins, diamonds, XP, player level</li>
+        <li><strong style="color:var(--text)">Unlocks:</strong> skins, bullets, shields, backgrounds, trails</li>
+        <li><strong style="color:var(--text)">Settings:</strong> difficulty, audio, screen shake</li>
+        <li><strong style="color:var(--text)">Stats:</strong> total kills, boss kills, games played</li>
+        <li><strong style="color:var(--text)">Best scores:</strong> endless mode wave and score records</li>
+      </ul>
+
+      <h2>Method 1: Uninstall (Recommended)</h2>
+      <div class="step-box">
+        <h3>📱 Uninstall the app</h3>
+        <ol>
+          <li>Long-press the Arena Shooter icon on your home screen</li>
+          <li>Tap <strong>Uninstall</strong></li>
+          <li>Confirm</li>
+          <li>✅ All data is permanently deleted</li>
+        </ol>
+      </div>
+
+      <h2>Method 2: Clear App Data</h2>
+      <div class="step-box">
+        <h3>🗑️ Clear data without uninstalling</h3>
+        <ol>
+          <li>Open <strong>Settings</strong> on your Android device</li>
+          <li>Go to <strong>Apps</strong> → <strong>Arena Shooter</strong></li>
+          <li>Tap <strong>Storage</strong></li>
+          <li>Tap <strong>Clear Data</strong></li>
+          <li>Confirm</li>
+          <li>✅ All progress reset to zero, as if first install</li>
+        </ol>
+      </div>
+
+      <h2>Method 3: Clear Cache</h2>
+      <p>
+        <strong style="color:var(--text)">Note:</strong> Clearing cache only removes temporary files,
+        not your save data. Use <strong>Clear Data</strong> (Method 2) to reset progress.
+      </p>
+
+      <h2>What happens after deletion</h2>
+      <ul>
+        <li>All level progress is lost — you start from Level 1</li>
+        <li>All coins, diamonds, and XP are reset to zero</li>
+        <li>All purchased unlocks are gone (skins, bullets, etc.)</li>
+        <li>Player level returns to 1</li>
+        <li>Endless mode high scores are erased</li>
+        <li>Settings return to defaults</li>
+      </ul>
+      <p><strong style="color:var(--neon)">This action cannot be undone.</strong></p>
+
+      <h2>No server-side data</h2>
+      <p>
+        Arena Shooter does not store any data on external servers. There is no "account" to delete,
+        no database to wipe, and no email request needed. Once you clear local data or uninstall,
+        it's gone for good.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        If you have questions:
+        <br />
+        <strong style="color:var(--text)">Rockshell Studios</strong>
+        <br />
+        Email: <a href="mailto:gadesesamuel35@gmail.com"><code>gadesesamuel35@gmail.com</code></a>
+      </p>
+
+      <div class="footer">
+        <div>© <span id="y"></span> Rockshell Studios</div>
+        <div><a href="index.html">Back to Home</a></div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
