@@ -105,6 +105,7 @@
     }
     .pill.cyan{border-color:rgba(0,229,255,.25);color:var(--neon)}
     .pill.red{border-color:rgba(255,95,109,.25);color:var(--red)}
+    .pill.yellow{border-color:rgba(251,191,36,.25);color:#fbbf24}
 
     .highlight-box{
       background:rgba(0,229,255,.06);
@@ -114,6 +115,15 @@
       margin:14px 0;
     }
     .highlight-box p{margin:0;color:var(--text);font-size:15px}
+
+    .ad-box{
+      background:rgba(251,191,36,.06);
+      border:1px solid rgba(251,191,36,.15);
+      border-radius:12px;
+      padding:14px 16px;
+      margin:14px 0;
+    }
+    .ad-box p{margin:0;color:var(--text);font-size:15px}
 
     .footer{
       border-top:1px solid var(--line);
@@ -154,12 +164,12 @@
       <p><strong style="color:var(--text)">Effective date:</strong> <span id="effectiveDate"></span></p>
 
       <span class="pill cyan">📱 Mobile Game</span>
-      <span class="pill">🔒 Offline Only</span>
+      <span class="pill yellow">📢 AdMob Ads</span>
       <span class="pill red">🚫 No Accounts</span>
       <span class="pill">💾 Local Save Data</span>
 
       <div class="highlight-box">
-        <p>🎯 <strong>Arena Shooter</strong> is a fully offline, single-player game. We do <strong>not</strong> collect personal information, create accounts, or transmit your data to servers. All progress is stored locally on your device.</p>
+        <p>🎯 <strong>Arena Shooter</strong> is an offline, single-player game with ads. Game progress is stored locally on your device. Ads are served through Google AdMob, which may collect device identifiers for ad personalization.</p>
       </div>
 
       <h2>1) Who we are</h2>
@@ -169,88 +179,115 @@
       </p>
 
       <h2>2) Information we collect</h2>
-      <p><strong style="color:var(--text)">Short answer: Nothing personal.</strong></p>
-      <p>All game data is stored <strong style="color:var(--text)">locally on your device only</strong>. This includes:</p>
+      <p><strong style="color:var(--text)">Locally (on your device only):</strong></p>
       <ul>
         <li><strong style="color:var(--text)">Game progress:</strong> level completion, stars earned, high scores</li>
         <li><strong style="color:var(--text)">In-game currency:</strong> coins, diamonds, XP</li>
         <li><strong style="color:var(--text)">Unlocks:</strong> purchased skins, bullet types, shields, backgrounds, trails</li>
         <li><strong style="color:var(--text)">Settings:</strong> difficulty preference, audio volume, screen shake toggle</li>
       </ul>
-      <p><strong style="color:var(--neon)">We do NOT collect:</strong></p>
+
+      <p><strong style="color:var(--text)">Via AdMob (handled by Google):</strong></p>
+      <ul>
+        <li><strong style="color:var(--text)">Device identifiers:</strong> Advertising ID (used by Google to serve relevant ads)</li>
+        <li><strong style="color:var(--text)">IP address:</strong> may be collected by Google's ad systems</li>
+        <li><strong style="color:var(--text)">Ad interaction data:</strong> impressions, clicks, and ad performance metrics</li>
+      </ul>
+
+      <p><strong style="color:var(--neon)">We do NOT collect directly:</strong></p>
       <ul>
         <li>❌ Names, emails, or any personal identifiers</li>
         <li>❌ Location data</li>
-        <li>❌ Device identifiers (no Advertising ID collection)</li>
         <li>❌ Contact lists or phone information</li>
-        <li>❌ Any data transmitted to external servers</li>
+        <li>❌ Any gameplay data sent to our own servers (we have none)</li>
       </ul>
 
       <h2>3) How we use information</h2>
-      <p>We don't "use" your data externally. The local data exists solely to:</p>
       <ul>
-        <li>Remember your progress when you return to the game</li>
-        <li>Keep your unlocks and currency between sessions</li>
-        <li>Save your settings preferences</li>
+        <li><strong style="color:var(--text)">Local data:</strong> only used to remember your progress and settings between sessions</li>
+        <li><strong style="color:var(--text)">AdMob data:</strong> used by Google to display ads and measure ad performance within the game</li>
       </ul>
 
       <h2>4) Third-party services</h2>
-      <p><strong style="color:var(--text)">Arena Shooter does not integrate any third-party analytics, advertising, or tracking SDKs.</strong></p>
+      <p>Arena Shooter uses the following third-party service:</p>
       <ul>
-        <li>❌ No Google AdMob</li>
-        <li>❌ No Google Analytics / Firebase</li>
-        <li>❌ No Facebook SDK</li>
-        <li>❌ No crash reporting services</li>
-        <li>❌ No social login or cloud save</li>
+        <li><strong style="color:var(--text)">Google AdMob</strong> — for displaying in-app advertisements</li>
       </ul>
-      <p>The game runs 100% offline with zero network requests.</p>
+      <p>
+        AdMob may collect and use device data under Google's own privacy policy:
+        <br />
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--neon);text-decoration:underline;">https://policies.google.com/privacy</a>
+      </p>
+      <p><strong style="color:var(--text)">Arena Shooter does NOT use:</strong></p>
+      <ul>
+        <li>❌ Google Analytics / Firebase</li>
+        <li>❌ Facebook SDK</li>
+        <li>❌ Crash reporting services</li>
+        <li>❌ Social login or cloud save</li>
+      </ul>
 
-      <h2>5) No accounts or sign-in</h2>
+      <h2>5) Ads (AdMob)</h2>
+      <div class="ad-box">
+        <p>📢 We use <strong>Google AdMob</strong> to display advertisements in Arena Shooter. AdMob may collect device identifiers (such as Advertising ID) and IP address to serve personalized or non-personalized ads depending on your device settings and region.</p>
+      </div>
+      <p>You can control ad personalization through:</p>
+      <ul>
+        <li><strong style="color:var(--text)">Android Settings → Google → Ads</strong> — reset or delete your Advertising ID</li>
+        <li><strong style="color:var(--text)">Android Settings → Google → Ads → Delete advertising ID</strong> — opt out of ad personalization</li>
+      </ul>
+
+      <h2>6) No accounts or sign-in</h2>
       <p>
         Arena Shooter does not have user accounts, profiles, login screens, or sign-in buttons.
-        There is no way to "sign up" because the game doesn't need any of your information.
+        There is no way to sign up because the game doesn't need any of your personal information.
       </p>
 
-      <h2>6) No multiplayer or chat</h2>
+      <h2>7) No multiplayer or chat</h2>
       <p>
         Arena Shooter is a single-player experience. There is no online multiplayer, no chat system,
-        no leaderboards, and no social features. No data is shared with other players because there are no other players.
+        no leaderboards, and no social features. No data is shared with other players.
       </p>
 
-      <h2>7) Data retention</h2>
-      <p>
-        Your game data stays on your device until you delete it. We have no copies on any server because
-        we don't have servers.
-      </p>
-
-      <h2>8) Data deletion</h2>
-      <p>To delete all your Arena Shooter data:</p>
+      <h2>8) Data retention</h2>
       <ul>
-        <li><strong style="color:var(--text)">Method 1:</strong> Go to Android Settings → Apps → Arena Shooter → Storage → Clear Data</li>
-        <li><strong style="color:var(--text)">Method 2:</strong> Uninstall the app — this removes all local save files</li>
-        <li><strong style="color:var(--text)">Method 3:</strong> In-game reset (if added in a future update)</li>
+        <li><strong style="color:var(--text)">Local game data:</strong> stays on your device until you delete it or uninstall</li>
+        <li><strong style="color:var(--text)">AdMob data:</strong> retained by Google under their own data retention policies</li>
       </ul>
-      <p><strong style="color:var(--neon)">No email request needed — you control your own data.</strong></p>
 
-      <h2>9) Children's privacy</h2>
+      <h2>9) Data deletion</h2>
+      <p>To delete your Arena Shooter game data:</p>
+      <ul>
+        <li><strong style="color:var(--text)">Method 1:</strong> Android Settings → Apps → Arena Shooter → Storage → Clear Data</li>
+        <li><strong style="color:var(--text)">Method 2:</strong> Uninstall the app — removes all local save files</li>
+      </ul>
       <p>
-        Arena Shooter is suitable for all ages. Since we collect zero personal data, have no accounts,
-        no chat, and no ads, there are no COPPA or GDPR-K concerns. The game cannot identify or contact any child.
+        <strong style="color:var(--text)">For AdMob data:</strong> visit
+        <a href="https://adssettings.google.com" target="_blank" rel="noopener" style="color:var(--neon);text-decoration:underline;">https://adssettings.google.com</a>
+        to manage your Google ad settings and advertising ID.
       </p>
 
-      <h2>10) Security</h2>
+      <h2>10) Children's privacy</h2>
       <p>
-        Since all data is local and never transmitted, the risk of data interception is effectively zero.
-        Your save file is stored in Android's private app storage, which other apps cannot access.
+        Arena Shooter is suitable for all ages. The game itself collects no personal data directly.
+        AdMob ads are served by Google, which has its own compliance measures for child-directed content.
+        If you are a parent and want to limit ad personalization for a child, use the
+        <a href="https://adssettings.google.com" target="_blank" rel="noopener" style="color:var(--neon);text-decoration:underline;">Google Ads Settings</a>
+        page or disable ad personalization in your device settings.
       </p>
 
-      <h2>11) Policy changes</h2>
+      <h2>11) Security</h2>
       <p>
-        If we update this policy (for example, if we add optional cloud save or ads in a future version),
+        Local game data is stored in Android's private app storage, which other apps cannot access.
+        Ad data is handled by Google through their secure AdMob infrastructure.
+      </p>
+
+      <h2>12) Policy changes</h2>
+      <p>
+        If we update this policy (for example, if we add new services in a future version),
         we will update the effective date above. We recommend checking this page after major app updates.
       </p>
 
-      <h2>12) Contact</h2>
+      <h2>13) Contact</h2>
       <p>
         Questions about this policy? Contact us:
         <br />
