@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Data Deletion | Arena Shooter – Rockshell Studios</title>
-  <meta name="description" content="How to delete Arena Shooter game data and progress." />
+  <meta name="description" content="How to delete Arena Shooter game data, ad data, and progress." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://lorla12.github.io/rockshellstudios/arena-shooter-delete-data.html" />
   <link rel="icon" href="assets/MainIcon.png" type="image/png" />
@@ -22,6 +22,7 @@
       --radius:18px;
       --neon:#00e5ff;
       --green:#4ade80;
+      --yellow:#fbbf24;
     }
     *{box-sizing:border-box}
     body{
@@ -103,6 +104,7 @@
       margin:10px 10px 0 0;
     }
     .pill.green{border-color:rgba(74,222,128,.25);color:var(--green)}
+    .pill.yellow{border-color:rgba(251,191,36,.25);color:var(--yellow)}
     .footer{
       border-top:1px solid var(--line);
       padding:18px 0;color:var(--muted);
@@ -137,6 +139,27 @@
       margin:14px 0;
     }
     .quick-box p{margin:0;color:var(--text);font-size:15px}
+
+    .ad-box{
+      background:rgba(251,191,36,.06);
+      border:1px solid rgba(251,191,36,.15);
+      border-radius:12px;
+      padding:14px 16px;
+      margin:14px 0;
+    }
+    .ad-box p{margin:0 0 8px;color:var(--text);font-size:15px}
+    .ad-box ul{margin:6px 0 0 18px;color:var(--muted)}
+    .ad-box li{margin:4px 0}
+
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:12px 14px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      text-decoration:none;font-weight:750;
+      background:rgba(255,255,255,.06);
+      transition:all .18s ease;
+    }
+    .btn:hover{transform:translateY(-2px)}
   </style>
 </head>
 
@@ -162,42 +185,51 @@
     <section class="card">
       <h1>Data Deletion</h1>
       <p>
-        Arena Shooter stores all data <strong style="color:var(--text)">locally on your device</strong>.
-        There are no accounts, no servers, and no cloud saves — so deleting your data is simple and instant.
+        Arena Shooter stores game progress <strong style="color:var(--text)">locally on your device</strong>.
+        Ads are served through <strong style="color:var(--text)">Google AdMob</strong>, which stores its own data separately.
+        There are no accounts or cloud saves.
       </p>
 
-      <span class="pill green">✅ No Email Required</span>
-      <span class="pill">📱 Local Data Only</span>
-      <span class="pill">⚡ Instant Deletion</span>
+      <span class="pill green">✅ No Email Required for Game Data</span>
+      <span class="pill yellow">📢 AdMob Data Managed by Google</span>
+      <span class="pill">📱 Local Game Data Only</span>
 
       <div class="quick-box">
-        <p>🚀 <strong>Quickest method:</strong> Just uninstall the app. All data is deleted automatically.</p>
+        <p>🚀 <strong>Quickest method:</strong> Just uninstall the app. All game data is deleted automatically. For ad data, visit Google's Ad Settings.</p>
       </div>
 
       <h2>What data exists</h2>
+      <p><strong style="color:var(--text)">Game data (local):</strong></p>
       <ul>
-        <li><strong style="color:var(--text)">Game progress:</strong> completed levels, stars earned</li>
-        <li><strong style="color:var(--text)">Currency:</strong> coins, diamonds, XP, player level</li>
-        <li><strong style="color:var(--text)">Unlocks:</strong> skins, bullets, shields, backgrounds, trails</li>
-        <li><strong style="color:var(--text)">Settings:</strong> difficulty, audio, screen shake</li>
-        <li><strong style="color:var(--text)">Stats:</strong> total kills, boss kills, games played</li>
-        <li><strong style="color:var(--text)">Best scores:</strong> endless mode wave and score records</li>
+        <li>Level progress, stars earned, high scores</li>
+        <li>Coins, diamonds, XP, player level</li>
+        <li>Purchased unlocks (skins, bullets, shields, backgrounds, trails)</li>
+        <li>Settings (difficulty, audio, screen shake)</li>
+        <li>Stats (kills, boss kills, games played)</li>
+        <li>Endless mode best wave and score</li>
       </ul>
 
-      <h2>Method 1: Uninstall (Recommended)</h2>
+      <p><strong style="color:var(--text)">Ad data (managed by Google AdMob):</strong></p>
+      <ul>
+        <li>Advertising ID</li>
+        <li>Ad interaction data (impressions, clicks)</li>
+        <li>Device data used for ad personalization</li>
+      </ul>
+
+      <h2>Delete game data</h2>
+
       <div class="step-box">
-        <h3>📱 Uninstall the app</h3>
+        <h3>📱 Method 1: Uninstall (Recommended)</h3>
         <ol>
           <li>Long-press the Arena Shooter icon on your home screen</li>
           <li>Tap <strong>Uninstall</strong></li>
           <li>Confirm</li>
-          <li>✅ All data is permanently deleted</li>
+          <li>✅ All local game data is permanently deleted</li>
         </ol>
       </div>
 
-      <h2>Method 2: Clear App Data</h2>
       <div class="step-box">
-        <h3>🗑️ Clear data without uninstalling</h3>
+        <h3>🗑️ Method 2: Clear App Data (keep app installed)</h3>
         <ol>
           <li>Open <strong>Settings</strong> on your Android device</li>
           <li>Go to <strong>Apps</strong> → <strong>Arena Shooter</strong></li>
@@ -208,29 +240,27 @@
         </ol>
       </div>
 
-      <h2>Method 3: Clear Cache</h2>
-      <p>
-        <strong style="color:var(--text)">Note:</strong> Clearing cache only removes temporary files,
-        not your save data. Use <strong>Clear Data</strong> (Method 2) to reset progress.
-      </p>
+      <h2>Delete AdMob ad data</h2>
+      <div class="ad-box">
+        <p>📢 Ad data is collected and managed by <strong>Google</strong>, not by Rockshell Studios. To delete or manage your ad data:</p>
+        <ul>
+          <li>Visit <a href="https://adssettings.google.com" target="_blank" rel="noopener" style="color:var(--yellow);text-decoration:underline;">https://adssettings.google.com</a></li>
+          <li>Go to <strong>Android Settings → Google → Ads</strong> → Delete advertising ID</li>
+          <li>Reset your Advertising ID to remove previous ad associations</li>
+          <li>Opt out of ad personalization to prevent future tracking</li>
+        </ul>
+      </div>
 
       <h2>What happens after deletion</h2>
       <ul>
-        <li>All level progress is lost — you start from Level 1</li>
-        <li>All coins, diamonds, and XP are reset to zero</li>
-        <li>All purchased unlocks are gone (skins, bullets, etc.)</li>
+        <li>All level progress lost — start from Level 1</li>
+        <li>All coins, diamonds, and XP reset to zero</li>
+        <li>All purchased unlocks gone (skins, bullets, etc.)</li>
         <li>Player level returns to 1</li>
-        <li>Endless mode high scores are erased</li>
+        <li>Endless mode high scores erased</li>
         <li>Settings return to defaults</li>
       </ul>
       <p><strong style="color:var(--neon)">This action cannot be undone.</strong></p>
-
-      <h2>No server-side data</h2>
-      <p>
-        Arena Shooter does not store any data on external servers. There is no "account" to delete,
-        no database to wipe, and no email request needed. Once you clear local data or uninstall,
-        it's gone for good.
-      </p>
 
       <h2>Contact</h2>
       <p>
@@ -240,6 +270,12 @@
         <br />
         Email: <a href="mailto:gadesesamuel35@gmail.com"><code>gadesesamuel35@gmail.com</code></a>
       </p>
+
+      <div style="margin-top:18px;">
+        <a class="btn" href="https://adssettings.google.com" target="_blank" rel="noopener">
+          📢 Manage Google Ad Settings
+        </a>
+      </div>
 
       <div class="footer">
         <div>© <span id="y"></span> Rockshell Studios</div>
