@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- SEO: Core -->
-  <title>Rockshell Studios – Indie Game Studio | Board Games for Android</title>
-  <meta name="description" content="Rockshell Studios is an indie game studio based in Dzodze, Ghana. Download Morris Games and King's Rules Ludo — strategic board games with unique rules like Back Kick, Line Kick, Home Kick, Double Dice, Prison, Safe Tiles, Wall system, offline AI mode, and online multiplayer on Google Play." />
-  <meta name="keywords" content="Rockshell Studios, Morris Games, King's Rules Ludo, board game, strategy game, Ludo game, Android game, Ghana game developer, Dzodze, Gadese Samuel, Back Kick, Line Kick, Home Kick, Prison Ludo, Safe Tiles, Double Dice, Wall system, offline Ludo, AI Ludo, online Ludo" />
+  <title>Rockshell Studios – Indie Game Studio | Arena Shooter, Board Games for Android</title>
+  <meta name="description" content="Rockshell Studios is an indie game studio based in Dzodze, Ghana. Download Arena Shooter — a tactical top-down cyberpunk action game with 30 levels, 7 enemy types, boss fights, and endless mode. Also play Morris Games and King's Rules Ludo — strategic board games for Android." />
+  <meta name="keywords" content="Rockshell Studios, Arena Shooter, cyberpunk game, top-down shooter, tactical combat, mech game, boss fights, endless mode, Morris Games, King's Rules Ludo, board game, strategy game, Android game, Ghana game developer, Dzodze, Gadese Samuel" />
   <meta name="author" content="Gadese Samuel - Rockshell Studios" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://lorla12.github.io/rockshellstudios/" />
 
   <!-- Social Preview -->
-  <meta property="og:title" content="Rockshell Studios – Strategy Board Games for Android" />
-  <meta property="og:description" content="Download Morris Games and King's Rules Ludo on Google Play. Unique rules like Back Kick, Line Kick, Home Kick, Double Dice, Prison, Safe Tiles, Wall system, offline AI, and online multiplayer — built by Rockshell Studios in Ghana." />
+  <meta property="og:title" content="Rockshell Studios – Arena Shooter, Board Games for Android" />
+  <meta property="og:description" content="Download Arena Shooter — tactical top-down cyberpunk action with 30 levels, 7 enemy types, boss fights & endless mode. Plus Morris Games and King's Rules Ludo — built by Rockshell Studios in Ghana." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lorla12.github.io/rockshellstudios/" />
-  <meta property="og:image" content="https://lorla12.github.io/rockshellstudios/assets/Developerlogo.png" />
+  <meta property="og:image" content="https://lorla12.github.io/rockshellstudios/ARENA_assets/icon.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" href="assets/MainIcon.png" type="image/png" />
@@ -53,6 +53,23 @@
       {
         "@type": "VideoGame",
         "position": 1,
+        "name": "Arena Shooter",
+        "genre": ["Action", "Tactical Shooter"],
+        "applicationCategory": "Game",
+        "operatingSystem": "Android",
+        "playMode": "SinglePlayer",
+        "description": "Tactical top-down cyberpunk action game. 30 handcrafted levels across 3 deadly zones, 7 unique enemy types, 4 boss fights with multiple phases, endless mode with scaling waves, player skins, bullet types, shields, arena themes, and trail effects.",
+        "creator": { "@type": "Organization", "name": "Rockshell Studios" },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://play.google.com/store/apps/details?id=com.rockshellstudios.ArenaShooter",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "VideoGame",
+        "position": 2,
         "name": "Morris Games",
         "genre": "Strategy",
         "applicationCategory": "Game",
@@ -67,7 +84,7 @@
       },
       {
         "@type": "VideoGame",
-        "position": 2,
+        "position": 3,
         "name": "King's Rules Ludo",
         "genre": "Board Game",
         "applicationCategory": "Game",
@@ -103,6 +120,8 @@
       --brand2:#38bdf8;
       --warn:#fbbf24;
       --red:#ef4444;
+      --purple:#a855f7;
+      --pink:#ec4899;
       --shadow: 0 22px 60px rgba(0,0,0,.35);
       --radius: 18px;
     }
@@ -207,6 +226,16 @@
                   radial-gradient(600px 200px at 90% 0%, rgba(239,68,68,.12), transparent 55%);
     }
 
+    .card.cyber{
+      border-color: rgba(168,85,247,.15);
+    }
+    .card.cyber:before{
+      background: radial-gradient(700px 250px at 0% 0%, rgba(168,85,247,.22), transparent 55%),
+                  radial-gradient(700px 250px at 100% 0%, rgba(236,72,153,.18), transparent 55%),
+                  radial-gradient(500px 200px at 50% 100%, rgba(239,68,68,.10), transparent 55%);
+      opacity:.75;
+    }
+
     .studioHero{
       padding:20px 0 6px;
       text-align:center;
@@ -286,6 +315,11 @@
       transform: translateZ(0);
       animation: floatIcon 5s ease-in-out infinite;
     }
+    .appIcon.large{
+      width:90px;height:90px;border-radius:22px;
+      box-shadow: 0 20px 50px rgba(168,85,247,.20), 0 0 30px rgba(168,85,247,.10);
+      border-color: rgba(168,85,247,.25);
+    }
     .appIcon img{width:100%;height:100%;object-fit:cover;display:block}
     @keyframes floatIcon{
       0%,100%{transform:translateY(0)}
@@ -327,6 +361,14 @@
       border-color:rgba(251,191,36,.22);
       background:linear-gradient(135deg, rgba(251,191,36,.14), rgba(255,255,255,.05));
     }
+    .btn.cyber{
+      border-color:rgba(168,85,247,.30);
+      background:linear-gradient(135deg, rgba(168,85,247,.22), rgba(236,72,153,.18));
+      box-shadow: 0 4px 20px rgba(168,85,247,.12);
+    }
+    .btn.cyber:hover{
+      box-shadow: 0 6px 28px rgba(168,85,247,.20);
+    }
     .btn:hover{transform:translateY(-2px); filter:saturate(1.1)}
     .btn:active{transform:translateY(0px) scale(.99)}
 
@@ -337,6 +379,16 @@
       background:rgba(255,255,255,.04);
       color:var(--muted);
       font-size:13px;font-weight:700;
+    }
+    .pill.purple{
+      border-color:rgba(168,85,247,.18);
+      background:rgba(168,85,247,.06);
+      color:var(--purple);
+    }
+    .pill.pink{
+      border-color:rgba(236,72,153,.18);
+      background:rgba(236,72,153,.06);
+      color:var(--pink);
     }
 
     ul{margin:10px 0 0 18px;color:var(--muted)}
@@ -368,6 +420,10 @@
       background: rgba(255,255,255,.03);
       box-shadow: 0 20px 50px rgba(0,0,0,.35);
       aspect-ratio: 16 / 9;
+    }
+    .carousel.cyber{
+      border-color:rgba(168,85,247,.15);
+      box-shadow: 0 20px 50px rgba(0,0,0,.35), 0 0 40px rgba(168,85,247,.06);
     }
     .slides{
       display:flex;
@@ -411,6 +467,10 @@
     .carousel.warm .dot.active{
       background: linear-gradient(135deg, rgba(251,191,36,.85), rgba(239,68,68,.7));
       border-color: rgba(251,191,36,.40);
+    }
+    .carousel.cyber .dot.active{
+      background: linear-gradient(135deg, rgba(168,85,247,.85), rgba(236,72,153,.7));
+      border-color: rgba(168,85,247,.40);
     }
     .navBtnRow{display:flex;gap:8px; pointer-events:auto}
     .iconBtn{
@@ -466,6 +526,11 @@
       margin-left:8px;
       animation: pulse 2.5s ease-in-out infinite;
     }
+    .newBadge.hot{
+      background:linear-gradient(135deg, rgba(168,85,247,.30), rgba(236,72,153,.22));
+      border-color:rgba(168,85,247,.35);
+      color:var(--purple);
+    }
     @keyframes pulse{
       0%,100%{opacity:1}
       50%{opacity:.65}
@@ -492,6 +557,16 @@
       background:linear-gradient(135deg, rgba(34,197,94,.08), rgba(34,197,94,.04));
       color:var(--brand);
     }
+    .featureChip.cyber{
+      border-color:rgba(168,85,247,.20);
+      background:linear-gradient(135deg, rgba(168,85,247,.10), rgba(236,72,153,.06));
+      color:var(--purple);
+    }
+    .featureChip.pink{
+      border-color:rgba(236,72,153,.18);
+      background:linear-gradient(135deg, rgba(236,72,153,.08), rgba(239,68,68,.06));
+      color:var(--pink);
+    }
 
     .modeRow{
       display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;
@@ -503,28 +578,109 @@
       font-size:13px;font-weight:700;
       display:flex;align-items:center;gap:8px;
     }
-    .modeBadge .modeIcon{
-      font-size:20px;
-    }
+    .modeBadge .modeIcon{font-size:20px}
     .modeBadge .modeLabel{color:var(--text)}
     .modeBadge .modeSub{color:var(--muted);font-size:12px;font-weight:500}
 
+    .modeBadge.cyber{
+      border-color:rgba(168,85,247,.18);
+      background:rgba(168,85,247,.06);
+    }
+
     .ss-section{margin:0 0 26px}
+
+    /* Featured Arena Card */
+    .featuredCard{
+      display:flex;flex-direction:column;
+      min-height:auto;
+    }
+    .featuredCard .heroLayout{
+      display:grid;
+      grid-template-columns: auto 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    .featuredCard .heroRight{
+      display:flex;flex-direction:column;gap:6px;
+    }
+    .featuredCard h1{
+      margin:0;
+      font-size:40px;line-height:1.08;
+      letter-spacing:.2px;
+      background: linear-gradient(135deg, var(--purple), var(--pink), var(--red));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .featuredCard .subtext{
+      margin:4px 0 0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.55;
+    }
+
+    .enemyGrid{
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap:8px;
+      margin-top:12px;
+    }
+    .enemyCard{
+      padding:10px 12px;border-radius:12px;
+      border:1px solid rgba(168,85,247,.12);
+      background:rgba(168,85,247,.04);
+      text-align:center;
+    }
+    .enemyCard .eIcon{font-size:22px}
+    .enemyCard .eName{font-size:13px;font-weight:700;color:var(--text);margin:2px 0 0}
+    .enemyCard .eDesc{font-size:11px;color:var(--muted);line-height:1.4}
+
+    .starRow{
+      display:flex;gap:6px;margin-top:8px;align-items:center;
+    }
+    .starRow .star{
+      font-size:16px;
+    }
+    .starRow .starLabel{
+      font-size:13px;color:var(--muted);margin-left:4px;
+    }
+
+    .zoneTimeline{
+      display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;
+    }
+    .zoneCard{
+      flex:1;min-width:160px;
+      padding:12px 14px;border-radius:14px;
+      border:1px solid rgba(168,85,247,.12);
+      background:rgba(255,255,255,.03);
+    }
+    .zoneCard .zIcon{font-size:22px}
+    .zoneCard .zName{font-size:14px;font-weight:700;color:var(--text);margin:2px 0 2px}
+    .zoneCard .zDesc{font-size:12px;color:var(--muted);line-height:1.4}
 
     @media (max-width: 980px){
       .gamesGrid{grid-template-columns:1fr}
       .infoRow{grid-template-columns:1fr}
       .studioHero h1{font-size:38px}
       .gameCard h1{font-size:30px}
+      .featuredCard h1{font-size:32px}
+      .featuredCard .heroLayout{grid-template-columns:auto 1fr}
       .brand{min-width:auto}
       .carousel{aspect-ratio: 4 / 3;}
+      .enemyGrid{grid-template-columns: repeat(auto-fill, minmax(110px, 1fr))}
+      .zoneTimeline{flex-direction:column}
     }
     @media (max-width: 520px){
       .studioHero h1{font-size:32px}
       .gameCard h1{font-size:26px}
+      .featuredCard h1{font-size:28px}
       .appIcon{width:64px;height:64px}
+      .appIcon.large{width:72px;height:72px}
       .navlinks{gap:10px}
       .navlinks a{padding:7px 9px}
+      .featuredCard .heroLayout{grid-template-columns:1fr;text-align:center}
+      .featuredCard .heroLayout .appIcon{margin:0 auto}
+      .enemyGrid{grid-template-columns: repeat(3, 1fr)}
     }
   </style>
 </head>
@@ -546,11 +702,12 @@
 
       <div class="navlinks">
         <a href="#games">Games</a>
+        <a href="#arena">Arena Shooter</a>
         <a href="#ss-morris">Morris</a>
         <a href="#ss-ludo">Ludo</a>
         <a href="#about">Studio</a>
         <a href="#contact">Contact</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="privacy-policy.html">Privacy</a>
         <a href="delete-account.html">Delete Account</a>
       </div>
     </div>
@@ -558,13 +715,273 @@
     <!-- Studio Hero -->
     <section class="studioHero reveal" id="games">
       <div class="tag">🎮 Indie Game Studio from Ghana</div>
-      <h1>Play Our <span>Board Games</span></h1>
+      <h1>Play Our <span>Games</span></h1>
       <p class="subtext">
-        Strategic, fun, and built for Android. Explore our growing collection of board games — each one crafted with care by Rockshell Studios.
+        Tactical shooters, strategic board games, and more — crafted with care for Android by Rockshell Studios.
       </p>
     </section>
 
-    <!-- Two Game Cards -->
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- ARENA SHOOTER — Featured Full-Width Card   -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="card cyber featuredCard reveal" id="arena" style="margin:0 0 18px;">
+      <div class="tag" style="border-color:rgba(168,85,247,.18);">⚔️ Tactical Action • Top-Down Shooter <span class="newBadge hot">🔥 Featured</span></div>
+
+      <div class="heroLayout" style="margin-top:14px;">
+        <div class="appIcon large">
+          <img src="ARENA_assets/icon.png" alt="Arena Shooter app icon">
+        </div>
+        <div class="heroRight">
+          <h1>ARENA SHOOTER</h1>
+          <p class="subtext">
+            Dive into the Void. Fight rogue AI. Survive the arena. A tactical top-down cyberpunk action game with 30 handcrafted levels, 7 enemy types, boss fights, and endless mode.
+          </p>
+        </div>
+      </div>
+
+      <!-- Game Modes -->
+      <div class="modeRow">
+        <div class="modeBadge cyber">
+          <span class="modeIcon">🗺️</span>
+          <div>
+            <div class="modeLabel">Campaign</div>
+            <div class="modeSub">30 levels · 3 zones</div>
+          </div>
+        </div>
+        <div class="modeBadge cyber">
+          <span class="modeIcon">♾️</span>
+          <div>
+            <div class="modeLabel">Endless Mode</div>
+            <div class="modeSub">Scaling waves · Boss every 10</div>
+          </div>
+        </div>
+        <div class="modeBadge cyber">
+          <span class="modeIcon">👹</span>
+          <div>
+            <div class="modeLabel">Boss Fights</div>
+            <div class="modeSub">4 bosses · Multiple phases</div>
+          </div>
+        </div>
+        <div class="modeBadge cyber">
+          <span class="modeIcon">🏪</span>
+          <div>
+            <div class="modeLabel">Store</div>
+            <div class="modeSub">Skins · Bullets · Shields</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Chips -->
+      <div class="featureChips">
+        <span class="featureChip cyber">🎯 Grid Movement</span>
+        <span class="featureChip cyber">🧱 Cover System</span>
+        <span class="featureChip pink">💀 7 Enemy Types</span>
+        <span class="featureChip pink">👾 4 Boss Fights</span>
+        <span class="featureChip cyber">⭐ 3-Star Rating</span>
+        <span class="featureChip cyber">⚡ 3 Difficulties</span>
+        <span class="featureChip pink">🎨 Player Skins</span>
+        <span class="featureChip pink">🔥 Bullet Types</span>
+        <span class="featureChip cyber">🛡️ Shields</span>
+        <span class="featureChip cyber">🌈 Arena Themes</span>
+        <span class="featureChip pink">💫 Trail Effects</span>
+        <span class="featureChip cyber">💾 Auto-Save</span>
+      </div>
+
+      <!-- Star Rating System -->
+      <div style="margin-top:14px;">
+        <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;">⭐ 3-Star Rating Per Level</div>
+        <div class="starRow">
+          <span class="star">⭐</span>
+          <span class="starLabel">Complete the level</span>
+        </div>
+        <div class="starRow">
+          <span class="star">⭐⭐</span>
+          <span class="starLabel">Take no damage</span>
+        </div>
+        <div class="starRow">
+          <span class="star">⭐⭐⭐</span>
+          <span class="starLabel">Speedrun bonus time</span>
+        </div>
+      </div>
+
+      <!-- Zone Timeline -->
+      <div style="font-size:14px;font-weight:700;color:var(--text);margin-top:16px;margin-bottom:2px;">🗺️ Campaign Zones</div>
+      <div class="zoneTimeline">
+        <div class="zoneCard">
+          <div class="zIcon">🟢</div>
+          <div class="zName">Zone 1: Initiation</div>
+          <div class="zDesc">Learn the basics. Face the Sentinel boss.</div>
+        </div>
+        <div class="zoneCard">
+          <div class="zIcon">🟡</div>
+          <div class="zName">Zone 2: Uprising</div>
+          <div class="zDesc">New threats. Dodge snipers and rushers.</div>
+        </div>
+        <div class="zoneCard">
+          <div class="zIcon">🔴</div>
+          <div class="zName">Zone 3: Void</div>
+          <div class="zDesc">Chaos mode. Enemies scale hard. Final boss.</div>
+        </div>
+      </div>
+
+      <!-- Enemy Types -->
+      <div style="font-size:14px;font-weight:700;color:var(--text);margin-top:16px;margin-bottom:2px;">👁️ 7 Enemy Types</div>
+      <div class="enemyGrid">
+        <div class="enemyCard">
+          <div class="eIcon">🔴</div>
+          <div class="eName">Basic</div>
+          <div class="eDesc">4-directional rotating shooter</div>
+        </div>
+        <div class="enemyCard">
+          <div class="eIcon">🟡</div>
+          <div class="eName">Drifter</div>
+          <div class="eDesc">Moves randomly, aims at you</div>
+        </div>
+        <div class="enemyCard">
+          <div class="eIcon">⚡</div>
+          <div class="eName">Rusher</div>
+          <div class="eDesc">Charges straight, contact damage</div>
+        </div>
+        <div class="enemyCard">
+          <div class="eIcon">🎯</div>
+          <div class="eName">Sniper</div>
+          <div class="eDesc">Red laser warning, fast precise shot</div>
+        </div>
+        <div class="enemyCard">
+          <div class="eIcon">🛡️</div>
+          <div class="eName">Tank</div>
+          <div class="eDesc">Takes 3 hits, heavy armor</div>
+        </div>
+        <div class="enemyCard">
+          <div class="eIcon">💣</div>
+          <div class="eName">Bomber</div>
+          <div class="eDesc">Drops explosive hazard zones</div>
+        </div>
+        <div class="enemyCard">
+          <div class="eIcon">🌀</div>
+          <div class="eName">Teleporter</div>
+          <div class="eDesc">Blinks around the arena</div>
+        </div>
+      </div>
+
+      <!-- Difficulty -->
+      <div style="font-size:14px;font-weight:700;color:var(--text);margin-top:16px;margin-bottom:6px;">⚡ Difficulty Modes</div>
+      <div class="modeRow">
+        <div class="modeBadge" style="border-color:rgba(34,197,94,.18);background:rgba(34,197,94,.05);">
+          <span class="modeIcon">🟢</span>
+          <div>
+            <div class="modeLabel">Easy</div>
+            <div class="modeSub">5 lives · x0.5 score</div>
+          </div>
+        </div>
+        <div class="modeBadge" style="border-color:rgba(56,189,248,.18);background:rgba(56,189,248,.05);">
+          <span class="modeIcon">🔵</span>
+          <div>
+            <div class="modeLabel">Normal</div>
+            <div class="modeSub">3 lives · x1.0 score</div>
+          </div>
+        </div>
+        <div class="modeBadge" style="border-color:rgba(239,68,68,.18);background:rgba(239,68,68,.05);">
+          <span class="modeIcon">🔴</span>
+          <div>
+            <div class="modeLabel">Hard</div>
+            <div class="modeSub">2 lives · x2.0 score</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Store Preview -->
+      <div style="font-size:14px;font-weight:700;color:var(--text);margin-top:16px;margin-bottom:6px;">🏪 Store — Unlock & Equip</div>
+      <div class="featureChips">
+        <span class="featureChip cyber">🎨 Player Skins</span>
+        <span class="featureChip pink">🔫 Laser</span>
+        <span class="featureChip pink">⚡ Plasma</span>
+        <span class="featureChip pink">🚀 Rocket</span>
+        <span class="featureChip pink">🌀 Void Beam</span>
+        <span class="featureChip pink">✨ Star Burst</span>
+        <span class="featureChip cyber">🛡️ Absorb Shield</span>
+        <span class="featureChip cyber">🔄 Reflect Shield</span>
+        <span class="featureChip cyber">🕳️ Void Phase</span>
+        <span class="featureChip cyber">🏙️ Neon City</span>
+        <span class="featureChip cyber">🌌 Void Space</span>
+        <span class="featureChip cyber">💻 Digital Matrix</span>
+        <span class="featureChip cyber">💎 Crystal Cave</span>
+        <span class="featureChip pink">🔥 Blue Flame</span>
+        <span class="featureChip pink">⚡ Lightning</span>
+        <span class="featureChip pink">🌈 Rainbow Wave</span>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta" style="margin-top:18px;">
+        <a class="btn cyber" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.ArenaShooter" target="_blank" rel="noopener">
+          ⚔️ Download on Play Store
+        </a>
+        <a class="btn" href="#ss-arena">🖼️ Screenshots</a>
+      </div>
+
+      <div class="kpi">
+        <span class="pill purple">⚔️ Tactical Action</span>
+        <span class="pill purple">🗺️ 30 Levels</span>
+        <span class="pill pink">💀 7 Enemies</span>
+        <span class="pill pink">👹 4 Bosses</span>
+        <span class="pill purple">♾️ Endless</span>
+        <span class="pill">📱 Android</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════ -->
+    <!-- ARENA SHOOTER Screenshots            -->
+    <!-- ═══════════════════════════════════ -->
+    <section class="ss-section" id="ss-arena">
+      <div class="card reveal" style="border-color:rgba(168,85,247,.10);">
+        <div class="sectionLabel" style="color:var(--purple);">📸 Arena Shooter — Screenshots</div>
+        <h2 style="margin:0 0 4px;">Game Preview</h2>
+        <p style="margin:0 0 4px;color:var(--muted);">
+          Neon-lit cyberpunk arenas, tactical grid combat, boss fights, and more.
+        </p>
+
+        <div style="height:12px;"></div>
+
+        <div class="carouselWrap">
+          <div class="carousel cyber" data-carousel="arena" aria-label="Arena Shooter screenshots carousel">
+            <div class="caption">Screenshot 1 / 10</div>
+
+            <div class="slides">
+              <div class="slide"><img src="ARENA_assets/screenshhot12.png" alt="Arena Shooter screenshot 1"></div>
+              <div class="slide"><img src="ARENA_assets/Screenshot_20260516-062644.png" alt="Arena Shooter screenshot 2"></div>
+              <div class="slide"><img src="ARENA_assets/Screenshot_20260527-182328.png" alt="Arena Shooter screenshot 3"></div>
+              <div class="slide"><img src="ARENA_assets/Screenshot_20260527-182337.png" alt="Arena Shooter screenshot 4"></div>
+              <div class="slide"><img src="ARENA_assets/Screenshot_20260527-182347.png" alt="Arena Shooter screenshot 5"></div>
+              <div class="slide"><img src="ARENA_assets/Screenshot_20260527-195619.png" alt="Arena Shooter screenshot 6"></div>
+              <div class="slide"><img src="ARENA_assets/Screenshot_20260528-025247.png" alt="Arena Shooter screenshot 7"></div>
+              <div class="slide"><img src="ARENA_assets/Screenshot_20260528-025427.png" alt="Arena Shooter screenshot 8"></div>
+              <div class="slide"><img src="ARENA_assets/Screenshot_20260528-025502.png" alt="Arena Shooter screenshot 9"></div>
+              <div class="slide"><img src="ARENA_assets/icon.png" alt="Arena Shooter app icon"></div>
+            </div>
+
+            <div class="carouselUI">
+              <div class="navBtnRow">
+                <button class="iconBtn" aria-label="Previous screenshot">⬅️</button>
+                <button class="iconBtn" aria-label="Next screenshot">➡️</button>
+              </div>
+              <div class="dots" aria-label="Screenshot dots"></div>
+              <div style="width:92px;"></div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:14px;">
+            <span class="pill purple">⏱️ Auto slide: 4s</span>
+            <span class="pill purple">🖱️ Hover pauses</span>
+            <span class="pill purple">⌨️ Arrow keys</span>
+            <span class="pill pink">📸 10 screenshots</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ -->
+    <!-- Two Board Game Cards           -->
+    <!-- ═══════════════════════════════ -->
     <div class="gamesGrid">
 
       <!-- Morris Games -->
@@ -621,7 +1038,6 @@
           Ludo reimagined with unique King's Rules. Unlock special attacks on your first 6 — Back Kick, Line Kick, Home Kick — plus Double Dice, Prison, Bonuses, Walls, and Safe Tiles. Play offline vs AI or online with friends.
         </p>
 
-        <!-- Game Modes -->
         <div class="modeRow">
           <div class="modeBadge">
             <span class="modeIcon">🤖</span>
@@ -671,14 +1087,14 @@
             <li><b style="color:var(--warn);">Back Kick</b> — Move backward by dice roll to capture enemies</li>
             <li><b style="color:var(--warn);">Line Kick</b> — Dash parallel onto enemy tokens to capture</li>
             <li><b style="color:var(--warn);">Home Kick</b> — Interact between home-path and board tokens</li>
-            <li><b style="color:var(--warn);">Double Dice</b> — Roll two dice per turn, choose which to use first; double 6s grant two extra turns</li>
+            <li><b style="color:var(--warn);">Double Dice</b> — Roll two dice per turn; double 6s grant two extra turns</li>
             <li><b style="color:var(--warn);">Prison</b> — Captured tokens jailed; roll a 6 to release</li>
             <li><b style="color:var(--warn);">Bonus</b> — Earn bonus rolls on successful captures</li>
             <li><b style="color:var(--warn);">Safe Tiles</b> — Star tiles immune to normal captures</li>
-            <li><b style="color:var(--brand2);">Walls</b> — 2+ tokens on same tile form a wall, blocking enemy movement and captures</li>
-            <li><b style="color:var(--brand);">Smart AI</b> — Strategic AI that prioritizes captures, releases, and optimal token advancement</li>
-            <li><b style="color:var(--brand);">In-Game Tutorial</b> — Context-sensitive guided tour for new players</li>
-            <li><b style="color:var(--brand2);">Online Chat</b> — Per-color messaging in multiplayer matches</li>
+            <li><b style="color:var(--brand2);">Walls</b> — 2+ tokens form a wall, blocking enemies</li>
+            <li><b style="color:var(--brand);">Smart AI</b> — Prioritizes captures, releases, optimal advancement</li>
+            <li><b style="color:var(--brand);">In-Game Tutorial</b> — Context-sensitive guided tour</li>
+            <li><b style="color:var(--brand2);">Online Chat</b> — Per-color messaging in multiplayer</li>
           </ul>
         </div>
       </div>
@@ -782,7 +1198,7 @@
         <p style="margin:0;color:var(--muted);">
           Rockshell Studios is an indie game studio based in Dzodze, Ghana, led by
           <b style="color:var(--text);">Gadese Samuel</b>. We build games with strong gameplay,
-          clean visuals, and a focus on player experience.
+          clean visuals, and a focus on player experience — from tactical shooters to strategic board games.
         </p>
 
         <div class="divider"></div>
@@ -796,6 +1212,7 @@
 
         <h2 style="margin:0 0 6px; font-size:18px;">Our Games</h2>
         <ul>
+          <li><b style="color:var(--purple);">Arena Shooter</b> — Tactical top-down cyberpunk action. 30 levels, 7 enemy types, 4 boss fights, endless mode, player skins, bullet types, shields, arena themes, and trail effects</li>
           <li><b style="color:var(--text);">Morris Games</b> — Classic strategy board game</li>
           <li><b style="color:var(--text);">King's Rules Ludo</b> — Ludo with Back Kick, Line Kick, Home Kick, Double Dice, Prison, Bonuses, Safe Tiles, Wall system, smart AI opponents, in-game tutorial, coins &amp; XP rewards, and online multiplayer with per-color chat</li>
         </ul>
@@ -810,6 +1227,7 @@
 
         <div class="cta" style="margin-top:12px;">
           <a class="btn alt" href="https://wa.me/233550519473" target="_blank" rel="noopener">💬 WhatsApp: +233 550 519 473</a>
+          <a class="btn" href="mailto:gadesesamuel35@gmail.com">📧 Email</a>
           <a class="btn" href="https://www.youtube.com/@RockshellStudios" target="_blank" rel="noopener">▶️ YouTube</a>
           <a class="btn" href="https://www.tiktok.com/@rockshell_studios?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">🎵 TikTok</a>
         </div>
@@ -831,6 +1249,7 @@
       </div>
 
       <div class="social">
+        <a class="btn cyber" style="padding:10px 12px;border-radius:12px;" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.ArenaShooter" target="_blank" rel="noopener">⚔️ Arena Shooter</a>
         <a class="btn" style="padding:10px 12px;border-radius:12px;" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.morrisgame1" target="_blank" rel="noopener">🧠 Morris Games</a>
         <a class="btn warm" style="padding:10px 12px;border-radius:12px;" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.kingsrulesludo" target="_blank" rel="noopener">👑 King's Rules Ludo</a>
         <a class="btn" style="padding:10px 12px;border-radius:12px;" href="https://www.youtube.com/@RockshellStudios" target="_blank" rel="noopener">▶️ YouTube</a>
