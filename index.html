@@ -45,7 +45,7 @@
       {
         "@type": "VideoGame", "position": 1, "name": "Arena Shooter",
         "genre": ["Action", "Tactical Shooter"], "applicationCategory": "Game", "operatingSystem": "Android", "playMode": "SinglePlayer",
-        "description": "Tactical top-down cyberpunk action game. 30 handcrafted levels across 3 deadly zones, 7 unique enemy types, 4 boss fights with multiple phases, endless mode with scaling waves, player skins, bullet types, shields, arena themes, and trail effects.",
+        "description": "Tactical top-down cyberpunk action game with 30 levels, 7 enemy types, 4 boss fights, endless mode, player skins, bullet types, shields, arena themes, and trail effects.",
         "creator": { "@type": "Organization", "name": "Rockshell Studios" },
         "offers": { "@type": "Offer", "url": "https://play.google.com/store/apps/details?id=com.rockshellstudios.ArenaShooter", "price": "0", "priceCurrency": "USD" }
       },
@@ -60,7 +60,7 @@
         "genre": "Board Game", "applicationCategory": "Game", "operatingSystem": "Android",
         "playMode": ["SinglePlayer", "MultiPlayer"],
         "numberOfPlayers": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 4 },
-        "description": "Ludo with unique King's Rules: Back Kick, Line Kick, Home Kick, Double Dice, Prison system, Bonus captures, Safe Tiles, Wall protection, smart AI opponents, in-game tutorial, coins & XP rewards, and online multiplayer with per-color chat.",
+        "description": "Ludo with unique King's Rules: Back Kick, Line Kick, Home Kick, Double Dice, Prison, Safe Tiles, Wall protection, smart AI, tutorial, and online multiplayer.",
         "creator": { "@type": "Organization", "name": "Rockshell Studios" },
         "offers": { "@type": "Offer", "url": "https://play.google.com/store/apps/details?id=com.rockshellstudios.kingsrulesludo", "price": "0", "priceCurrency": "USD" }
       }
@@ -69,421 +69,498 @@
   </script>
 
   <style>
-    :root{
-      --bg:#070a12;
-      --card:rgba(17,24,39,.72);
-      --card2:rgba(15,23,42,.62);
-      --line:rgba(255,255,255,.10);
-      --text:#e5e7eb;
-      --muted:#9ca3af;
-      --brand:#22c55e;
-      --brand2:#38bdf8;
-      --warn:#fbbf24;
-      --red:#ef4444;
-      --purple:#a855f7;
-      --pink:#ec4899;
-      --shadow:0 22px 60px rgba(0,0,0,.35);
-      --radius:18px;
+    :root {
+      --bg: #070a12;
+      --card: rgba(17,24,39,.72);
+      --card2: rgba(15,23,42,.62);
+      --line: rgba(255,255,255,.10);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --brand: #22c55e;
+      --brand2: #38bdf8;
+      --warn: #fbbf24;
+      --red: #ef4444;
+      --purple: #a855f7;
+      --pink: #ec4899;
+      --shadow: 0 22px 60px rgba(0,0,0,.35);
+      --radius: 18px;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;
-      color:var(--text);
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial;
+      color: var(--text);
       background:
-        radial-gradient(1200px 650px at 20% -10%,rgba(56,189,248,.22),transparent 60%),
-        radial-gradient(950px 600px at 85% 5%,rgba(34,197,94,.18),transparent 60%),
-        radial-gradient(900px 650px at 60% 120%,rgba(251,191,36,.10),transparent 60%),
+        radial-gradient(1200px 650px at 20% -10%, rgba(56,189,248,.22), transparent 60%),
+        radial-gradient(950px 600px at 85% 5%, rgba(34,197,94,.18), transparent 60%),
+        radial-gradient(900px 650px at 60% 120%, rgba(251,191,36,.10), transparent 60%),
         var(--bg);
-      line-height:1.6;
-      overflow-x:hidden;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    a{color:inherit}
-    .wrap{max-width:1100px;margin:0 auto;padding:22px}
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
 
-    .glow{
-      position:fixed;inset:-40vh -40vw auto -40vw;height:55vh;
-      pointer-events:none;
-      background:radial-gradient(circle at 30% 40%,rgba(56,189,248,.25),transparent 55%),
-                  radial-gradient(circle at 70% 30%,rgba(34,197,94,.20),transparent 55%);
-      filter:blur(26px);opacity:.7;z-index:-1;
-      animation:floatGlow 10s ease-in-out infinite;
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 22px;
     }
-    @keyframes floatGlow{0%,100%{transform:translateY(0)}50%{transform:translateY(14px)}}
+
+    /* ── Floating glow ── */
+    .glow {
+      position: fixed;
+      top: -20vh; left: -30vw; right: -30vw;
+      height: 55vh;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 30% 40%, rgba(56,189,248,.25), transparent 55%),
+        radial-gradient(circle at 70% 30%, rgba(34,197,94,.20), transparent 55%);
+      filter: blur(26px);
+      opacity: .7;
+      z-index: -1;
+      animation: floatGlow 10s ease-in-out infinite;
+    }
+    @keyframes floatGlow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(14px)} }
 
     /* ── NAV ── */
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:14px 0;gap:14px;
-      border-bottom:1px solid var(--line);
-      backdrop-filter:blur(10px);
-      position:sticky;top:0;
-      background:linear-gradient(to bottom,rgba(7,10,18,.78),rgba(7,10,18,.50));
-      z-index:20;
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 12px;
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      background: linear-gradient(to bottom, rgba(7,10,18,.80), rgba(7,10,18,.55));
+      z-index: 50;
     }
-    .brand{display:flex;align-items:center;gap:12px;min-width:240px}
-    .logo{
-      width:44px;height:44px;border-radius:14px;overflow:hidden;
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow:0 14px 34px rgba(56,189,248,.12);
-      background:linear-gradient(135deg,rgba(56,189,248,.18),rgba(34,197,94,.18));
-      flex:0 0 auto;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
     }
-    .logo img{width:100%;height:100%;object-fit:cover;display:block}
-    .brandtext{display:flex;flex-direction:column;gap:2px}
-    .brandtext .name{font-weight:850;letter-spacing:.3px}
-    .brandtext .sub{color:var(--muted);font-size:13px;margin-top:-2px}
-    .navlinks{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end}
-    .navlinks a{
-      color:var(--muted);text-decoration:none;
-      padding:8px 10px;border-radius:999px;
-      border:1px solid transparent;
-      transition:all .2s ease;font-weight:650;font-size:14px;
+    .logo {
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 14px 34px rgba(56,189,248,.12);
+      background: linear-gradient(135deg, rgba(56,189,248,.18), rgba(34,197,94,.18));
+      flex-shrink: 0;
     }
-    .navlinks a:hover{
-      color:var(--text);border-color:rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);transform:translateY(-1px);
+    .logo img { width: 100%; height: 100%; object-fit: cover; }
+    .brand-name { font-weight: 850; font-size: 16px; letter-spacing: .3px; white-space: nowrap; }
+    .brand-sub { color: var(--muted); font-size: 12px; white-space: nowrap; }
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav-links a {
+      color: var(--muted);
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 650;
+      font-size: 13px;
+      transition: all .2s ease;
+      white-space: nowrap;
+    }
+    .nav-links a:hover {
+      color: var(--text);
+      border-color: rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      transform: translateY(-1px);
     }
 
-    /* ── CARDS ── */
-    .card{
-      background:linear-gradient(180deg,var(--card),var(--card2));
-      border:1px solid var(--line);border-radius:var(--radius);
-      padding:18px;box-shadow:var(--shadow);
-      position:relative;overflow:hidden;
+    /* ── CARD ── */
+    .card {
+      background: linear-gradient(180deg, var(--card), var(--card2));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
     }
-    .card:before{
-      content:"";position:absolute;inset:-1px;
-      background:radial-gradient(600px 200px at 10% 0%,rgba(56,189,248,.14),transparent 55%),
-                  radial-gradient(600px 200px at 90% 0%,rgba(34,197,94,.12),transparent 55%);
-      opacity:.65;pointer-events:none;
+    .card::before {
+      content: "";
+      position: absolute; inset: -1px;
+      background:
+        radial-gradient(600px 200px at 10% 0%, rgba(56,189,248,.14), transparent 55%),
+        radial-gradient(600px 200px at 90% 0%, rgba(34,197,94,.12), transparent 55%);
+      opacity: .65;
+      pointer-events: none;
     }
-    .card>*{position:relative;z-index:1}
-    .card.warm:before{
-      background:radial-gradient(600px 200px at 10% 0%,rgba(251,191,36,.16),transparent 55%),
-                  radial-gradient(600px 200px at 90% 0%,rgba(239,68,68,.12),transparent 55%);
+    .card > * { position: relative; z-index: 1; }
+
+    .card.warm::before {
+      background:
+        radial-gradient(600px 200px at 10% 0%, rgba(251,191,36,.16), transparent 55%),
+        radial-gradient(600px 200px at 90% 0%, rgba(239,68,68,.12), transparent 55%);
     }
-    .card.cyber{border-color:rgba(168,85,247,.15)}
-    .card.cyber:before{
-      background:radial-gradient(700px 250px at 0% 0%,rgba(168,85,247,.22),transparent 55%),
-                  radial-gradient(700px 250px at 100% 0%,rgba(236,72,153,.18),transparent 55%),
-                  radial-gradient(500px 200px at 50% 100%,rgba(239,68,68,.10),transparent 55%);
-      opacity:.75;
+    .card.cyber { border-color: rgba(168,85,247,.15); }
+    .card.cyber::before {
+      background:
+        radial-gradient(700px 250px at 0% 0%, rgba(168,85,247,.22), transparent 55%),
+        radial-gradient(700px 250px at 100% 0%, rgba(236,72,153,.18), transparent 55%),
+        radial-gradient(500px 200px at 50% 100%, rgba(239,68,68,.10), transparent 55%);
+      opacity: .75;
     }
 
     /* ── HERO ── */
-    .studioHero{padding:20px 0 6px;text-align:center}
-    .studioHero .tag{
-      display:inline-flex;gap:10px;align-items:center;
-      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);
-      padding:8px 12px;border-radius:999px;color:var(--muted);font-size:14px;
-      animation:popIn .7s ease both;
+    .hero { padding: 24px 0 8px; text-align: center; }
+    .hero-tag {
+      display: inline-flex; gap: 10px; align-items: center;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      padding: 8px 14px; border-radius: 999px;
+      color: var(--muted); font-size: 14px;
+      animation: popIn .7s ease both;
     }
-    @keyframes popIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-    .studioHero h1{
-      margin:14px 0 0;font-size:48px;line-height:1.08;
-      letter-spacing:.2px;animation:fadeSlide .8s ease both;
+    @keyframes popIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+    .hero h1 {
+      margin: 14px 0 0;
+      font-size: 48px; line-height: 1.08;
+      animation: fadeSlide .8s ease both;
     }
-    @keyframes fadeSlide{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-    .studioHero h1 span{
-      background:linear-gradient(135deg,var(--brand2),var(--brand));
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    @keyframes fadeSlide { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--brand2), var(--brand));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
-    .studioHero .subtext{margin:10px auto 0;color:var(--muted);max-width:60ch;font-size:16px;animation:fadeSlide .9s ease both}
-    .sectionLabel{
-      display:inline-flex;gap:8px;align-items:center;
-      color:var(--muted);font-size:13px;font-weight:750;
-      text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px;
+    .hero-sub {
+      margin: 10px auto 0; color: var(--muted);
+      max-width: 60ch; font-size: 16px;
+      animation: fadeSlide .9s ease both;
     }
 
-    /* ── GAME GRID ── */
-    .gamesGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 26px}
-    .gameCard{display:flex;flex-direction:column;min-height:380px}
-    .gameCard .tag{
-      display:inline-flex;gap:10px;align-items:center;
-      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);
-      padding:8px 12px;border-radius:999px;color:var(--muted);font-size:14px;width:fit-content;
+    /* ── SECTION LABEL ── */
+    .sec-label {
+      display: inline-flex; gap: 8px; align-items: center;
+      color: var(--muted); font-size: 13px; font-weight: 750;
+      text-transform: uppercase; letter-spacing: 1.2px;
+      margin-bottom: 4px;
     }
-    .titleRow{display:flex;align-items:center;gap:14px;margin-top:14px}
-    .appIcon{
-      width:74px;height:74px;border-radius:18px;overflow:hidden;
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow:0 18px 40px rgba(0,0,0,.35);
-      background:rgba(255,255,255,.04);flex:0 0 auto;
-      transform:translateZ(0);animation:floatIcon 5s ease-in-out infinite;
-    }
-    .appIcon.large{
-      width:90px;height:90px;border-radius:22px;
-      box-shadow:0 20px 50px rgba(168,85,247,.20),0 0 30px rgba(168,85,247,.10);
-      border-color:rgba(168,85,247,.25);
-    }
-    .appIcon img{width:100%;height:100%;object-fit:cover;display:block}
-    @keyframes floatIcon{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-    .gameCard h1{margin:0;font-size:34px;line-height:1.10;letter-spacing:.2px}
-    .gameCard .subtext{margin:10px 0 0;color:var(--muted);font-size:15px}
 
     /* ── BUTTONS ── */
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:12px 14px;border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      text-decoration:none;font-weight:750;
-      background:rgba(255,255,255,.06);
-      transition:all .18s ease;will-change:transform;font-size:14px;
+    .cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 16px; border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      font-weight: 750; font-size: 14px;
+      background: rgba(255,255,255,.06);
+      transition: all .18s ease;
     }
-    .btn.primary{border-color:rgba(56,189,248,.25);background:linear-gradient(135deg,rgba(56,189,248,.20),rgba(34,197,94,.18))}
-    .btn.warm{border-color:rgba(251,191,36,.25);background:linear-gradient(135deg,rgba(251,191,36,.20),rgba(239,68,68,.16))}
-    .btn.alt{border-color:rgba(251,191,36,.22);background:linear-gradient(135deg,rgba(251,191,36,.14),rgba(255,255,255,.05))}
-    .btn.cyber{
-      border-color:rgba(168,85,247,.30);
-      background:linear-gradient(135deg,rgba(168,85,247,.22),rgba(236,72,153,.18));
-      box-shadow:0 4px 20px rgba(168,85,247,.12);
+    .btn.primary { border-color: rgba(56,189,248,.25); background: linear-gradient(135deg, rgba(56,189,248,.20), rgba(34,197,94,.18)); }
+    .btn.warm { border-color: rgba(251,191,36,.25); background: linear-gradient(135deg, rgba(251,191,36,.20), rgba(239,68,68,.16)); }
+    .btn.alt { border-color: rgba(251,191,36,.22); background: linear-gradient(135deg, rgba(251,191,36,.14), rgba(255,255,255,.05)); }
+    .btn.cyber {
+      border-color: rgba(168,85,247,.30);
+      background: linear-gradient(135deg, rgba(168,85,247,.22), rgba(236,72,153,.18));
+      box-shadow: 0 4px 20px rgba(168,85,247,.12);
     }
-    .btn.cyber:hover{box-shadow:0 6px 28px rgba(168,85,247,.20)}
-    .btn:hover{transform:translateY(-2px);filter:saturate(1.1)}
-    .btn:active{transform:translateY(0px) scale(.99)}
+    .btn:hover { transform: translateY(-2px); filter: saturate(1.1); }
+    .btn:active { transform: translateY(0) scale(.99); }
 
     /* ── PILLS ── */
-    .kpi{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .pill{
-      padding:7px 10px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);color:var(--muted);font-size:13px;font-weight:700;
+    .kpi { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .pill {
+      padding: 6px 10px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: var(--muted); font-size: 12px; font-weight: 700;
     }
-    .pill.purple{border-color:rgba(168,85,247,.18);background:rgba(168,85,247,.06);color:var(--purple)}
-    .pill.pink{border-color:rgba(236,72,153,.18);background:rgba(236,72,153,.06);color:var(--pink)}
-
-    ul{margin:10px 0 0 18px;color:var(--muted)}
-    li{margin:6px 0}
-    .divider{height:1px;background:linear-gradient(to right,transparent,rgba(255,255,255,.16),transparent);margin:14px 0}
-    .gameFooter{margin-top:auto;padding-top:14px}
-    .infoRow{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 26px}
-
-    /* ── CAROUSEL ── */
-    .carouselWrap{display:grid;grid-template-columns:1fr;gap:12px}
-    .carousel{
-      position:relative;border-radius:18px;
-      border:1px solid rgba(255,255,255,.12);
-      overflow:hidden;background:rgba(255,255,255,.03);
-      box-shadow:0 20px 50px rgba(0,0,0,.35);aspect-ratio:16/9;
-    }
-    .carousel.cyber{border-color:rgba(168,85,247,.15);box-shadow:0 20px 50px rgba(0,0,0,.35),0 0 40px rgba(168,85,247,.06)}
-    .slides{display:flex;width:100%;height:100%;transition:transform .75s cubic-bezier(.2,.85,.2,1)}
-    .slide{min-width:100%;height:100%;position:relative}
-    .slide img{width:100%;height:100%;object-fit:contain;background:rgba(0,0,0,.35);display:block}
-    .slide:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.45),transparent 60%);pointer-events:none}
-    .carouselUI{position:absolute;inset:auto 0 0 0;display:flex;align-items:center;justify-content:space-between;padding:12px;gap:10px;pointer-events:none}
-    .dots{display:flex;gap:8px;align-items:center;justify-content:center;pointer-events:auto}
-    .dot{width:10px;height:10px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.10);cursor:pointer;transition:all .2s ease}
-    .dot.active{width:22px;background:linear-gradient(135deg,rgba(56,189,248,.8),rgba(34,197,94,.7));border-color:rgba(56,189,248,.35)}
-    .carousel.warm .dot.active{background:linear-gradient(135deg,rgba(251,191,36,.85),rgba(239,68,68,.7));border-color:rgba(251,191,36,.40)}
-    .carousel.cyber .dot.active{background:linear-gradient(135deg,rgba(168,85,247,.85),rgba(236,72,153,.7));border-color:rgba(168,85,247,.40)}
-    .navBtnRow{display:flex;gap:8px;pointer-events:auto}
-    .iconBtn{width:42px;height:42px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);display:grid;place-items:center;cursor:pointer;transition:all .18s ease;user-select:none}
-    .iconBtn:hover{transform:translateY(-2px)}
-    .iconBtn:active{transform:translateY(0px) scale(.99)}
-    .caption{position:absolute;top:12px;left:12px;padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.35);color:rgba(255,255,255,.86);font-weight:750;font-size:13px;backdrop-filter:blur(8px)}
-
-    /* ── FOOTER ── */
-    .footer{border-top:1px solid var(--line);padding:18px 0;color:var(--muted);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
-    .social{display:flex;gap:10px;flex-wrap:wrap}
-
-    /* ── REVEAL ── */
-    .reveal{opacity:0;transform:translateY(10px);transition:opacity .7s ease,transform .7s ease}
-    .reveal.show{opacity:1;transform:translateY(0)}
-
-    /* ── BADGES ── */
-    .newBadge{
-      display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:999px;
-      background:linear-gradient(135deg,rgba(34,197,94,.25),rgba(56,189,248,.18));
-      border:1px solid rgba(34,197,94,.30);color:#22c55e;font-size:11px;font-weight:800;
-      text-transform:uppercase;letter-spacing:.8px;margin-left:8px;animation:pulse 2.5s ease-in-out infinite;
-    }
-    .newBadge.hot{background:linear-gradient(135deg,rgba(168,85,247,.30),rgba(236,72,153,.22));border-color:rgba(168,85,247,.35);color:var(--purple)}
-    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.65}}
+    .pill.purple { border-color: rgba(168,85,247,.18); background: rgba(168,85,247,.06); color: var(--purple); }
+    .pill.pink { border-color: rgba(236,72,153,.18); background: rgba(236,72,153,.06); color: var(--pink); }
 
     /* ── CHIPS ── */
-    .featureChips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-    .featureChip{padding:5px 10px;border-radius:999px;border:1px solid rgba(251,191,36,.18);background:linear-gradient(135deg,rgba(251,191,36,.08),rgba(239,68,68,.06));color:var(--warn);font-size:12px;font-weight:700;letter-spacing:.2px}
-    .featureChip.cool{border-color:rgba(56,189,248,.18);background:linear-gradient(135deg,rgba(56,189,248,.08),rgba(34,197,94,.06));color:var(--brand2)}
-    .featureChip.green{border-color:rgba(34,197,94,.18);background:linear-gradient(135deg,rgba(34,197,94,.08),rgba(34,197,94,.04));color:var(--brand)}
-    .featureChip.cyber{border-color:rgba(168,85,247,.20);background:linear-gradient(135deg,rgba(168,85,247,.10),rgba(236,72,153,.06));color:var(--purple)}
-    .featureChip.pink{border-color:rgba(236,72,153,.18);background:linear-gradient(135deg,rgba(236,72,153,.08),rgba(239,68,68,.06));color:var(--pink)}
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .chip {
+      padding: 5px 10px; border-radius: 999px; font-size: 12px; font-weight: 700;
+    }
+    .chip.cyber { border: 1px solid rgba(168,85,247,.20); background: linear-gradient(135deg, rgba(168,85,247,.10), rgba(236,72,153,.06)); color: var(--purple); }
+    .chip.pink { border: 1px solid rgba(236,72,153,.18); background: linear-gradient(135deg, rgba(236,72,153,.08), rgba(239,68,68,.06)); color: var(--pink); }
+    .chip.warn { border: 1px solid rgba(251,191,36,.18); background: linear-gradient(135deg, rgba(251,191,36,.08), rgba(239,68,68,.06)); color: var(--warn); }
 
     /* ── MODE BADGES ── */
-    .modeRow{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
-    .modeBadge{padding:8px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px}
-    .modeBadge .modeIcon{font-size:20px}
-    .modeBadge .modeLabel{color:var(--text)}
-    .modeBadge .modeSub{color:var(--muted);font-size:12px;font-weight:500}
-    .modeBadge.cyber{border-color:rgba(168,85,247,.18);background:rgba(168,85,247,.06)}
-    .ss-section{margin:0 0 26px}
-
-    /* ── FEATURED ARENA CARD ── */
-    .featuredCard{display:flex;flex-direction:column;min-height:auto}
-    .featuredCard .heroLayout{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
-    .featuredCard .heroRight{display:flex;flex-direction:column;gap:6px}
-    .featuredCard h1{
-      margin:0;font-size:40px;line-height:1.08;letter-spacing:.2px;
-      background:linear-gradient(135deg,var(--purple),var(--pink),var(--red));
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    .modes { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+    .mode {
+      padding: 8px 14px; border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      font-size: 13px; font-weight: 700;
+      display: flex; align-items: center; gap: 8px;
     }
-    .featuredCard .subtext{margin:4px 0 0;color:var(--muted);font-size:16px;line-height:1.55}
+    .mode .mi { font-size: 20px; }
+    .mode .ml { color: var(--text); }
+    .mode .ms { color: var(--muted); font-size: 12px; font-weight: 500; }
+    .mode.cyber { border-color: rgba(168,85,247,.18); background: rgba(168,85,247,.06); }
 
-    .enemyGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-top:12px}
-    .enemyCard{padding:10px 12px;border-radius:12px;border:1px solid rgba(168,85,247,.12);background:rgba(168,85,247,.04);text-align:center}
-    .enemyCard .eIcon{font-size:22px}
-    .enemyCard .eName{font-size:13px;font-weight:700;color:var(--text);margin:2px 0 0}
-    .enemyCard .eDesc{font-size:11px;color:var(--muted);line-height:1.4}
+    /* ── APP ICON ── */
+    .icon-wrap {
+      width: 74px; height: 74px; border-radius: 18px;
+      overflow: hidden; flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+      background: rgba(255,255,255,.04);
+      animation: floatIcon 5s ease-in-out infinite;
+    }
+    .icon-wrap.big {
+      width: 90px; height: 90px; border-radius: 22px;
+      box-shadow: 0 20px 50px rgba(168,85,247,.20), 0 0 30px rgba(168,85,247,.10);
+      border-color: rgba(168,85,247,.25);
+    }
+    .icon-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    @keyframes floatIcon { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
 
-    .starRow{display:flex;gap:6px;margin-top:8px;align-items:center}
-    .starRow .star{font-size:16px}
-    .starRow .starLabel{font-size:13px;color:var(--muted);margin-left:4px}
+    /* ── LAYOUT ── */
+    .title-row { display: flex; align-items: center; gap: 14px; margin-top: 14px; }
+    .sub { margin: 8px 0 0; color: var(--muted); font-size: 15px; }
 
-    .zoneTimeline{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
-    .zoneCard{flex:1;min-width:160px;padding:12px 14px;border-radius:14px;border:1px solid rgba(168,85,247,.12);background:rgba(255,255,255,.03)}
-    .zoneCard .zIcon{font-size:22px}
-    .zoneCard .zName{font-size:14px;font-weight:700;color:var(--text);margin:2px 0 2px}
-    .zoneCard .zDesc{font-size:12px;color:var(--muted);line-height:1.4}
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 18px 0 26px; }
+    .grid2 .card { display: flex; flex-direction: column; min-height: 380px; }
+    .grid2 .card .foot { margin-top: auto; padding-top: 12px; }
 
-    /* ═══════════════════════════════════ */
-    /* TABLET                               */
-    /* ═══════════════════════════════════ */
-    @media(max-width:980px){
-      .gamesGrid{grid-template-columns:1fr}
-      .infoRow{grid-template-columns:1fr}
-      .studioHero h1{font-size:38px}
-      .gameCard h1{font-size:30px}
-      .featuredCard h1{font-size:32px}
-      .brand{min-width:auto}
-      .carousel{aspect-ratio:4/3}
-      .enemyGrid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 0 0 26px; }
+
+    .divider { height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,.16), transparent); margin: 12px 0; }
+
+    ul { margin: 8px 0 0 18px; color: var(--muted); }
+    li { margin: 5px 0; }
+
+    /* ── ENEMY GRID ── */
+    .enemies { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; margin-top: 10px; }
+    .enemy {
+      padding: 10px 12px; border-radius: 12px; text-align: center;
+      border: 1px solid rgba(168,85,247,.12); background: rgba(168,85,247,.04);
+    }
+    .enemy .ei { font-size: 22px; }
+    .enemy .en { font-size: 13px; font-weight: 700; color: var(--text); margin: 2px 0 0; }
+    .enemy .ed { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+    /* ── ZONE TIMELINE ── */
+    .zones { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+    .zone {
+      flex: 1; min-width: 160px; padding: 12px 14px; border-radius: 14px;
+      border: 1px solid rgba(168,85,247,.12); background: rgba(255,255,255,.03);
+    }
+    .zone .zi { font-size: 22px; }
+    .zone .zn { font-size: 14px; font-weight: 700; color: var(--text); margin: 2px 0; }
+    .zone .zd { font-size: 12px; color: var(--muted); line-height: 1.4; }
+
+    /* ── STAR ROWS ── */
+    .star-row { display: flex; gap: 6px; margin-top: 6px; align-items: center; }
+    .star-row .s { font-size: 16px; }
+    .star-row .sl { font-size: 13px; color: var(--muted); margin-left: 4px; }
+
+    /* ── CAROUSEL ── */
+    .carousel-wrap { margin-top: 12px; }
+    .carousel {
+      position: relative; border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      overflow: hidden; background: rgba(255,255,255,.03);
+      box-shadow: 0 20px 50px rgba(0,0,0,.35);
+      aspect-ratio: 16/9;
+    }
+    .carousel.cyber { border-color: rgba(168,85,247,.15); box-shadow: 0 20px 50px rgba(0,0,0,.35), 0 0 40px rgba(168,85,247,.06); }
+    .slides { display: flex; width: 100%; height: 100%; transition: transform .75s cubic-bezier(.2,.85,.2,1); }
+    .slide { min-width: 100%; height: 100%; position: relative; }
+    .slide img { width: 100%; height: 100%; object-fit: contain; background: rgba(0,0,0,.35); }
+    .slide::after { content:""; position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,.45), transparent 60%); pointer-events: none; }
+    .carousel-ui { position: absolute; inset: auto 0 0 0; display: flex; align-items: center; justify-content: space-between; padding: 12px; gap: 10px; pointer-events: none; }
+    .dots { display: flex; gap: 8px; align-items: center; justify-content: center; pointer-events: auto; }
+    .dot { width: 10px; height: 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.10); cursor: pointer; transition: all .2s; }
+    .dot.on { width: 22px; background: linear-gradient(135deg, rgba(56,189,248,.8), rgba(34,197,94,.7)); border-color: rgba(56,189,248,.35); }
+    .carousel.warm .dot.on { background: linear-gradient(135deg, rgba(251,191,36,.85), rgba(239,68,68,.7)); border-color: rgba(251,191,36,.40); }
+    .carousel.cyber .dot.on { background: linear-gradient(135deg, rgba(168,85,247,.85), rgba(236,72,153,.7)); border-color: rgba(168,85,247,.40); }
+    .nav-btns { display: flex; gap: 8px; pointer-events: auto; }
+    .ib {
+      width: 42px; height: 42px; border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      display: grid; place-items: center;
+      cursor: pointer; transition: all .18s; user-select: none;
+    }
+    .ib:hover { transform: translateY(-2px); }
+    .cap {
+      position: absolute; top: 12px; left: 12px;
+      padding: 8px 10px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.35); color: rgba(255,255,255,.86);
+      font-weight: 750; font-size: 13px; backdrop-filter: blur(8px);
     }
 
-    /* ═══════════════════════════════════ */
-    /* PHONE — compact, nothing hidden     */
-    /* ═══════════════════════════════════ */
-    @media(max-width:600px){
+    /* ── BADGE ── */
+    .badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 3px 9px; border-radius: 999px;
+      font-size: 11px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .8px; margin-left: 8px;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    .badge.green { background: linear-gradient(135deg, rgba(34,197,94,.25), rgba(56,189,248,.18)); border: 1px solid rgba(34,197,94,.30); color: #22c55e; }
+    .badge.hot { background: linear-gradient(135deg, rgba(168,85,247,.30), rgba(236,72,153,.22)); border: 1px solid rgba(168,85,247,.35); color: var(--purple); }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.65} }
 
-      /* 1. NAV: not sticky, smaller, ALL links visible */
-      .nav{
-        position:relative;
-        padding:10px 0;
-        gap:6px;
-      }
-      .brand{min-width:auto;gap:8px}
-      .logo{width:34px;height:34px;border-radius:10px}
-      .brandtext .name{font-size:14px}
-      .brandtext .sub{font-size:10px}
-      .navlinks{gap:3px;justify-content:flex-end}
-      .navlinks a{padding:5px 7px;font-size:11px;border-radius:8px}
+    .tag {
+      display: inline-flex; gap: 10px; align-items: center;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      padding: 8px 12px; border-radius: 999px;
+      color: var(--muted); font-size: 14px;
+      width: fit-content;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 18px 0; color: var(--muted);
+      display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      align-items: center;
+    }
+    .footer-links { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    /* ── REVEAL ── */
+    .rv { opacity: 0; transform: translateY(10px); transition: opacity .7s ease, transform .7s ease; }
+    .rv.show { opacity: 1; transform: translateY(0); }
+
+    .ss-sec { margin: 0 0 26px; }
+
+    /* ── ARENA TITLE ── */
+    .arena-title {
+      margin: 0; font-size: 40px; line-height: 1.08;
+      background: linear-gradient(135deg, var(--purple), var(--pink), var(--red));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    /* ═══════════════════════════════ */
+    /* TABLET                        */
+    /* ═══════════════════════════════ */
+    @media (max-width: 980px) {
+      .grid2 { grid-template-columns: 1fr; }
+      .grid2 .card { min-height: auto; }
+      .info-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 36px; }
+      .arena-title { font-size: 32px; }
+      .enemies { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+      .carousel { aspect-ratio: 4/3; }
+    }
+
+    /* ═══════════════════════════════ */
+    /* PHONE — nothing hidden       */
+    /* ═══════════════════════════════ */
+    @media (max-width: 600px) {
+      /* 1. NAV: not sticky, all links visible, compact */
+      .nav { position: relative; padding: 8px 0; gap: 6px; }
+      .logo { width: 32px; height: 32px; border-radius: 10px; }
+      .brand-name { font-size: 13px; }
+      .brand-sub { font-size: 10px; }
+      .nav-links { gap: 3px; }
+      .nav-links a { padding: 5px 6px; font-size: 10px; border-radius: 8px; }
 
       /* 2. WRAPPER */
-      .wrap{padding:12px}
+      .wrap { padding: 10px; }
 
       /* 3. HERO */
-      .studioHero h1{font-size:26px}
-      .studioHero .tag{font-size:11px;padding:5px 9px;gap:6px}
-      .studioHero .subtext{font-size:13px}
+      .hero { padding: 14px 0 4px; }
+      .hero-tag { font-size: 11px; padding: 5px 8px; gap: 6px; }
+      .hero h1 { font-size: 24px; }
+      .hero-sub { font-size: 13px; }
 
       /* 4. CARDS */
-      .card{padding:12px;border-radius:14px}
+      .card { padding: 12px; border-radius: 14px; }
 
-      /* 5. GAME CARDS: no forced height */
-      .gameCard{min-height:auto}
+      /* 5. ICONS */
+      .icon-wrap { width: 50px; height: 50px; border-radius: 13px; }
+      .icon-wrap.big { width: 58px; height: 58px; border-radius: 15px; }
+      .title-row { gap: 10px; margin-top: 10px; }
 
-      /* 6. FEATURED ARENA */
-      .featuredCard .heroLayout{gap:10px}
-      .appIcon.large{width:60px;height:60px;border-radius:15px}
-      .featuredCard h1{font-size:24px}
-      .featuredCard .subtext{font-size:13px}
+      /* 6. TITLES */
+      .arena-title { font-size: 22px; }
+      .grid2 .card h1 { font-size: 20px; }
+      .sub { font-size: 12px; margin-top: 6px; }
 
-      /* 7. MODES */
-      .modeRow{gap:5px}
-      .modeBadge{padding:6px 8px;border-radius:9px;font-size:11px}
-      .modeBadge .modeIcon{font-size:15px}
-      .modeBadge .modeSub{font-size:10px}
+      /* 7. TAGS */
+      .tag { font-size: 11px; padding: 5px 8px; }
 
-      /* 8. CHIPS */
-      .featureChips{gap:4px;margin-top:7px}
-      .featureChip{padding:3px 7px;font-size:10px}
+      /* 8. MODES */
+      .modes { gap: 5px; margin-top: 8px; }
+      .mode { padding: 6px 8px; border-radius: 10px; font-size: 11px; }
+      .mode .mi { font-size: 15px; }
+      .mode .ms { font-size: 9px; }
 
-      /* 9. GAME CARD TITLES */
-      .gameCard h1{font-size:22px}
-      .titleRow{gap:8px;margin-top:8px}
-      .appIcon{width:50px;height:50px;border-radius:13px}
-      .gameCard .subtext{font-size:12px;margin-top:5px}
-      .gameCard .tag{font-size:11px;padding:5px 8px}
+      /* 9. CHIPS */
+      .chips { gap: 4px; margin-top: 7px; }
+      .chip { padding: 3px 7px; font-size: 10px; }
 
-      /* 10. ENEMIES: 4 cols, compact */
-      .enemyGrid{grid-template-columns:repeat(4,1fr);gap:4px;margin-top:7px}
-      .enemyCard{padding:6px 3px;border-radius:8px}
-      .enemyCard .eIcon{font-size:16px}
-      .enemyCard .eName{font-size:10px}
-      .enemyCard .eDesc{font-size:9px;line-height:1.3}
+      /* 10. PILLS */
+      .kpi { gap: 4px; margin-top: 8px; }
+      .pill { padding: 4px 7px; font-size: 10px; }
 
-      /* 11. ZONES: horizontal scroll */
-      .zoneTimeline{
-        flex-wrap:nowrap;overflow-x:auto;gap:6px;margin-top:7px;
-        padding-bottom:4px;-webkit-overflow-scrolling:touch;
-        scrollbar-width:none;
-      }
-      .zoneTimeline::-webkit-scrollbar{display:none}
-      .zoneCard{min-width:180px;flex:0 0 auto;padding:8px 10px;border-radius:10px}
-      .zoneCard .zIcon{font-size:16px}
-      .zoneCard .zName{font-size:12px}
-      .zoneCard .zDesc{font-size:10px}
+      /* 11. BUTTONS */
+      .btn { padding: 8px 10px; font-size: 12px; border-radius: 11px; gap: 6px; }
+      .cta { gap: 6px; margin-top: 10px; }
 
-      /* 12. STARS */
-      .starRow .star{font-size:13px}
-      .starRow .starLabel{font-size:11px}
-      .starRow{gap:4px;margin-top:5px}
+      /* 12. ENEMIES: 4 cols, compact */
+      .enemies { grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 7px; }
+      .enemy { padding: 6px 3px; border-radius: 8px; }
+      .enemy .ei { font-size: 16px; }
+      .enemy .en { font-size: 10px; }
+      .enemy .ed { font-size: 9px; line-height: 1.2; }
 
-      /* 13. SECTION LABELS */
-      .sectionLabel{font-size:10px;letter-spacing:1px}
+      /* 13. ZONES: horizontal scroll */
+      .zones { flex-wrap: nowrap; overflow-x: auto; gap: 6px; margin-top: 7px; scrollbar-width: none; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+      .zones::-webkit-scrollbar { display: none; }
+      .zone { min-width: 170px; flex: 0 0 auto; padding: 8px 10px; border-radius: 10px; }
+      .zone .zi { font-size: 16px; }
+      .zone .zn { font-size: 12px; }
+      .zone .zd { font-size: 10px; }
 
-      /* 14. KPI PILLS */
-      .kpi{gap:4px;margin-top:8px}
-      .pill{padding:4px 7px;font-size:10px}
+      /* 14. STARS */
+      .star-row { margin-top: 4px; }
+      .star-row .s { font-size: 13px; }
+      .star-row .sl { font-size: 11px; }
 
-      /* 15. BUTTONS */
-      .btn{padding:9px 10px;font-size:12px;border-radius:11px;gap:6px}
-      .cta{gap:6px;margin-top:10px}
+      /* 15. SECTION LABELS */
+      .sec-label { font-size: 10px; }
 
-      /* 16. INFO ROW */
-      .infoRow{gap:10px;margin:0 0 14px}
+      /* 16. CAROUSEL */
+      .carousel { aspect-ratio: 16/10; border-radius: 14px; }
+      .ib { width: 32px; height: 32px; border-radius: 10px; }
+      .cap { font-size: 10px; padding: 5px 7px; top: 6px; left: 6px; }
+      .dot { width: 7px; height: 7px; }
+      .dot.on { width: 16px; }
 
-      /* 17. FOOTER: stack */
-      .footer{flex-direction:column;text-align:center;gap:10px;padding:12px 0}
-      .social{justify-content:center;flex-wrap:wrap}
-      .social .btn{padding:8px 10px;font-size:11px;border-radius:10px}
+      /* 17. SS SECTIONS */
+      .ss-sec { margin: 0 0 14px; }
 
-      /* 18. CAROUSEL */
-      .carousel{aspect-ratio:16/10}
-      .iconBtn{width:34px;height:34px;border-radius:10px}
-      .caption{font-size:10px;padding:5px 7px;top:6px;left:6px}
-      .dot{width:7px;height:7px}
-      .dot.active{width:16px}
+      /* 18. DIVIDERS */
+      .divider { margin: 8px 0; }
 
-      /* 19. SS SECTIONS */
-      .ss-section{margin:0 0 14px}
+      /* 19. LISTS */
+      ul { margin: 5px 0 0 14px; font-size: 12px; }
+      li { margin: 3px 0; }
 
-      /* 20. DIVIDERS */
-      .divider{margin:8px 0}
+      /* 20. FOOTER: stack */
+      .footer { flex-direction: column; text-align: center; gap: 10px; padding: 12px 0; }
+      .footer-links { justify-content: center; }
+      .footer-links .btn { padding: 7px 9px; font-size: 10px; border-radius: 10px; }
 
-      /* 21. LISTS */
-      ul{margin:6px 0 0 14px;font-size:12px}
-      li{margin:3px 0}
+      /* 21. INFO GRID */
+      .info-grid { gap: 10px; margin: 0 0 14px; }
 
-      /* 22. STAR RATING / DIFF / STORE sections */
-      .featuredCard div[style*="font-size:14px;font-weight:700"]{
-        font-size:12px !important;
-        margin-top:10px !important;
-      }
+      /* 22. SMALL SECTION HEADERS */
+      .sh { font-size: 12px !important; margin-top: 10px !important; margin-bottom: 4px !important; }
     }
   </style>
 </head>
@@ -492,132 +569,122 @@
   <div class="glow"></div>
 
   <div class="wrap">
-    <!-- NAV: all links always visible -->
-    <div class="nav">
+
+    <!-- NAV: all links always visible everywhere -->
+    <nav class="nav">
       <div class="brand">
-        <div class="logo">
-          <img src="assets/Developerlogo.png" alt="Rockshell Studios logo">
-        </div>
-        <div class="brandtext">
-          <div class="name">Rockshell Studios</div>
-          <div class="sub">Indie Game Studio • Ghana</div>
+        <div class="logo"><img src="assets/Developerlogo.png" alt="Rockshell Studios"></div>
+        <div>
+          <div class="brand-name">Rockshell Studios</div>
+          <div class="brand-sub">Indie Game Studio • Ghana</div>
         </div>
       </div>
-      <div class="navlinks">
+      <div class="nav-links">
         <a href="#games">Games</a>
         <a href="#arena">Arena</a>
-        <a href="#ss-arena">Screenshots</a>
+        <a href="#morris">Morris</a>
+        <a href="#ludo">Ludo</a>
         <a href="#about">Studio</a>
         <a href="#contact">Contact</a>
         <a href="privacy-policy.html">Privacy</a>
         <a href="delete-account.html">Delete</a>
       </div>
-    </div>
+    </nav>
 
-    <!-- Studio Hero -->
-    <section class="studioHero reveal" id="games">
-      <div class="tag">🎮 Indie Game Studio from Ghana</div>
+    <!-- HERO -->
+    <section class="hero rv" id="games">
+      <div class="hero-tag">🎮 Indie Game Studio from Ghana</div>
       <h1>Play Our <span>Games</span></h1>
-      <p class="subtext">Tactical shooters, strategic board games, and more — crafted with care for Android.</p>
+      <p class="hero-sub">Tactical shooters, strategic board games, and more — crafted with care for Android.</p>
     </section>
 
-    <!-- ═══════════════════════════════════════ -->
-    <!-- ARENA SHOOTER — Featured Card           -->
-    <!-- ═══════════════════════════════════════ -->
-    <section class="card cyber featuredCard reveal" id="arena" style="margin:0 0 18px;">
-      <div class="tag" style="border-color:rgba(168,85,247,.18);">⚔️ Tactical Action • Top-Down Shooter <span class="newBadge hot">🔥 Featured</span></div>
+    <!-- ═══════════════════════════════════ -->
+    <!-- ARENA SHOOTER                    -->
+    <!-- ═══════════════════════════════════ -->
+    <section class="card cyber rv" id="arena" style="margin-bottom:18px;">
+      <div class="tag" style="border-color:rgba(168,85,247,.18);">⚔️ Tactical Action • Top-Down Shooter <span class="badge hot">🔥 Featured</span></div>
 
-      <div class="heroLayout" style="margin-top:14px;">
-        <div class="appIcon large">
-          <img src="ARENA_assets/icon.png" alt="Arena Shooter app icon">
-        </div>
-        <div class="heroRight">
-          <h1>ARENA SHOOTER</h1>
-          <p class="subtext">Dive into the Void. Fight rogue AI. Survive the arena. 30 handcrafted levels, 7 enemy types, boss fights, and endless mode.</p>
+      <div class="title-row">
+        <div class="icon-wrap big"><img src="ARENA_assets/icon.png" alt="Arena Shooter"></div>
+        <div>
+          <h1 class="arena-title">ARENA SHOOTER</h1>
+          <p class="sub">Dive into the Void. Fight rogue AI. Survive the arena. 30 handcrafted levels, 7 enemy types, boss fights, and endless mode.</p>
         </div>
       </div>
 
-      <div class="modeRow">
-        <div class="modeBadge cyber"><span class="modeIcon">🗺️</span><div><div class="modeLabel">Campaign</div><div class="modeSub">30 levels · 3 zones</div></div></div>
-        <div class="modeBadge cyber"><span class="modeIcon">♾️</span><div><div class="modeLabel">Endless</div><div class="modeSub">Scaling waves</div></div></div>
-        <div class="modeBadge cyber"><span class="modeIcon">👹</span><div><div class="modeLabel">Bosses</div><div class="modeSub">4 unique fights</div></div></div>
-        <div class="modeBadge cyber"><span class="modeIcon">🏪</span><div><div class="modeLabel">Store</div><div class="modeSub">Skins · Bullets · Shields</div></div></div>
+      <div class="modes">
+        <div class="mode cyber"><span class="mi">🗺️</span><div><div class="ml">Campaign</div><div class="ms">30 levels · 3 zones</div></div></div>
+        <div class="mode cyber"><span class="mi">♾️</span><div><div class="ml">Endless</div><div class="ms">Scaling waves</div></div></div>
+        <div class="mode cyber"><span class="mi">👹</span><div><div class="ml">Bosses</div><div class="ms">4 unique fights</div></div></div>
+        <div class="mode cyber"><span class="mi">🏪</span><div><div class="ml">Store</div><div class="ms">Skins · Bullets · Shields</div></div></div>
       </div>
 
-      <div class="featureChips">
-        <span class="featureChip cyber">🎯 Grid Movement</span>
-        <span class="featureChip cyber">🧱 Cover System</span>
-        <span class="featureChip pink">💀 7 Enemy Types</span>
-        <span class="featureChip pink">👾 4 Boss Fights</span>
-        <span class="featureChip cyber">⭐ 3-Star Rating</span>
-        <span class="featureChip cyber">⚡ 3 Difficulties</span>
-        <span class="featureChip pink">🎨 Player Skins</span>
-        <span class="featureChip pink">🔥 Bullet Types</span>
-        <span class="featureChip cyber">🛡️ Shields</span>
-        <span class="featureChip cyber">🌈 Arena Themes</span>
-        <span class="featureChip pink">💫 Trail Effects</span>
-        <span class="featureChip cyber">💾 Auto-Save</span>
+      <div class="chips">
+        <span class="chip cyber">🎯 Grid Movement</span>
+        <span class="chip cyber">🧱 Cover System</span>
+        <span class="chip pink">💀 7 Enemy Types</span>
+        <span class="chip pink">👾 4 Boss Fights</span>
+        <span class="chip cyber">⭐ 3-Star Rating</span>
+        <span class="chip cyber">⚡ 3 Difficulties</span>
+        <span class="chip pink">🎨 Player Skins</span>
+        <span class="chip pink">🔥 Bullet Types</span>
+        <span class="chip cyber">🛡️ Shields</span>
+        <span class="chip cyber">🌈 Arena Themes</span>
+        <span class="chip pink">💫 Trail Effects</span>
+        <span class="chip cyber">💾 Auto-Save</span>
       </div>
 
-      <!-- Star Rating -->
-      <div style="margin-top:14px;">
-        <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;">⭐ 3-Star Rating Per Level</div>
-        <div class="starRow"><span class="star">⭐</span><span class="starLabel">Complete the level</span></div>
-        <div class="starRow"><span class="star">⭐⭐</span><span class="starLabel">Take no damage</span></div>
-        <div class="starRow"><span class="star">⭐⭐⭐</span><span class="starLabel">Speedrun bonus time</span></div>
+      <p class="sh" style="font-size:14px;font-weight:700;color:var(--text);margin-top:14px;margin-bottom:2px;">⭐ 3-Star Rating Per Level</p>
+      <div class="star-row"><span class="s">⭐</span><span class="sl">Complete the level</span></div>
+      <div class="star-row"><span class="s">⭐⭐</span><span class="sl">Take no damage</span></div>
+      <div class="star-row"><span class="s">⭐⭐⭐</span><span class="sl">Speedrun bonus time</span></div>
+
+      <p class="sh" style="font-size:14px;font-weight:700;color:var(--text);margin-top:14px;margin-bottom:2px;">🗺️ Campaign Zones</p>
+      <div class="zones">
+        <div class="zone"><div class="zi">🟢</div><div class="zn">Zone 1: Initiation</div><div class="zd">Learn the basics. Face the Sentinel boss.</div></div>
+        <div class="zone"><div class="zi">🟡</div><div class="zn">Zone 2: Uprising</div><div class="zd">New threats. Dodge snipers and rushers.</div></div>
+        <div class="zone"><div class="zi">🔴</div><div class="zn">Zone 3: Void</div><div class="zd">Chaos mode. Enemies scale hard. Final boss.</div></div>
       </div>
 
-      <!-- Zone Timeline -->
-      <div style="font-size:14px;font-weight:700;color:var(--text);margin-top:16px;margin-bottom:2px;">🗺️ Campaign Zones</div>
-      <div class="zoneTimeline">
-        <div class="zoneCard"><div class="zIcon">🟢</div><div class="zName">Zone 1: Initiation</div><div class="zDesc">Learn the basics. Face the Sentinel boss.</div></div>
-        <div class="zoneCard"><div class="zIcon">🟡</div><div class="zName">Zone 2: Uprising</div><div class="zDesc">New threats. Dodge snipers and rushers.</div></div>
-        <div class="zoneCard"><div class="zIcon">🔴</div><div class="zName">Zone 3: Void</div><div class="zDesc">Chaos mode. Enemies scale hard. Final boss.</div></div>
+      <p class="sh" style="font-size:14px;font-weight:700;color:var(--text);margin-top:14px;margin-bottom:2px;">👁️ 7 Enemy Types</p>
+      <div class="enemies">
+        <div class="enemy"><div class="ei">🔴</div><div class="en">Basic</div><div class="ed">4-dir rotating shooter</div></div>
+        <div class="enemy"><div class="ei">🟡</div><div class="en">Drifter</div><div class="ed">Moves randomly, aims</div></div>
+        <div class="enemy"><div class="ei">⚡</div><div class="en">Rusher</div><div class="ed">Charges, contact damage</div></div>
+        <div class="enemy"><div class="ei">🎯</div><div class="en">Sniper</div><div class="ed">Laser warning, fast shot</div></div>
+        <div class="enemy"><div class="ei">🛡️</div><div class="en">Tank</div><div class="ed">3 hits, heavy armor</div></div>
+        <div class="enemy"><div class="ei">💣</div><div class="en">Bomber</div><div class="ed">Explosive hazard zones</div></div>
+        <div class="enemy"><div class="ei">🌀</div><div class="en">Teleporter</div><div class="ed">Blinks around arena</div></div>
       </div>
 
-      <!-- Enemy Grid -->
-      <div style="font-size:14px;font-weight:700;color:var(--text);margin-top:16px;margin-bottom:2px;">👁️ 7 Enemy Types</div>
-      <div class="enemyGrid">
-        <div class="enemyCard"><div class="eIcon">🔴</div><div class="eName">Basic</div><div class="eDesc">4-dir rotating shooter</div></div>
-        <div class="enemyCard"><div class="eIcon">🟡</div><div class="eName">Drifter</div><div class="eDesc">Moves randomly, aims</div></div>
-        <div class="enemyCard"><div class="eIcon">⚡</div><div class="eName">Rusher</div><div class="eDesc">Charges, contact damage</div></div>
-        <div class="enemyCard"><div class="eIcon">🎯</div><div class="eName">Sniper</div><div class="eDesc">Laser warning, fast shot</div></div>
-        <div class="enemyCard"><div class="eIcon">🛡️</div><div class="eName">Tank</div><div class="eDesc">3 hits, heavy armor</div></div>
-        <div class="enemyCard"><div class="eIcon">💣</div><div class="eName">Bomber</div><div class="eDesc">Explosive hazard zones</div></div>
-        <div class="enemyCard"><div class="eIcon">🌀</div><div class="eName">Teleporter</div><div class="eDesc">Blinks around arena</div></div>
+      <p class="sh" style="font-size:14px;font-weight:700;color:var(--text);margin-top:14px;margin-bottom:4px;">⚡ Difficulty Modes</p>
+      <div class="modes">
+        <div class="mode" style="border-color:rgba(34,197,94,.18);background:rgba(34,197,94,.05);"><span class="mi">🟢</span><div><div class="ml">Easy</div><div class="ms">5 lives · x0.5 score</div></div></div>
+        <div class="mode" style="border-color:rgba(56,189,248,.18);background:rgba(56,189,248,.05);"><span class="mi">🔵</span><div><div class="ml">Normal</div><div class="ms">3 lives · x1.0 score</div></div></div>
+        <div class="mode" style="border-color:rgba(239,68,68,.18);background:rgba(239,68,68,.05);"><span class="mi">🔴</span><div><div class="ml">Hard</div><div class="ms">2 lives · x2.0 score</div></div></div>
       </div>
 
-      <!-- Difficulty -->
-      <div style="font-size:14px;font-weight:700;color:var(--text);margin-top:16px;margin-bottom:6px;">⚡ Difficulty Modes</div>
-      <div class="modeRow">
-        <div class="modeBadge" style="border-color:rgba(34,197,94,.18);background:rgba(34,197,94,.05);"><span class="modeIcon">🟢</span><div><div class="modeLabel">Easy</div><div class="modeSub">5 lives · x0.5 score</div></div></div>
-        <div class="modeBadge" style="border-color:rgba(56,189,248,.18);background:rgba(56,189,248,.05);"><span class="modeIcon">🔵</span><div><div class="modeLabel">Normal</div><div class="modeSub">3 lives · x1.0 score</div></div></div>
-        <div class="modeBadge" style="border-color:rgba(239,68,68,.18);background:rgba(239,68,68,.05);"><span class="modeIcon">🔴</span><div><div class="modeLabel">Hard</div><div class="modeSub">2 lives · x2.0 score</div></div></div>
+      <p class="sh" style="font-size:14px;font-weight:700;color:var(--text);margin-top:14px;margin-bottom:4px;">🏪 Store — Unlock & Equip</p>
+      <div class="chips">
+        <span class="chip cyber">🎨 Player Skins</span>
+        <span class="chip pink">🔫 Laser</span>
+        <span class="chip pink">⚡ Plasma</span>
+        <span class="chip pink">🚀 Rocket</span>
+        <span class="chip pink">🌀 Void Beam</span>
+        <span class="chip pink">✨ Star Burst</span>
+        <span class="chip cyber">🛡️ Absorb Shield</span>
+        <span class="chip cyber">🔄 Reflect Shield</span>
+        <span class="chip cyber">🕳️ Void Phase</span>
+        <span class="chip cyber">🏙️ Neon City</span>
+        <span class="chip cyber">🌌 Void Space</span>
+        <span class="chip cyber">💻 Digital Matrix</span>
+        <span class="chip cyber">💎 Crystal Cave</span>
+        <span class="chip pink">🔥 Blue Flame</span>
+        <span class="chip pink">⚡ Lightning</span>
+        <span class="chip pink">🌈 Rainbow Wave</span>
       </div>
 
-      <!-- Store -->
-      <div style="font-size:14px;font-weight:700;color:var(--text);margin-top:16px;margin-bottom:6px;">🏪 Store — Unlock & Equip</div>
-      <div class="featureChips">
-        <span class="featureChip cyber">🎨 Player Skins</span>
-        <span class="featureChip pink">🔫 Laser</span>
-        <span class="featureChip pink">⚡ Plasma</span>
-        <span class="featureChip pink">🚀 Rocket</span>
-        <span class="featureChip pink">🌀 Void Beam</span>
-        <span class="featureChip pink">✨ Star Burst</span>
-        <span class="featureChip cyber">🛡️ Absorb Shield</span>
-        <span class="featureChip cyber">🔄 Reflect Shield</span>
-        <span class="featureChip cyber">🕳️ Void Phase</span>
-        <span class="featureChip cyber">🏙️ Neon City</span>
-        <span class="featureChip cyber">🌌 Void Space</span>
-        <span class="featureChip cyber">💻 Digital Matrix</span>
-        <span class="featureChip cyber">💎 Crystal Cave</span>
-        <span class="featureChip pink">🔥 Blue Flame</span>
-        <span class="featureChip pink">⚡ Lightning</span>
-        <span class="featureChip pink">🌈 Rainbow Wave</span>
-      </div>
-
-      <!-- CTA -->
-      <div class="cta" style="margin-top:16px;">
+      <div class="cta">
         <a class="btn cyber" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.ArenaShooter" target="_blank" rel="noopener">⚔️ Download on Play Store</a>
         <a class="btn" href="#ss-arena">🖼️ Screenshots</a>
       </div>
@@ -633,59 +700,55 @@
     </section>
 
     <!-- Arena Screenshots -->
-    <section class="ss-section" id="ss-arena">
-      <div class="card reveal" style="border-color:rgba(168,85,247,.10);">
-        <div class="sectionLabel" style="color:var(--purple);">📸 Arena Shooter — Screenshots</div>
-        <h2 style="margin:0 0 4px;">Game Preview</h2>
-        <p style="margin:0 0 4px;color:var(--muted);">Neon-lit cyberpunk arenas, tactical grid combat, boss fights.</p>
-        <div style="height:12px;"></div>
-        <div class="carouselWrap">
-          <div class="carousel cyber" data-carousel="arena" aria-label="Arena Shooter screenshots carousel">
-            <div class="caption">Screenshot 1 / 10</div>
+    <section class="ss-sec" id="ss-arena">
+      <div class="card rv" style="border-color:rgba(168,85,247,.10);">
+        <div class="sec-label" style="color:var(--purple);">📸 Arena Shooter — Screenshots</div>
+        <h2 style="margin:0 0 2px;">Game Preview</h2>
+        <p class="sub" style="margin-top:2px;">Neon-lit cyberpunk arenas, tactical grid combat, boss fights.</p>
+        <div class="carousel-wrap">
+          <div class="carousel cyber" data-carousel="arena">
+            <div class="cap">Screenshot 1 / 10</div>
             <div class="slides">
-              <div class="slide"><img src="ARENA_assets/screenshhot12.png" alt="Arena Shooter screenshot 1"></div>
-              <div class="slide"><img src="ARENA_assets/Screenshot_20260516-062644.png" alt="Arena Shooter screenshot 2"></div>
-              <div class="slide"><img src="ARENA_assets/Screenshot_20260527-182328.png" alt="Arena Shooter screenshot 3"></div>
-              <div class="slide"><img src="ARENA_assets/Screenshot_20260527-182337.png" alt="Arena Shooter screenshot 4"></div>
-              <div class="slide"><img src="ARENA_assets/Screenshot_20260527-182347.png" alt="Arena Shooter screenshot 5"></div>
-              <div class="slide"><img src="ARENA_assets/Screenshot_20260527-195619.png" alt="Arena Shooter screenshot 6"></div>
-              <div class="slide"><img src="ARENA_assets/Screenshot_20260528-025247.png" alt="Arena Shooter screenshot 7"></div>
-              <div class="slide"><img src="ARENA_assets/Screenshot_20260528-025427.png" alt="Arena Shooter screenshot 8"></div>
-              <div class="slide"><img src="ARENA_assets/Screenshot_20260528-025502.png" alt="Arena Shooter screenshot 9"></div>
-              <div class="slide"><img src="ARENA_assets/icon.png" alt="Arena Shooter app icon"></div>
+              <div class="slide"><img src="ARENA_assets/screenshhot12.png" alt="Arena screenshot 1"></div>
+              <div class="slide"><img src="ARENA_assets/Screenshot_20260516-062644.png" alt="Arena screenshot 2"></div>
+              <div class="slide"><img src="ARENA_assets/Screenshot_20260527-182328.png" alt="Arena screenshot 3"></div>
+              <div class="slide"><img src="ARENA_assets/Screenshot_20260527-182337.png" alt="Arena screenshot 4"></div>
+              <div class="slide"><img src="ARENA_assets/Screenshot_20260527-182347.png" alt="Arena screenshot 5"></div>
+              <div class="slide"><img src="ARENA_assets/Screenshot_20260527-195619.png" alt="Arena screenshot 6"></div>
+              <div class="slide"><img src="ARENA_assets/Screenshot_20260528-025247.png" alt="Arena screenshot 7"></div>
+              <div class="slide"><img src="ARENA_assets/Screenshot_20260528-025427.png" alt="Arena screenshot 8"></div>
+              <div class="slide"><img src="ARENA_assets/Screenshot_20260528-025502.png" alt="Arena screenshot 9"></div>
+              <div class="slide"><img src="ARENA_assets/icon.png" alt="Arena icon"></div>
             </div>
-            <div class="carouselUI">
-              <div class="navBtnRow"><button class="iconBtn" aria-label="Previous screenshot">⬅️</button><button class="iconBtn" aria-label="Next screenshot">➡️</button></div>
-              <div class="dots" aria-label="Screenshot dots"></div>
-              <div style="width:92px;"></div>
+            <div class="carousel-ui">
+              <div class="nav-btns"><button class="ib" aria-label="Previous">⬅️</button><button class="ib" aria-label="Next">➡️</button></div>
+              <div class="dots"></div>
+              <div style="width:92px"></div>
             </div>
-          </div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:14px;">
-            <span class="pill purple">⏱️ Auto: 4s</span>
-            <span class="pill purple">🖱️ Hover pauses</span>
-            <span class="pill pink">📸 10 shots</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Board Game Cards -->
-    <div class="gamesGrid">
-      <div class="card gameCard reveal">
+    <!-- ═══════════════════════════════════ -->
+    <!-- MORRIS & LUDO GAME CARDS         -->
+    <!-- ═══════════════════════════════════ -->
+    <div class="grid2" id="morris">
+      <div class="card rv">
         <div class="tag">🧠 Strategy • Morris Games</div>
-        <div class="titleRow">
-          <div class="appIcon"><img src="assets/MainIcon.png" alt="Morris Games app icon"></div>
+        <div class="title-row">
+          <div class="icon-wrap"><img src="assets/MainIcon.png" alt="Morris Games"></div>
           <h1>Morris Games</h1>
         </div>
-        <p class="subtext">A classic strategy board game experience. Think ahead, outsmart opponents, and enjoy clean, smooth gameplay on Android.</p>
+        <p class="sub">A classic strategy board game experience. Think ahead, outsmart opponents, and enjoy clean, smooth gameplay on Android.</p>
         <div class="cta">
           <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.morrisgame1" target="_blank" rel="noopener">✅ Download on Play Store</a>
           <a class="btn" href="#ss-morris">🖼️ Screenshots</a>
         </div>
         <div class="kpi"><span class="pill">🧠 Strategy</span><span class="pill">⚡ Fast matches</span><span class="pill">📱 Android</span></div>
-        <div class="gameFooter">
+        <div class="foot">
           <div class="divider"></div>
-          <h2 style="margin:0 0 4px;font-size:16px;">Highlights</h2>
+          <h2 style="margin:0 0 4px;font-size:15px;">Highlights</h2>
           <ul>
             <li>Simple controls with a clean UI</li>
             <li>Skill-based gameplay that rewards smart moves</li>
@@ -694,247 +757,223 @@
         </div>
       </div>
 
-      <div class="card warm gameCard reveal">
-        <div class="tag">🎲 Board Game • King's Rules Ludo <span class="newBadge">New</span></div>
-        <div class="titleRow">
-          <div class="appIcon"><img src="assets/icon.png" alt="King's Rules Ludo app icon"></div>
+      <div class="card warm rv" id="ludo">
+        <div class="tag">🎲 Board Game • King's Rules Ludo <span class="badge green">New</span></div>
+        <div class="title-row">
+          <div class="icon-wrap"><img src="assets/icon.png" alt="King's Rules Ludo"></div>
           <h1>King's Rules Ludo</h1>
         </div>
-        <p class="subtext">Ludo reimagined with unique King's Rules. Back Kick, Line Kick, Home Kick, Double Dice, Prison, Bonuses, Walls, and Safe Tiles. Play offline vs AI or online.</p>
-        <div class="modeRow">
-          <div class="modeBadge"><span class="modeIcon">🤖</span><div><div class="modeLabel">Offline</div><div class="modeSub">Play vs smart AI</div></div></div>
-          <div class="modeBadge"><span class="modeIcon">🌐</span><div><div class="modeLabel">Online</div><div class="modeSub">Multiplayer + Chat</div></div></div>
+        <p class="sub">Ludo reimagined with unique King's Rules. Back Kick, Line Kick, Home Kick, Double Dice, Prison, Bonuses, Walls, and Safe Tiles. Play offline vs AI or online.</p>
+        <div class="modes">
+          <div class="mode"><span class="mi">🤖</span><div><div class="ml">Offline</div><div class="ms">Play vs smart AI</div></div></div>
+          <div class="mode"><span class="mi">🌐</span><div><div class="ml">Online</div><div class="ms">Multiplayer + Chat</div></div></div>
         </div>
-        <div class="featureChips">
-          <span class="featureChip">⬅️ Back Kick</span>
-          <span class="featureChip">📏 Line Kick</span>
-          <span class="featureChip">🏠 Home Kick</span>
-          <span class="featureChip">🎲🎲 Double Dice</span>
-          <span class="featureChip">🚓 Prison</span>
-          <span class="featureChip">🎁 Bonus</span>
-          <span class="featureChip">🛡️ Safe Tiles</span>
-          <span class="featureChip">🧱 Walls</span>
+        <div class="chips">
+          <span class="chip warn">⬅️ Back Kick</span>
+          <span class="chip warn">📏 Line Kick</span>
+          <span class="chip warn">🏠 Home Kick</span>
+          <span class="chip warn">🎲🎲 Double Dice</span>
+          <span class="chip warn">🚓 Prison</span>
+          <span class="chip warn">🎁 Bonus</span>
+          <span class="chip warn">🛡️ Safe Tiles</span>
+          <span class="chip warn">🧱 Walls</span>
         </div>
         <div class="cta">
           <a class="btn warm" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.kingsrulesludo" target="_blank" rel="noopener">👑 Download on Play Store</a>
           <a class="btn" href="#ss-ludo">🖼️ Screenshots</a>
         </div>
         <div class="kpi"><span class="pill">🎲 Ludo</span><span class="pill">👑 King's Rules</span><span class="pill">🤖 AI + 🌐 Online</span><span class="pill">📱 Android</span></div>
-        <div class="gameFooter">
+        <div class="foot">
           <div class="divider"></div>
-          <h2 style="margin:0 0 4px;font-size:16px;">Key Features</h2>
+          <h2 style="margin:0 0 4px;font-size:15px;">Key Features</h2>
           <ul>
-            <li><b style="color:var(--warn);">Back Kick</b> — Move backward by dice roll to capture enemies</li>
-            <li><b style="color:var(--warn);">Line Kick</b> — Dash parallel onto enemy tokens to capture</li>
-            <li><b style="color:var(--warn);">Home Kick</b> — Interact between home-path and board tokens</li>
-            <li><b style="color:var(--warn);">Double Dice</b> — Roll two dice; double 6s grant two extra turns</li>
-            <li><b style="color:var(--warn);">Prison</b> — Captured tokens jailed; roll a 6 to release</li>
-            <li><b style="color:var(--warn);">Bonus</b> — Earn bonus rolls on successful captures</li>
+            <li><b style="color:var(--warn);">Back Kick</b> — Move backward by dice roll to capture</li>
+            <li><b style="color:var(--warn);">Line Kick</b> — Dash parallel onto enemy tokens</li>
+            <li><b style="color:var(--warn);">Home Kick</b> — Interact home-path and board tokens</li>
+            <li><b style="color:var(--warn);">Double Dice</b> — Roll two dice; double 6s = two extra turns</li>
+            <li><b style="color:var(--warn);">Prison</b> — Captured tokens jailed; roll 6 to release</li>
+            <li><b style="color:var(--warn);">Bonus</b> — Earn bonus rolls on captures</li>
             <li><b style="color:var(--warn);">Safe Tiles</b> — Star tiles immune to normal captures</li>
-            <li><b style="color:var(--brand2);">Walls</b> — 2+ tokens form a wall, blocking enemies</li>
-            <li><b style="color:var(--brand);">Smart AI</b> — Prioritizes captures, releases, optimal moves</li>
+            <li><b style="color:var(--brand2);">Walls</b> — 2+ tokens block enemies</li>
+            <li><b style="color:var(--brand);">Smart AI</b> — Prioritizes captures and optimal moves</li>
             <li><b style="color:var(--brand);">In-Game Tutorial</b> — Context-sensitive guided tour</li>
-            <li><b style="color:var(--brand2);">Online Chat</b> — Per-color messaging in multiplayer</li>
+            <li><b style="color:var(--brand2);">Online Chat</b> — Per-color messaging</li>
           </ul>
         </div>
       </div>
     </div>
 
     <!-- Morris Screenshots -->
-    <section class="ss-section" id="ss-morris">
-      <div class="card reveal">
-        <div class="sectionLabel">📸 Morris Games — Screenshots</div>
-        <h2 style="margin:0 0 4px;">Game Preview</h2>
-        <p style="margin:0 0 4px;color:var(--muted);">Auto-sliding preview (click dots/arrows to navigate).</p>
-        <div style="height:12px;"></div>
-        <div class="carouselWrap">
-          <div class="carousel" data-carousel="morris" aria-label="Morris Games screenshots carousel">
-            <div class="caption">Screenshot 1 / 6</div>
+    <section class="ss-sec" id="ss-morris">
+      <div class="card rv">
+        <div class="sec-label">📸 Morris Games — Screenshots</div>
+        <h2 style="margin:0 0 2px;">Game Preview</h2>
+        <p class="sub" style="margin-top:2px;">Auto-sliding preview (click dots/arrows to navigate).</p>
+        <div class="carousel-wrap">
+          <div class="carousel" data-carousel="morris">
+            <div class="cap">Screenshot 1 / 6</div>
             <div class="slides">
-              <div class="slide"><img src="assets/Screenshot_20251125-095426.png" alt="Morris Games screenshot 1"></div>
-              <div class="slide"><img src="assets/Screenshot_20251219-202524.png" alt="Morris Games screenshot 2"></div>
-              <div class="slide"><img src="assets/Screenshot_20260101-043449.png" alt="Morris Games screenshot 3"></div>
-              <div class="slide"><img src="assets/Screenshot_20260101-043559.png" alt="Morris Games screenshot 4"></div>
-              <div class="slide"><img src="assets/Screenshot_20260101-043740.png" alt="Morris Games screenshot 5"></div>
-              <div class="slide"><img src="assets/Screenshot_20260101-043803.png" alt="Morris Games screenshot 6"></div>
+              <div class="slide"><img src="assets/Screenshot_20251125-095426.png" alt="Morris 1"></div>
+              <div class="slide"><img src="assets/Screenshot_20251219-202524.png" alt="Morris 2"></div>
+              <div class="slide"><img src="assets/Screenshot_20260101-043449.png" alt="Morris 3"></div>
+              <div class="slide"><img src="assets/Screenshot_20260101-043559.png" alt="Morris 4"></div>
+              <div class="slide"><img src="assets/Screenshot_20260101-043740.png" alt="Morris 5"></div>
+              <div class="slide"><img src="assets/Screenshot_20260101-043803.png" alt="Morris 6"></div>
             </div>
-            <div class="carouselUI">
-              <div class="navBtnRow"><button class="iconBtn" aria-label="Previous screenshot">⬅️</button><button class="iconBtn" aria-label="Next screenshot">➡️</button></div>
-              <div class="dots" aria-label="Screenshot dots"></div>
-              <div style="width:92px;"></div>
+            <div class="carousel-ui">
+              <div class="nav-btns"><button class="ib" aria-label="Previous">⬅️</button><button class="ib" aria-label="Next">➡️</button></div>
+              <div class="dots"></div>
+              <div style="width:92px"></div>
             </div>
-          </div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:14px;">
-            <span class="pill">⏱️ Auto: 4s</span><span class="pill">🖱️ Hover pauses</span><span class="pill">⌨️ Arrow keys</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Ludo Screenshots -->
-    <section class="ss-section" id="ss-ludo">
-      <div class="card reveal" style="border-color:rgba(251,191,36,.10);">
-        <div class="sectionLabel" style="color:var(--warn);">📸 King's Rules Ludo — Screenshots</div>
-        <h2 style="margin:0 0 4px;">Game Preview</h2>
-        <p style="margin:0 0 4px;color:var(--muted);">See the King's Rules in action — double dice, special kicks, prison, safe tiles, walls, and more.</p>
-        <div style="height:12px;"></div>
-        <div class="carouselWrap">
-          <div class="carousel warm" data-carousel="ludo" aria-label="King's Rules Ludo screenshots carousel">
-            <div class="caption">Screenshot 1 / 8</div>
+    <section class="ss-sec" id="ss-ludo">
+      <div class="card rv" style="border-color:rgba(251,191,36,.10);">
+        <div class="sec-label" style="color:var(--warn);">📸 King's Rules Ludo — Screenshots</div>
+        <h2 style="margin:0 0 2px;">Game Preview</h2>
+        <p class="sub" style="margin-top:2px;">See the King's Rules in action — double dice, special kicks, prison, walls, and more.</p>
+        <div class="carousel-wrap">
+          <div class="carousel warm" data-carousel="ludo">
+            <div class="cap">Screenshot 1 / 8</div>
             <div class="slides">
-              <div class="slide"><img src="assets/Screenshot_20260421-030546.png" alt="King's Rules Ludo screenshot 1"></div>
-              <div class="slide"><img src="assets/Screenshot_20260422-144927.png" alt="King's Rules Ludo screenshot 2"></div>
-              <div class="slide"><img src="assets/Screenshot_20260422-145005.png" alt="King's Rules Ludo screenshot 3"></div>
-              <div class="slide"><img src="assets/Screenshot_20260424-134252.png" alt="King's Rules Ludo screenshot 4"></div>
-              <div class="slide"><img src="assets/Screenshot_20260424-134830.png" alt="King's Rules Ludo screenshot 5"></div>
-              <div class="slide"><img src="assets/Screenshot_20260424-135116.png" alt="King's Rules Ludo screenshot 6"></div>
-              <div class="slide"><img src="assets/Screenshot_20260424-135900.png" alt="King's Rules Ludo screenshot 7"></div>
-              <div class="slide"><img src="assets/Screenshot_20260424-135940.png" alt="King's Rules Ludo screenshot 8"></div>
+              <div class="slide"><img src="assets/Screenshot_20260421-030546.png" alt="Ludo 1"></div>
+              <div class="slide"><img src="assets/Screenshot_20260422-144927.png" alt="Ludo 2"></div>
+              <div class="slide"><img src="assets/Screenshot_20260422-145005.png" alt="Ludo 3"></div>
+              <div class="slide"><img src="assets/Screenshot_20260424-134252.png" alt="Ludo 4"></div>
+              <div class="slide"><img src="assets/Screenshot_20260424-134830.png" alt="Ludo 5"></div>
+              <div class="slide"><img src="assets/Screenshot_20260424-135116.png" alt="Ludo 6"></div>
+              <div class="slide"><img src="assets/Screenshot_20260424-135900.png" alt="Ludo 7"></div>
+              <div class="slide"><img src="assets/Screenshot_20260424-135940.png" alt="Ludo 8"></div>
             </div>
-            <div class="carouselUI">
-              <div class="navBtnRow"><button class="iconBtn" aria-label="Previous screenshot">⬅️</button><button class="iconBtn" aria-label="Next screenshot">➡️</button></div>
-              <div class="dots" aria-label="Screenshot dots"></div>
-              <div style="width:92px;"></div>
+            <div class="carousel-ui">
+              <div class="nav-btns"><button class="ib" aria-label="Previous">⬅️</button><button class="ib" aria-label="Next">➡️</button></div>
+              <div class="dots"></div>
+              <div style="width:92px"></div>
             </div>
-          </div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:14px;">
-            <span class="pill">⏱️ Auto: 4s</span><span class="pill">🖱️ Hover pauses</span><span class="pill">⌨️ Arrow keys</span><span class="pill">📸 8 shots</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- About & Contact -->
-    <section class="infoRow" id="about">
-      <div class="card reveal">
-        <div class="sectionLabel">🏢 About</div>
+    <section class="info-grid" id="about">
+      <div class="card rv">
+        <div class="sec-label">🏢 About</div>
         <h2 style="margin:0 0 6px;">About Rockshell Studios</h2>
-        <p style="margin:0;color:var(--muted);">
-          Rockshell Studios is an indie game studio based in Dzodze, Ghana, led by
-          <b style="color:var(--text);">Gadese Samuel</b>. We build games with strong gameplay,
-          clean visuals, and a focus on player experience — from tactical shooters to strategic board games.
-        </p>
+        <p style="margin:0;color:var(--muted);">Rockshell Studios is an indie game studio based in Dzodze, Ghana, led by <b style="color:var(--text);">Gadese Samuel</b>. We build games with strong gameplay, clean visuals, and a focus on player experience — from tactical shooters to strategic board games.</p>
         <div class="divider"></div>
-        <h2 style="margin:0 0 6px;font-size:18px;">Mission</h2>
+        <h2 style="margin:0 0 6px;font-size:17px;">Mission</h2>
         <p style="margin:0;color:var(--muted);">Create fun, accessible games and improve them continuously through community feedback.</p>
         <div class="divider"></div>
-        <h2 style="margin:0 0 6px;font-size:18px;">Our Games</h2>
+        <h2 style="margin:0 0 6px;font-size:17px;">Our Games</h2>
         <ul>
           <li><b style="color:var(--purple);">Arena Shooter</b> — Tactical top-down cyberpunk action. 30 levels, 7 enemy types, 4 boss fights, endless mode, skins, bullets, shields, arena themes, trails</li>
           <li><b style="color:var(--text);">Morris Games</b> — Classic strategy board game</li>
           <li><b style="color:var(--text);">King's Rules Ludo</b> — Ludo with Back Kick, Line Kick, Home Kick, Double Dice, Prison, Bonuses, Safe Tiles, Walls, smart AI, tutorial, and online multiplayer</li>
         </ul>
       </div>
-      <div class="card reveal" id="contact">
-        <div class="sectionLabel">📬 Contact</div>
+      <div class="card rv" id="contact">
+        <div class="sec-label">📬 Contact</div>
         <h2 style="margin:0 0 6px;">Get in Touch</h2>
         <p style="margin:0;color:var(--muted);">Feedback, partnerships, or support — reach us directly:</p>
-        <div class="cta" style="margin-top:12px;">
+        <div class="cta" style="margin-top:10px;">
           <a class="btn alt" href="https://wa.me/233550519473" target="_blank" rel="noopener">💬 WhatsApp</a>
           <a class="btn" href="mailto:gadesesamuel35@gmail.com">📧 Email</a>
           <a class="btn" href="https://www.youtube.com/@RockshellStudios" target="_blank" rel="noopener">▶️ YouTube</a>
           <a class="btn" href="https://www.tiktok.com/@rockshell_studios?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">🎵 TikTok</a>
         </div>
         <div class="divider"></div>
-        <p style="margin:0;color:var(--muted);font-size:14px;">CEO: <b style="color:var(--text);">Gadese Samuel</b><br/>Location: <b style="color:var(--text);">Dzodze, Ghana</b></p>
+        <p style="margin:0;color:var(--muted);font-size:14px;">CEO: <b style="color:var(--text);">Gadese Samuel</b><br>Location: <b style="color:var(--text);">Dzodze, Ghana</b></p>
       </div>
     </section>
 
-    <div class="footer">
-      <div>
-        © <span id="y"></span> Rockshell Studios •
-        <a href="privacy-policy.html" style="text-decoration:none;">Privacy Policy</a> •
-        <a href="delete-account.html" style="text-decoration:none;">Delete Account</a>
+    <footer class="footer">
+      <div>© <span id="y"></span> Rockshell Studios • <a href="privacy-policy.html">Privacy Policy</a> • <a href="delete-account.html">Delete Account</a></div>
+      <div class="footer-links">
+        <a class="btn cyber" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.ArenaShooter" target="_blank" rel="noopener">⚔️ Arena Shooter</a>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.morrisgame1" target="_blank" rel="noopener">🧠 Morris Games</a>
+        <a class="btn warm" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.kingsrulesludo" target="_blank" rel="noopener">👑 King's Rules Ludo</a>
+        <a class="btn" href="https://www.youtube.com/@RockshellStudios" target="_blank" rel="noopener">▶️ YouTube</a>
+        <a class="btn" href="https://www.tiktok.com/@rockshell_studios?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">🎵 TikTok</a>
       </div>
-      <div class="social">
-        <a class="btn cyber" style="padding:10px 12px;border-radius:12px;" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.ArenaShooter" target="_blank" rel="noopener">⚔️ Arena Shooter</a>
-        <a class="btn" style="padding:10px 12px;border-radius:12px;" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.morrisgame1" target="_blank" rel="noopener">🧠 Morris Games</a>
-        <a class="btn warm" style="padding:10px 12px;border-radius:12px;" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.kingsrulesludo" target="_blank" rel="noopener">👑 King's Rules Ludo</a>
-        <a class="btn" style="padding:10px 12px;border-radius:12px;" href="https://www.youtube.com/@RockshellStudios" target="_blank" rel="noopener">▶️ YouTube</a>
-        <a class="btn" style="padding:10px 12px;border-radius:12px;" href="https://www.tiktok.com/@rockshell_studios?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">🎵 TikTok</a>
-      </div>
-    </div>
+    </footer>
   </div>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    const revealEls = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
-    }, { threshold: 0.12 });
-    revealEls.forEach(el => io.observe(el));
+    // Reveal on scroll
+    const io = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add("show"); }), { threshold: 0.12 });
+    document.querySelectorAll(".rv").forEach(el => io.observe(el));
 
+    // Carousels
     const carousels = [];
-
     document.querySelectorAll("[data-carousel]").forEach(root => {
       const slidesEl = root.querySelector(".slides");
-      const captionEl = root.querySelector(".caption");
+      const capEl = root.querySelector(".cap");
       const dotsEl = root.querySelector(".dots");
-      const prevBtn = root.querySelectorAll(".iconBtn")[0];
-      const nextBtn = root.querySelectorAll(".iconBtn")[1];
-      if (!slidesEl || !captionEl || !dotsEl) return;
+      const btns = root.querySelectorAll(".ib");
+      if (!slidesEl || !capEl || !dotsEl || btns.length < 2) return;
 
       const total = slidesEl.children.length;
-      let index = 0;
-
+      let idx = 0;
       const dots = [];
+
       for (let i = 0; i < total; i++) {
         const d = document.createElement("button");
-        d.className = "dot" + (i === 0 ? " active" : "");
-        d.setAttribute("aria-label", "Go to screenshot " + (i + 1));
-        d.addEventListener("click", () => goTo(i, true));
+        d.className = "dot" + (i === 0 ? " on" : "");
+        d.addEventListener("click", () => go(i, true));
         dotsEl.appendChild(d);
         dots.push(d);
       }
 
-      function updateUI() {
-        slidesEl.style.transform = "translateX(" + (-index * 100) + "%)";
-        captionEl.textContent = "Screenshot " + (index + 1) + " / " + total;
-        dots.forEach((d, i) => d.classList.toggle("active", i === index));
+      function up() {
+        slidesEl.style.transform = "translateX(" + (-idx * 100) + "%)";
+        capEl.textContent = "Screenshot " + (idx + 1) + " / " + total;
+        dots.forEach((d, i) => d.classList.toggle("on", i === idx));
       }
+      function go(i, user) { idx = (i + total) % total; up(); if (user) restart(); }
+      function next() { go(idx + 1, true); }
+      function prev() { go(idx - 1, true); }
 
-      function goTo(i, userAction) { index = (i + total) % total; updateUI(); if (userAction) restartAuto(); }
-      function next() { goTo(index + 1, true); }
-      function prev() { goTo(index - 1, true); }
-
-      prevBtn.addEventListener("click", prev);
-      nextBtn.addEventListener("click", next);
+      btns[0].addEventListener("click", prev);
+      btns[1].addEventListener("click", next);
 
       let timer = null;
-      const INTERVAL = 4000;
+      function start() { stop(); timer = setInterval(() => { idx = (idx + 1) % total; up(); }, 4000); }
+      function stop() { if (timer) clearInterval(timer); timer = null; }
+      function restart() { start(); }
 
-      function startAuto() { stopAuto(); timer = setInterval(() => { index = (index + 1) % total; updateUI(); }, INTERVAL); }
-      function stopAuto() { if (timer) clearInterval(timer); timer = null; }
-      function restartAuto() { startAuto(); }
+      root.addEventListener("mouseenter", stop);
+      root.addEventListener("mouseleave", start);
+      root.addEventListener("touchstart", stop, { passive: true });
+      root.addEventListener("touchend", start, { passive: true });
 
-      root.addEventListener("mouseenter", stopAuto);
-      root.addEventListener("mouseleave", startAuto);
-      root.addEventListener("touchstart", stopAuto, { passive: true });
-      root.addEventListener("touchend", startAuto, { passive: true });
+      up();
+      start();
 
-      updateUI();
-      startAuto();
-
-      carousels.push({ root, next, prev, isVisible: () => {
+      carousels.push({ root, next, prev, vis: () => {
         const r = root.getBoundingClientRect();
-        return r.top < window.innerHeight * 0.7 && r.bottom > window.innerHeight * 0.3;
+        return r.top < innerHeight * .7 && r.bottom > innerHeight * .3;
       }});
     });
 
-    window.addEventListener("keydown", (e) => {
+    // Arrow keys
+    addEventListener("keydown", e => {
       if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
-      let best = null;
-      let bestDist = Infinity;
+      let best = null, bd = Infinity;
       for (const c of carousels) {
-        if (!c.isVisible()) continue;
+        if (!c.vis()) continue;
         const r = c.root.getBoundingClientRect();
-        const dist = Math.abs(r.top + r.height / 2 - window.innerHeight / 2);
-        if (dist < bestDist) { bestDist = dist; best = c; }
+        const d = Math.abs(r.top + r.height / 2 - innerHeight / 2);
+        if (d < bd) { bd = d; best = c; }
       }
       if (!best) return;
-      if (e.key === "ArrowRight") best.next();
-      if (e.key === "ArrowLeft") best.prev();
+      e.key === "ArrowRight" ? best.next() : best.prev();
     });
   </script>
 </body>
