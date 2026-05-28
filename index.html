@@ -28,11 +28,7 @@
     "url": "https://lorla12.github.io/rockshellstudios/",
     "logo": "https://lorla12.github.io/rockshellstudios/assets/Developerlogo.png",
     "founder": { "@type": "Person", "name": "Gadese Samuel" },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Dzodze",
-      "addressCountry": "GH"
-    },
+    "address": { "@type": "PostalAddress", "addressLocality": "Dzodze", "addressCountry": "GH" },
     "sameAs": [
       "https://www.youtube.com/@RockshellStudios",
       "https://www.tiktok.com/@rockshell_studios?is_from_webapp=1&sender_device=pc"
@@ -47,54 +43,26 @@
     "name": "Rockshell Studios Games",
     "itemListElement": [
       {
-        "@type": "VideoGame",
-        "position": 1,
-        "name": "Arena Shooter",
-        "genre": ["Action", "Tactical Shooter"],
-        "applicationCategory": "Game",
-        "operatingSystem": "Android",
-        "playMode": "SinglePlayer",
+        "@type": "VideoGame", "position": 1, "name": "Arena Shooter",
+        "genre": ["Action", "Tactical Shooter"], "applicationCategory": "Game", "operatingSystem": "Android", "playMode": "SinglePlayer",
         "description": "Tactical top-down cyberpunk action game. 30 handcrafted levels across 3 deadly zones, 7 unique enemy types, 4 boss fights with multiple phases, endless mode with scaling waves, player skins, bullet types, shields, arena themes, and trail effects.",
         "creator": { "@type": "Organization", "name": "Rockshell Studios" },
-        "offers": {
-          "@type": "Offer",
-          "url": "https://play.google.com/store/apps/details?id=com.rockshellstudios.ArenaShooter",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
+        "offers": { "@type": "Offer", "url": "https://play.google.com/store/apps/details?id=com.rockshellstudios.ArenaShooter", "price": "0", "priceCurrency": "USD" }
       },
       {
-        "@type": "VideoGame",
-        "position": 2,
-        "name": "Morris Games",
-        "genre": "Strategy",
-        "applicationCategory": "Game",
-        "operatingSystem": "Android",
+        "@type": "VideoGame", "position": 2, "name": "Morris Games",
+        "genre": "Strategy", "applicationCategory": "Game", "operatingSystem": "Android",
         "creator": { "@type": "Organization", "name": "Rockshell Studios" },
-        "offers": {
-          "@type": "Offer",
-          "url": "https://play.google.com/store/apps/details?id=com.rockshellstudios.morrisgame1",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
+        "offers": { "@type": "Offer", "url": "https://play.google.com/store/apps/details?id=com.rockshellstudios.morrisgame1", "price": "0", "priceCurrency": "USD" }
       },
       {
-        "@type": "VideoGame",
-        "position": 3,
-        "name": "King's Rules Ludo",
-        "genre": "Board Game",
-        "applicationCategory": "Game",
-        "operatingSystem": "Android",
+        "@type": "VideoGame", "position": 3, "name": "King's Rules Ludo",
+        "genre": "Board Game", "applicationCategory": "Game", "operatingSystem": "Android",
         "playMode": ["SinglePlayer", "MultiPlayer"],
         "numberOfPlayers": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 4 },
         "description": "Ludo with unique King's Rules: Back Kick, Line Kick, Home Kick, Double Dice, Prison system, Bonus captures, Safe Tiles, Wall protection, smart AI opponents, in-game tutorial, coins & XP rewards, and online multiplayer with per-color chat.",
         "creator": { "@type": "Organization", "name": "Rockshell Studios" },
-        "offers": {
-          "@type": "Offer",
-          "url": "https://play.google.com/store/apps/details?id=com.rockshellstudios.kingsrulesludo",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
+        "offers": { "@type": "Offer", "url": "https://play.google.com/store/apps/details?id=com.rockshellstudios.kingsrulesludo", "price": "0", "priceCurrency": "USD" }
       }
     ]
   }
@@ -137,20 +105,14 @@
     .wrap{max-width:1100px;margin:0 auto;padding:22px}
 
     .glow{
-      position:fixed;inset:-40vh -40vw auto -40vw;
-      height:55vh;
+      position:fixed;inset:-40vh -40vw auto -40vw;height:55vh;
       pointer-events:none;
       background:radial-gradient(circle at 30% 40%,rgba(56,189,248,.25),transparent 55%),
                   radial-gradient(circle at 70% 30%,rgba(34,197,94,.20),transparent 55%);
-      filter:blur(26px);
-      opacity:.7;
-      z-index:-1;
+      filter:blur(26px);opacity:.7;z-index:-1;
       animation:floatGlow 10s ease-in-out infinite;
     }
-    @keyframes floatGlow{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(14px)}
-    }
+    @keyframes floatGlow{0%,100%{transform:translateY(0)}50%{transform:translateY(14px)}}
 
     /* ── NAV ── */
     .nav{
@@ -162,13 +124,9 @@
       background:linear-gradient(to bottom,rgba(7,10,18,.78),rgba(7,10,18,.50));
       z-index:20;
     }
-    .brand{
-      display:flex;align-items:center;gap:12px;
-      min-width:240px;
-    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:240px}
     .logo{
-      width:44px;height:44px;border-radius:14px;
-      overflow:hidden;
+      width:44px;height:44px;border-radius:14px;overflow:hidden;
       border:1px solid rgba(255,255,255,.14);
       box-shadow:0 14px 34px rgba(56,189,248,.12);
       background:linear-gradient(135deg,rgba(56,189,248,.18),rgba(34,197,94,.18));
@@ -178,47 +136,36 @@
     .brandtext{display:flex;flex-direction:column;gap:2px}
     .brandtext .name{font-weight:850;letter-spacing:.3px}
     .brandtext .sub{color:var(--muted);font-size:13px;margin-top:-2px}
-
     .navlinks{display:flex;gap:16px;flex-wrap:wrap;justify-content:flex-end}
     .navlinks a{
       color:var(--muted);text-decoration:none;
       padding:8px 10px;border-radius:999px;
       border:1px solid transparent;
-      transition:all .2s ease;
-      font-weight:650;font-size:14px;
+      transition:all .2s ease;font-weight:650;font-size:14px;
     }
     .navlinks a:hover{
-      color:var(--text);
-      border-color:rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      transform:translateY(-1px);
+      color:var(--text);border-color:rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);transform:translateY(-1px);
     }
 
     /* ── CARDS ── */
     .card{
       background:linear-gradient(180deg,var(--card),var(--card2));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
-      position:relative;
-      overflow:hidden;
+      border:1px solid var(--line);border-radius:var(--radius);
+      padding:18px;box-shadow:var(--shadow);
+      position:relative;overflow:hidden;
     }
     .card:before{
-      content:"";
-      position:absolute;inset:-1px;
+      content:"";position:absolute;inset:-1px;
       background:radial-gradient(600px 200px at 10% 0%,rgba(56,189,248,.14),transparent 55%),
                   radial-gradient(600px 200px at 90% 0%,rgba(34,197,94,.12),transparent 55%);
-      opacity:.65;
-      pointer-events:none;
+      opacity:.65;pointer-events:none;
     }
     .card>*{position:relative;z-index:1}
-
     .card.warm:before{
       background:radial-gradient(600px 200px at 10% 0%,rgba(251,191,36,.16),transparent 55%),
                   radial-gradient(600px 200px at 90% 0%,rgba(239,68,68,.12),transparent 55%);
     }
-
     .card.cyber{border-color:rgba(168,85,247,.15)}
     .card.cyber:before{
       background:radial-gradient(700px 250px at 0% 0%,rgba(168,85,247,.22),transparent 55%),
@@ -231,34 +178,21 @@
     .studioHero{padding:20px 0 6px;text-align:center}
     .studioHero .tag{
       display:inline-flex;gap:10px;align-items:center;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      padding:8px 12px;border-radius:999px;
-      color:var(--muted);font-size:14px;
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);
+      padding:8px 12px;border-radius:999px;color:var(--muted);font-size:14px;
       animation:popIn .7s ease both;
     }
-    @keyframes popIn{
-      from{opacity:0;transform:translateY(8px)}
-      to{opacity:1;transform:translateY(0)}
-    }
+    @keyframes popIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
     .studioHero h1{
       margin:14px 0 0;font-size:48px;line-height:1.08;
       letter-spacing:.2px;animation:fadeSlide .8s ease both;
     }
-    @keyframes fadeSlide{
-      from{opacity:0;transform:translateY(10px)}
-      to{opacity:1;transform:translateY(0)}
-    }
+    @keyframes fadeSlide{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
     .studioHero h1 span{
       background:linear-gradient(135deg,var(--brand2),var(--brand));
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-      background-clip:text;
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
     }
-    .studioHero .subtext{
-      margin:10px auto 0;color:var(--muted);max-width:60ch;
-      font-size:16px;animation:fadeSlide .9s ease both;
-    }
-
+    .studioHero .subtext{margin:10px auto 0;color:var(--muted);max-width:60ch;font-size:16px;animation:fadeSlide .9s ease both}
     .sectionLabel{
       display:inline-flex;gap:8px;align-items:center;
       color:var(--muted);font-size:13px;font-weight:750;
@@ -266,20 +200,13 @@
     }
 
     /* ── GAME GRID ── */
-    .gamesGrid{
-      display:grid;grid-template-columns:1fr 1fr;
-      gap:16px;margin:18px 0 26px;
-    }
-
+    .gamesGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0 26px}
     .gameCard{display:flex;flex-direction:column;min-height:380px}
     .gameCard .tag{
       display:inline-flex;gap:10px;align-items:center;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      padding:8px 12px;border-radius:999px;
-      color:var(--muted);font-size:14px;width:fit-content;
+      background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);
+      padding:8px 12px;border-radius:999px;color:var(--muted);font-size:14px;width:fit-content;
     }
-
     .titleRow{display:flex;align-items:center;gap:14px;margin-top:14px}
     .appIcon{
       width:74px;height:74px;border-radius:18px;overflow:hidden;
@@ -294,11 +221,7 @@
       border-color:rgba(168,85,247,.25);
     }
     .appIcon img{width:100%;height:100%;object-fit:cover;display:block}
-    @keyframes floatIcon{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-6px)}
-    }
-
+    @keyframes floatIcon{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
     .gameCard h1{margin:0;font-size:34px;line-height:1.10;letter-spacing:.2px}
     .gameCard .subtext{margin:10px 0 0;color:var(--muted);font-size:15px}
 
@@ -312,18 +235,9 @@
       background:rgba(255,255,255,.06);
       transition:all .18s ease;will-change:transform;font-size:14px;
     }
-    .btn.primary{
-      border-color:rgba(56,189,248,.25);
-      background:linear-gradient(135deg,rgba(56,189,248,.20),rgba(34,197,94,.18));
-    }
-    .btn.warm{
-      border-color:rgba(251,191,36,.25);
-      background:linear-gradient(135deg,rgba(251,191,36,.20),rgba(239,68,68,.16));
-    }
-    .btn.alt{
-      border-color:rgba(251,191,36,.22);
-      background:linear-gradient(135deg,rgba(251,191,36,.14),rgba(255,255,255,.05));
-    }
+    .btn.primary{border-color:rgba(56,189,248,.25);background:linear-gradient(135deg,rgba(56,189,248,.20),rgba(34,197,94,.18))}
+    .btn.warm{border-color:rgba(251,191,36,.25);background:linear-gradient(135deg,rgba(251,191,36,.20),rgba(239,68,68,.16))}
+    .btn.alt{border-color:rgba(251,191,36,.22);background:linear-gradient(135deg,rgba(251,191,36,.14),rgba(255,255,255,.05))}
     .btn.cyber{
       border-color:rgba(168,85,247,.30);
       background:linear-gradient(135deg,rgba(168,85,247,.22),rgba(236,72,153,.18));
@@ -338,21 +252,14 @@
     .pill{
       padding:7px 10px;border-radius:999px;
       border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      color:var(--muted);font-size:13px;font-weight:700;
+      background:rgba(255,255,255,.04);color:var(--muted);font-size:13px;font-weight:700;
     }
     .pill.purple{border-color:rgba(168,85,247,.18);background:rgba(168,85,247,.06);color:var(--purple)}
     .pill.pink{border-color:rgba(236,72,153,.18);background:rgba(236,72,153,.06);color:var(--pink)}
 
     ul{margin:10px 0 0 18px;color:var(--muted)}
     li{margin:6px 0}
-
-    .divider{
-      height:1px;
-      background:linear-gradient(to right,transparent,rgba(255,255,255,.16),transparent);
-      margin:14px 0;
-    }
-
+    .divider{height:1px;background:linear-gradient(to right,transparent,rgba(255,255,255,.16),transparent);margin:14px 0}
     .gameFooter{margin-top:auto;padding-top:14px}
     .infoRow{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 26px}
 
@@ -362,173 +269,73 @@
       position:relative;border-radius:18px;
       border:1px solid rgba(255,255,255,.12);
       overflow:hidden;background:rgba(255,255,255,.03);
-      box-shadow:0 20px 50px rgba(0,0,0,.35);
-      aspect-ratio:16/9;
+      box-shadow:0 20px 50px rgba(0,0,0,.35);aspect-ratio:16/9;
     }
-    .carousel.cyber{
-      border-color:rgba(168,85,247,.15);
-      box-shadow:0 20px 50px rgba(0,0,0,.35),0 0 40px rgba(168,85,247,.06);
-    }
-    .slides{
-      display:flex;width:100%;height:100%;
-      transition:transform .75s cubic-bezier(.2,.85,.2,1);
-    }
+    .carousel.cyber{border-color:rgba(168,85,247,.15);box-shadow:0 20px 50px rgba(0,0,0,.35),0 0 40px rgba(168,85,247,.06)}
+    .slides{display:flex;width:100%;height:100%;transition:transform .75s cubic-bezier(.2,.85,.2,1)}
     .slide{min-width:100%;height:100%;position:relative}
-    .slide img{
-      width:100%;height:100%;object-fit:contain;
-      background:rgba(0,0,0,.35);display:block;
-    }
-    .slide:after{
-      content:"";position:absolute;inset:0;
-      background:linear-gradient(to top,rgba(0,0,0,.45),transparent 60%);
-      pointer-events:none;
-    }
-    .carouselUI{
-      position:absolute;inset:auto 0 0 0;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:12px;gap:10px;pointer-events:none;
-    }
+    .slide img{width:100%;height:100%;object-fit:contain;background:rgba(0,0,0,.35);display:block}
+    .slide:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.45),transparent 60%);pointer-events:none}
+    .carouselUI{position:absolute;inset:auto 0 0 0;display:flex;align-items:center;justify-content:space-between;padding:12px;gap:10px;pointer-events:none}
     .dots{display:flex;gap:8px;align-items:center;justify-content:center;pointer-events:auto}
-    .dot{
-      width:10px;height:10px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.22);
-      background:rgba(255,255,255,.10);
-      cursor:pointer;transition:all .2s ease;
-    }
-    .dot.active{
-      width:22px;
-      background:linear-gradient(135deg,rgba(56,189,248,.8),rgba(34,197,94,.7));
-      border-color:rgba(56,189,248,.35);
-    }
-    .carousel.warm .dot.active{
-      background:linear-gradient(135deg,rgba(251,191,36,.85),rgba(239,68,68,.7));
-      border-color:rgba(251,191,36,.40);
-    }
-    .carousel.cyber .dot.active{
-      background:linear-gradient(135deg,rgba(168,85,247,.85),rgba(236,72,153,.7));
-      border-color:rgba(168,85,247,.40);
-    }
+    .dot{width:10px;height:10px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.10);cursor:pointer;transition:all .2s ease}
+    .dot.active{width:22px;background:linear-gradient(135deg,rgba(56,189,248,.8),rgba(34,197,94,.7));border-color:rgba(56,189,248,.35)}
+    .carousel.warm .dot.active{background:linear-gradient(135deg,rgba(251,191,36,.85),rgba(239,68,68,.7));border-color:rgba(251,191,36,.40)}
+    .carousel.cyber .dot.active{background:linear-gradient(135deg,rgba(168,85,247,.85),rgba(236,72,153,.7));border-color:rgba(168,85,247,.40)}
     .navBtnRow{display:flex;gap:8px;pointer-events:auto}
-    .iconBtn{
-      width:42px;height:42px;border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.06);
-      display:grid;place-items:center;cursor:pointer;
-      transition:all .18s ease;user-select:none;
-    }
+    .iconBtn{width:42px;height:42px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);display:grid;place-items:center;cursor:pointer;transition:all .18s ease;user-select:none}
     .iconBtn:hover{transform:translateY(-2px)}
     .iconBtn:active{transform:translateY(0px) scale(.99)}
-    .caption{
-      position:absolute;top:12px;left:12px;
-      padding:8px 10px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(0,0,0,.35);
-      color:rgba(255,255,255,.86);
-      font-weight:750;font-size:13px;
-      backdrop-filter:blur(8px);
-    }
+    .caption{position:absolute;top:12px;left:12px;padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.35);color:rgba(255,255,255,.86);font-weight:750;font-size:13px;backdrop-filter:blur(8px)}
 
     /* ── FOOTER ── */
-    .footer{
-      border-top:1px solid var(--line);
-      padding:18px 0;color:var(--muted);
-      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
-      align-items:center;
-    }
+    .footer{border-top:1px solid var(--line);padding:18px 0;color:var(--muted);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
     .social{display:flex;gap:10px;flex-wrap:wrap}
 
     /* ── REVEAL ── */
-    .reveal{
-      opacity:0;transform:translateY(10px);
-      transition:opacity .7s ease,transform .7s ease;
-    }
+    .reveal{opacity:0;transform:translateY(10px);transition:opacity .7s ease,transform .7s ease}
     .reveal.show{opacity:1;transform:translateY(0)}
 
     /* ── BADGES ── */
     .newBadge{
-      display:inline-flex;align-items:center;gap:5px;
-      padding:3px 9px;border-radius:999px;
+      display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:999px;
       background:linear-gradient(135deg,rgba(34,197,94,.25),rgba(56,189,248,.18));
-      border:1px solid rgba(34,197,94,.30);
-      color:#22c55e;font-size:11px;font-weight:800;
-      text-transform:uppercase;letter-spacing:.8px;margin-left:8px;
-      animation:pulse 2.5s ease-in-out infinite;
+      border:1px solid rgba(34,197,94,.30);color:#22c55e;font-size:11px;font-weight:800;
+      text-transform:uppercase;letter-spacing:.8px;margin-left:8px;animation:pulse 2.5s ease-in-out infinite;
     }
-    .newBadge.hot{
-      background:linear-gradient(135deg,rgba(168,85,247,.30),rgba(236,72,153,.22));
-      border-color:rgba(168,85,247,.35);color:var(--purple);
-    }
+    .newBadge.hot{background:linear-gradient(135deg,rgba(168,85,247,.30),rgba(236,72,153,.22));border-color:rgba(168,85,247,.35);color:var(--purple)}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.65}}
 
     /* ── CHIPS ── */
     .featureChips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-    .featureChip{
-      padding:5px 10px;border-radius:999px;
-      border:1px solid rgba(251,191,36,.18);
-      background:linear-gradient(135deg,rgba(251,191,36,.08),rgba(239,68,68,.06));
-      color:var(--warn);font-size:12px;font-weight:700;letter-spacing:.2px;
-    }
-    .featureChip.cool{
-      border-color:rgba(56,189,248,.18);
-      background:linear-gradient(135deg,rgba(56,189,248,.08),rgba(34,197,94,.06));
-      color:var(--brand2);
-    }
-    .featureChip.green{
-      border-color:rgba(34,197,94,.18);
-      background:linear-gradient(135deg,rgba(34,197,94,.08),rgba(34,197,94,.04));
-      color:var(--brand);
-    }
-    .featureChip.cyber{
-      border-color:rgba(168,85,247,.20);
-      background:linear-gradient(135deg,rgba(168,85,247,.10),rgba(236,72,153,.06));
-      color:var(--purple);
-    }
-    .featureChip.pink{
-      border-color:rgba(236,72,153,.18);
-      background:linear-gradient(135deg,rgba(236,72,153,.08),rgba(239,68,68,.06));
-      color:var(--pink);
-    }
+    .featureChip{padding:5px 10px;border-radius:999px;border:1px solid rgba(251,191,36,.18);background:linear-gradient(135deg,rgba(251,191,36,.08),rgba(239,68,68,.06));color:var(--warn);font-size:12px;font-weight:700;letter-spacing:.2px}
+    .featureChip.cool{border-color:rgba(56,189,248,.18);background:linear-gradient(135deg,rgba(56,189,248,.08),rgba(34,197,94,.06));color:var(--brand2)}
+    .featureChip.green{border-color:rgba(34,197,94,.18);background:linear-gradient(135deg,rgba(34,197,94,.08),rgba(34,197,94,.04));color:var(--brand)}
+    .featureChip.cyber{border-color:rgba(168,85,247,.20);background:linear-gradient(135deg,rgba(168,85,247,.10),rgba(236,72,153,.06));color:var(--purple)}
+    .featureChip.pink{border-color:rgba(236,72,153,.18);background:linear-gradient(135deg,rgba(236,72,153,.08),rgba(239,68,68,.06));color:var(--pink)}
 
     /* ── MODE BADGES ── */
     .modeRow{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
-    .modeBadge{
-      padding:8px 14px;border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      font-size:13px;font-weight:700;
-      display:flex;align-items:center;gap:8px;
-    }
+    .modeBadge{padding:8px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px}
     .modeBadge .modeIcon{font-size:20px}
     .modeBadge .modeLabel{color:var(--text)}
     .modeBadge .modeSub{color:var(--muted);font-size:12px;font-weight:500}
     .modeBadge.cyber{border-color:rgba(168,85,247,.18);background:rgba(168,85,247,.06)}
-
     .ss-section{margin:0 0 26px}
 
     /* ── FEATURED ARENA CARD ── */
     .featuredCard{display:flex;flex-direction:column;min-height:auto}
-    .featuredCard .heroLayout{
-      display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;
-    }
+    .featuredCard .heroLayout{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
     .featuredCard .heroRight{display:flex;flex-direction:column;gap:6px}
     .featuredCard h1{
       margin:0;font-size:40px;line-height:1.08;letter-spacing:.2px;
       background:linear-gradient(135deg,var(--purple),var(--pink),var(--red));
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-      background-clip:text;
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
     }
-    .featuredCard .subtext{
-      margin:4px 0 0;color:var(--muted);font-size:16px;line-height:1.55;
-    }
+    .featuredCard .subtext{margin:4px 0 0;color:var(--muted);font-size:16px;line-height:1.55}
 
-    .enemyGrid{
-      display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-top:12px;
-    }
-    .enemyCard{
-      padding:10px 12px;border-radius:12px;
-      border:1px solid rgba(168,85,247,.12);
-      background:rgba(168,85,247,.04);text-align:center;
-    }
+    .enemyGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-top:12px}
+    .enemyCard{padding:10px 12px;border-radius:12px;border:1px solid rgba(168,85,247,.12);background:rgba(168,85,247,.04);text-align:center}
     .enemyCard .eIcon{font-size:22px}
     .enemyCard .eName{font-size:13px;font-weight:700;color:var(--text);margin:2px 0 0}
     .enemyCard .eDesc{font-size:11px;color:var(--muted);line-height:1.4}
@@ -538,30 +345,14 @@
     .starRow .starLabel{font-size:13px;color:var(--muted);margin-left:4px}
 
     .zoneTimeline{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
-    .zoneCard{
-      flex:1;min-width:160px;padding:12px 14px;border-radius:14px;
-      border:1px solid rgba(168,85,247,.12);background:rgba(255,255,255,.03);
-    }
+    .zoneCard{flex:1;min-width:160px;padding:12px 14px;border-radius:14px;border:1px solid rgba(168,85,247,.12);background:rgba(255,255,255,.03)}
     .zoneCard .zIcon{font-size:22px}
     .zoneCard .zName{font-size:14px;font-weight:700;color:var(--text);margin:2px 0 2px}
     .zoneCard .zDesc{font-size:12px;color:var(--muted);line-height:1.4}
 
-    /* ── COLLAPSIBLE SECTIONS (mobile) ── */
-    .collapseToggle{
-      display:none;
-      width:100%;padding:10px 14px;border-radius:12px;
-      border:1px solid rgba(168,85,247,.18);
-      background:rgba(168,85,247,.06);
-      color:var(--purple);font-weight:700;font-size:13px;
-      cursor:pointer;text-align:center;
-      margin-top:10px;
-      transition:all .15s ease;
-    }
-    .collapseToggle:hover{background:rgba(168,85,247,.10)}
-
-    /* ═══════════════════════════════════════ */
-    /* MOBILE: Tablet breakpoint              */
-    /* ═══════════════════════════════════════ */
+    /* ═══════════════════════════════════ */
+    /* TABLET                               */
+    /* ═══════════════════════════════════ */
     @media(max-width:980px){
       .gamesGrid{grid-template-columns:1fr}
       .infoRow{grid-template-columns:1fr}
@@ -573,122 +364,126 @@
       .enemyGrid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}
     }
 
-    /* ═══════════════════════════════════════ */
-    /* MOBILE: Phone breakpoint — THE FIX     */
-    /* ═══════════════════════════════════════ */
+    /* ═══════════════════════════════════ */
+    /* PHONE — compact, nothing hidden     */
+    /* ═══════════════════════════════════ */
     @media(max-width:600px){
 
-      /* 1. NAV: stop sticky, hide footer links, shrink */
+      /* 1. NAV: not sticky, smaller, ALL links visible */
       .nav{
         position:relative;
         padding:10px 0;
-        gap:8px;
+        gap:6px;
       }
-      .navHide{display:none}
-      .brand{min-width:auto}
-      .logo{width:36px;height:36px;border-radius:11px}
-      .brandtext .name{font-size:15px}
-      .brandtext .sub{font-size:11px}
-      .navlinks{gap:4px}
-      .navlinks a{padding:6px 8px;font-size:12px;border-radius:10px}
+      .brand{min-width:auto;gap:8px}
+      .logo{width:34px;height:34px;border-radius:10px}
+      .brandtext .name{font-size:14px}
+      .brandtext .sub{font-size:10px}
+      .navlinks{gap:3px;justify-content:flex-end}
+      .navlinks a{padding:5px 7px;font-size:11px;border-radius:8px}
 
-      /* 2. WRAPPER: less padding */
-      .wrap{padding:14px}
+      /* 2. WRAPPER */
+      .wrap{padding:12px}
 
-      /* 3. HERO: smaller */
-      .studioHero h1{font-size:28px}
-      .studioHero .tag{font-size:12px;padding:6px 10px}
-      .studioHero .subtext{font-size:14px}
+      /* 3. HERO */
+      .studioHero h1{font-size:26px}
+      .studioHero .tag{font-size:11px;padding:5px 9px;gap:6px}
+      .studioHero .subtext{font-size:13px}
 
-      /* 4. CARDS: tighter padding */
-      .card{padding:14px;border-radius:14px}
+      /* 4. CARDS */
+      .card{padding:12px;border-radius:14px}
 
       /* 5. GAME CARDS: no forced height */
       .gameCard{min-height:auto}
 
-      /* 6. FEATURED ARENA: compact everything */
-      .featuredCard .heroLayout{gap:12px}
-      .appIcon.large{width:68px;height:68px;border-radius:16px}
-      .featuredCard h1{font-size:26px}
-      .featuredCard .subtext{font-size:14px}
+      /* 6. FEATURED ARENA */
+      .featuredCard .heroLayout{gap:10px}
+      .appIcon.large{width:60px;height:60px;border-radius:15px}
+      .featuredCard h1{font-size:24px}
+      .featuredCard .subtext{font-size:13px}
 
-      .modeRow{gap:6px}
-      .modeBadge{padding:7px 10px;border-radius:10px;font-size:12px}
-      .modeBadge .modeIcon{font-size:16px}
-      .modeBadge .modeSub{font-size:11px}
+      /* 7. MODES */
+      .modeRow{gap:5px}
+      .modeBadge{padding:6px 8px;border-radius:9px;font-size:11px}
+      .modeBadge .modeIcon{font-size:15px}
+      .modeBadge .modeSub{font-size:10px}
 
-      .featureChips{gap:4px;margin-top:8px}
-      .featureChip{padding:4px 8px;font-size:11px;border-radius:999px}
+      /* 8. CHIPS */
+      .featureChips{gap:4px;margin-top:7px}
+      .featureChip{padding:3px 7px;font-size:10px}
 
-      .gameCard h1{font-size:24px}
-      .titleRow{gap:10px;margin-top:10px}
-      .appIcon{width:56px;height:56px;border-radius:14px}
-      .gameCard .subtext{font-size:13px;margin-top:6px}
+      /* 9. GAME CARD TITLES */
+      .gameCard h1{font-size:22px}
+      .titleRow{gap:8px;margin-top:8px}
+      .appIcon{width:50px;height:50px;border-radius:13px}
+      .gameCard .subtext{font-size:12px;margin-top:5px}
+      .gameCard .tag{font-size:11px;padding:5px 8px}
 
-      /* 7. HIDE verbose sections, show toggle buttons */
-      .mobileHide{display:none!important}
-      .collapseToggle{display:block}
+      /* 10. ENEMIES: 4 cols, compact */
+      .enemyGrid{grid-template-columns:repeat(4,1fr);gap:4px;margin-top:7px}
+      .enemyCard{padding:6px 3px;border-radius:8px}
+      .enemyCard .eIcon{font-size:16px}
+      .enemyCard .eName{font-size:10px}
+      .enemyCard .eDesc{font-size:9px;line-height:1.3}
 
-      /* 8. Enemy grid: 4 cols, tiny */
-      .enemyGrid{grid-template-columns:repeat(4,1fr);gap:5px;margin-top:8px}
-      .enemyCard{padding:7px 4px;border-radius:8px}
-      .enemyCard .eIcon{font-size:18px}
-      .enemyCard .eName{font-size:11px}
-      .enemyCard .eDesc{display:none}
-
-      /* 9. Zone timeline: horizontal scroll, not stacked */
+      /* 11. ZONES: horizontal scroll */
       .zoneTimeline{
-        flex-wrap:nowrap;
-        overflow-x:auto;
-        gap:8px;
-        margin-top:8px;
-        padding-bottom:4px;
-        -webkit-overflow-scrolling:touch;
+        flex-wrap:nowrap;overflow-x:auto;gap:6px;margin-top:7px;
+        padding-bottom:4px;-webkit-overflow-scrolling:touch;
         scrollbar-width:none;
       }
       .zoneTimeline::-webkit-scrollbar{display:none}
-      .zoneCard{min-width:200px;flex:0 0 auto;padding:10px 12px;border-radius:12px}
-      .zoneCard .zIcon{font-size:18px}
-      .zoneCard .zName{font-size:13px}
-      .zoneCard .zDesc{font-size:11px}
+      .zoneCard{min-width:180px;flex:0 0 auto;padding:8px 10px;border-radius:10px}
+      .zoneCard .zIcon{font-size:16px}
+      .zoneCard .zName{font-size:12px}
+      .zoneCard .zDesc{font-size:10px}
 
-      /* 10. Star rows: smaller */
-      .starRow .star{font-size:14px}
-      .starRow .starLabel{font-size:12px}
+      /* 12. STARS */
+      .starRow .star{font-size:13px}
+      .starRow .starLabel{font-size:11px}
+      .starRow{gap:4px;margin-top:5px}
 
-      /* 11. KPI pills: smaller */
-      .kpi{gap:6px;margin-top:10px}
-      .pill{padding:5px 8px;font-size:11px;border-radius:999px}
+      /* 13. SECTION LABELS */
+      .sectionLabel{font-size:10px;letter-spacing:1px}
 
-      /* 12. Buttons: smaller */
-      .btn{padding:10px 12px;font-size:13px;border-radius:12px;gap:8px}
-      .cta{gap:8px;margin-top:12px}
+      /* 14. KPI PILLS */
+      .kpi{gap:4px;margin-top:8px}
+      .pill{padding:4px 7px;font-size:10px}
 
-      /* 13. Section labels */
-      .sectionLabel{font-size:11px}
+      /* 15. BUTTONS */
+      .btn{padding:9px 10px;font-size:12px;border-radius:11px;gap:6px}
+      .cta{gap:6px;margin-top:10px}
 
-      /* 14. Info row cards */
-      .infoRow{gap:12px;margin:0 0 18px}
+      /* 16. INFO ROW */
+      .infoRow{gap:10px;margin:0 0 14px}
 
-      /* 15. Footer: stack vertically */
-      .footer{flex-direction:column;text-align:center;gap:12px;padding:14px 0}
-      .social{justify-content:center}
+      /* 17. FOOTER: stack */
+      .footer{flex-direction:column;text-align:center;gap:10px;padding:12px 0}
+      .social{justify-content:center;flex-wrap:wrap}
+      .social .btn{padding:8px 10px;font-size:11px;border-radius:10px}
 
-      /* 16. Carousel controls */
-      .iconBtn{width:36px;height:36px;border-radius:11px}
-      .caption{font-size:11px;padding:6px 8px;top:8px;left:8px}
-      .dot{width:8px;height:8px}
-      .dot.active{width:18px}
+      /* 18. CAROUSEL */
+      .carousel{aspect-ratio:16/10}
+      .iconBtn{width:34px;height:34px;border-radius:10px}
+      .caption{font-size:10px;padding:5px 7px;top:6px;left:6px}
+      .dot{width:7px;height:7px}
+      .dot.active{width:16px}
 
-      /* 17. SS sections: less bottom margin */
-      .ss-section{margin:0 0 18px}
+      /* 19. SS SECTIONS */
+      .ss-section{margin:0 0 14px}
 
-      /* 18. Divider */
-      .divider{margin:10px 0}
+      /* 20. DIVIDERS */
+      .divider{margin:8px 0}
 
-      /* 19. Lists */
-      ul{margin:6px 0 0 14px;font-size:13px}
-      li{margin:4px 0}
+      /* 21. LISTS */
+      ul{margin:6px 0 0 14px;font-size:12px}
+      li{margin:3px 0}
+
+      /* 22. STAR RATING / DIFF / STORE sections */
+      .featuredCard div[style*="font-size:14px;font-weight:700"]{
+        font-size:12px !important;
+        margin-top:10px !important;
+      }
     }
   </style>
 </head>
@@ -697,7 +492,7 @@
   <div class="glow"></div>
 
   <div class="wrap">
-    <!-- NAV: hide Privacy/Delete on mobile -->
+    <!-- NAV: all links always visible -->
     <div class="nav">
       <div class="brand">
         <div class="logo">
@@ -714,8 +509,8 @@
         <a href="#ss-arena">Screenshots</a>
         <a href="#about">Studio</a>
         <a href="#contact">Contact</a>
-        <a href="privacy-policy.html" class="navHide">Privacy</a>
-        <a href="delete-account.html" class="navHide">Delete Account</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="delete-account.html">Delete</a>
       </div>
     </div>
 
@@ -723,14 +518,12 @@
     <section class="studioHero reveal" id="games">
       <div class="tag">🎮 Indie Game Studio from Ghana</div>
       <h1>Play Our <span>Games</span></h1>
-      <p class="subtext">
-        Tactical shooters, strategic board games, and more — crafted with care for Android.
-      </p>
+      <p class="subtext">Tactical shooters, strategic board games, and more — crafted with care for Android.</p>
     </section>
 
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- ARENA SHOOTER — Featured Card               -->
-    <!-- ═══════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════ -->
+    <!-- ARENA SHOOTER — Featured Card           -->
+    <!-- ═══════════════════════════════════════ -->
     <section class="card cyber featuredCard reveal" id="arena" style="margin:0 0 18px;">
       <div class="tag" style="border-color:rgba(168,85,247,.18);">⚔️ Tactical Action • Top-Down Shooter <span class="newBadge hot">🔥 Featured</span></div>
 
@@ -740,33 +533,17 @@
         </div>
         <div class="heroRight">
           <h1>ARENA SHOOTER</h1>
-          <p class="subtext">
-            Dive into the Void. Fight rogue AI. Survive the arena. 30 handcrafted levels, 7 enemy types, boss fights, and endless mode.
-          </p>
+          <p class="subtext">Dive into the Void. Fight rogue AI. Survive the arena. 30 handcrafted levels, 7 enemy types, boss fights, and endless mode.</p>
         </div>
       </div>
 
-      <!-- Game Modes -->
       <div class="modeRow">
-        <div class="modeBadge cyber">
-          <span class="modeIcon">🗺️</span>
-          <div><div class="modeLabel">Campaign</div><div class="modeSub">30 levels · 3 zones</div></div>
-        </div>
-        <div class="modeBadge cyber">
-          <span class="modeIcon">♾️</span>
-          <div><div class="modeLabel">Endless</div><div class="modeSub">Scaling waves</div></div>
-        </div>
-        <div class="modeBadge cyber">
-          <span class="modeIcon">👹</span>
-          <div><div class="modeLabel">Bosses</div><div class="modeSub">4 unique fights</div></div>
-        </div>
-        <div class="modeBadge cyber">
-          <span class="modeIcon">🏪</span>
-          <div><div class="modeLabel">Store</div><div class="modeSub">Skins · Bullets · Shields</div></div>
-        </div>
+        <div class="modeBadge cyber"><span class="modeIcon">🗺️</span><div><div class="modeLabel">Campaign</div><div class="modeSub">30 levels · 3 zones</div></div></div>
+        <div class="modeBadge cyber"><span class="modeIcon">♾️</span><div><div class="modeLabel">Endless</div><div class="modeSub">Scaling waves</div></div></div>
+        <div class="modeBadge cyber"><span class="modeIcon">👹</span><div><div class="modeLabel">Bosses</div><div class="modeSub">4 unique fights</div></div></div>
+        <div class="modeBadge cyber"><span class="modeIcon">🏪</span><div><div class="modeLabel">Store</div><div class="modeSub">Skins · Bullets · Shields</div></div></div>
       </div>
 
-      <!-- Key Feature Chips (always visible) -->
       <div class="featureChips">
         <span class="featureChip cyber">🎯 Grid Movement</span>
         <span class="featureChip cyber">🧱 Cover System</span>
@@ -782,37 +559,23 @@
         <span class="featureChip cyber">💾 Auto-Save</span>
       </div>
 
-      <!-- STAR RATING: hidden on mobile, tap to show -->
-      <div class="mobileHide" id="arenaStars">
-        <div style="margin-top:14px;">
-          <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;">⭐ 3-Star Rating Per Level</div>
-          <div class="starRow"><span class="star">⭐</span><span class="starLabel">Complete the level</span></div>
-          <div class="starRow"><span class="star">⭐⭐</span><span class="starLabel">Take no damage</span></div>
-          <div class="starRow"><span class="star">⭐⭐⭐</span><span class="starLabel">Speedrun bonus time</span></div>
-        </div>
+      <!-- Star Rating -->
+      <div style="margin-top:14px;">
+        <div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;">⭐ 3-Star Rating Per Level</div>
+        <div class="starRow"><span class="star">⭐</span><span class="starLabel">Complete the level</span></div>
+        <div class="starRow"><span class="star">⭐⭐</span><span class="starLabel">Take no damage</span></div>
+        <div class="starRow"><span class="star">⭐⭐⭐</span><span class="starLabel">Speedrun bonus time</span></div>
       </div>
 
-      <!-- ZONE TIMELINE: always visible but compact on mobile -->
+      <!-- Zone Timeline -->
       <div style="font-size:14px;font-weight:700;color:var(--text);margin-top:16px;margin-bottom:2px;">🗺️ Campaign Zones</div>
       <div class="zoneTimeline">
-        <div class="zoneCard">
-          <div class="zIcon">🟢</div>
-          <div class="zName">Zone 1: Initiation</div>
-          <div class="zDesc">Learn the basics. Face the Sentinel boss.</div>
-        </div>
-        <div class="zoneCard">
-          <div class="zIcon">🟡</div>
-          <div class="zName">Zone 2: Uprising</div>
-          <div class="zDesc">New threats. Dodge snipers and rushers.</div>
-        </div>
-        <div class="zoneCard">
-          <div class="zIcon">🔴</div>
-          <div class="zName">Zone 3: Void</div>
-          <div class="zDesc">Chaos mode. Enemies scale hard. Final boss.</div>
-        </div>
+        <div class="zoneCard"><div class="zIcon">🟢</div><div class="zName">Zone 1: Initiation</div><div class="zDesc">Learn the basics. Face the Sentinel boss.</div></div>
+        <div class="zoneCard"><div class="zIcon">🟡</div><div class="zName">Zone 2: Uprising</div><div class="zDesc">New threats. Dodge snipers and rushers.</div></div>
+        <div class="zoneCard"><div class="zIcon">🔴</div><div class="zName">Zone 3: Void</div><div class="zDesc">Chaos mode. Enemies scale hard. Final boss.</div></div>
       </div>
 
-      <!-- ENEMY GRID: always visible but compact on mobile -->
+      <!-- Enemy Grid -->
       <div style="font-size:14px;font-weight:700;color:var(--text);margin-top:16px;margin-bottom:2px;">👁️ 7 Enemy Types</div>
       <div class="enemyGrid">
         <div class="enemyCard"><div class="eIcon">🔴</div><div class="eName">Basic</div><div class="eDesc">4-dir rotating shooter</div></div>
@@ -824,53 +587,38 @@
         <div class="enemyCard"><div class="eIcon">🌀</div><div class="eName">Teleporter</div><div class="eDesc">Blinks around arena</div></div>
       </div>
 
-      <!-- DIFFICULTY: hidden on mobile -->
-      <div class="mobileHide" id="arenaDiff">
-        <div style="font-size:14px;font-weight:700;color:var(--text);margin-top:16px;margin-bottom:6px;">⚡ Difficulty Modes</div>
-        <div class="modeRow">
-          <div class="modeBadge" style="border-color:rgba(34,197,94,.18);background:rgba(34,197,94,.05);">
-            <span class="modeIcon">🟢</span><div><div class="modeLabel">Easy</div><div class="modeSub">5 lives · x0.5 score</div></div>
-          </div>
-          <div class="modeBadge" style="border-color:rgba(56,189,248,.18);background:rgba(56,189,248,.05);">
-            <span class="modeIcon">🔵</span><div><div class="modeLabel">Normal</div><div class="modeSub">3 lives · x1.0 score</div></div>
-          </div>
-          <div class="modeBadge" style="border-color:rgba(239,68,68,.18);background:rgba(239,68,68,.05);">
-            <span class="modeIcon">🔴</span><div><div class="modeLabel">Hard</div><div class="modeSub">2 lives · x2.0 score</div></div>
-          </div>
-        </div>
+      <!-- Difficulty -->
+      <div style="font-size:14px;font-weight:700;color:var(--text);margin-top:16px;margin-bottom:6px;">⚡ Difficulty Modes</div>
+      <div class="modeRow">
+        <div class="modeBadge" style="border-color:rgba(34,197,94,.18);background:rgba(34,197,94,.05);"><span class="modeIcon">🟢</span><div><div class="modeLabel">Easy</div><div class="modeSub">5 lives · x0.5 score</div></div></div>
+        <div class="modeBadge" style="border-color:rgba(56,189,248,.18);background:rgba(56,189,248,.05);"><span class="modeIcon">🔵</span><div><div class="modeLabel">Normal</div><div class="modeSub">3 lives · x1.0 score</div></div></div>
+        <div class="modeBadge" style="border-color:rgba(239,68,68,.18);background:rgba(239,68,68,.05);"><span class="modeIcon">🔴</span><div><div class="modeLabel">Hard</div><div class="modeSub">2 lives · x2.0 score</div></div></div>
       </div>
 
-      <!-- STORE: hidden on mobile -->
-      <div class="mobileHide" id="arenaStore">
-        <div style="font-size:14px;font-weight:700;color:var(--text);margin-top:16px;margin-bottom:6px;">🏪 Store — Unlock & Equip</div>
-        <div class="featureChips">
-          <span class="featureChip cyber">🎨 Player Skins</span>
-          <span class="featureChip pink">🔫 Laser</span>
-          <span class="featureChip pink">⚡ Plasma</span>
-          <span class="featureChip pink">🚀 Rocket</span>
-          <span class="featureChip pink">🌀 Void Beam</span>
-          <span class="featureChip pink">✨ Star Burst</span>
-          <span class="featureChip cyber">🛡️ Absorb Shield</span>
-          <span class="featureChip cyber">🔄 Reflect Shield</span>
-          <span class="featureChip cyber">🕳️ Void Phase</span>
-          <span class="featureChip cyber">🏙️ Neon City</span>
-          <span class="featureChip cyber">🌌 Void Space</span>
-          <span class="featureChip cyber">💻 Digital Matrix</span>
-          <span class="featureChip cyber">💎 Crystal Cave</span>
-          <span class="featureChip pink">🔥 Blue Flame</span>
-          <span class="featureChip pink">⚡ Lightning</span>
-          <span class="featureChip pink">🌈 Rainbow Wave</span>
-        </div>
+      <!-- Store -->
+      <div style="font-size:14px;font-weight:700;color:var(--text);margin-top:16px;margin-bottom:6px;">🏪 Store — Unlock & Equip</div>
+      <div class="featureChips">
+        <span class="featureChip cyber">🎨 Player Skins</span>
+        <span class="featureChip pink">🔫 Laser</span>
+        <span class="featureChip pink">⚡ Plasma</span>
+        <span class="featureChip pink">🚀 Rocket</span>
+        <span class="featureChip pink">🌀 Void Beam</span>
+        <span class="featureChip pink">✨ Star Burst</span>
+        <span class="featureChip cyber">🛡️ Absorb Shield</span>
+        <span class="featureChip cyber">🔄 Reflect Shield</span>
+        <span class="featureChip cyber">🕳️ Void Phase</span>
+        <span class="featureChip cyber">🏙️ Neon City</span>
+        <span class="featureChip cyber">🌌 Void Space</span>
+        <span class="featureChip cyber">💻 Digital Matrix</span>
+        <span class="featureChip cyber">💎 Crystal Cave</span>
+        <span class="featureChip pink">🔥 Blue Flame</span>
+        <span class="featureChip pink">⚡ Lightning</span>
+        <span class="featureChip pink">🌈 Rainbow Wave</span>
       </div>
-
-      <!-- Mobile-only: show more button -->
-      <button class="collapseToggle" id="arenaMoreBtn" onclick="toggleArenaDetails()">📖 Show More Details</button>
 
       <!-- CTA -->
       <div class="cta" style="margin-top:16px;">
-        <a class="btn cyber" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.ArenaShooter" target="_blank" rel="noopener">
-          ⚔️ Download on Play Store
-        </a>
+        <a class="btn cyber" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.ArenaShooter" target="_blank" rel="noopener">⚔️ Download on Play Store</a>
         <a class="btn" href="#ss-arena">🖼️ Screenshots</a>
       </div>
 
@@ -907,10 +655,7 @@
               <div class="slide"><img src="ARENA_assets/icon.png" alt="Arena Shooter app icon"></div>
             </div>
             <div class="carouselUI">
-              <div class="navBtnRow">
-                <button class="iconBtn" aria-label="Previous screenshot">⬅️</button>
-                <button class="iconBtn" aria-label="Next screenshot">➡️</button>
-              </div>
+              <div class="navBtnRow"><button class="iconBtn" aria-label="Previous screenshot">⬅️</button><button class="iconBtn" aria-label="Next screenshot">➡️</button></div>
               <div class="dots" aria-label="Screenshot dots"></div>
               <div style="width:92px;"></div>
             </div>
@@ -926,7 +671,6 @@
 
     <!-- Board Game Cards -->
     <div class="gamesGrid">
-      <!-- Morris Games -->
       <div class="card gameCard reveal">
         <div class="tag">🧠 Strategy • Morris Games</div>
         <div class="titleRow">
@@ -938,11 +682,7 @@
           <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.morrisgame1" target="_blank" rel="noopener">✅ Download on Play Store</a>
           <a class="btn" href="#ss-morris">🖼️ Screenshots</a>
         </div>
-        <div class="kpi">
-          <span class="pill">🧠 Strategy</span>
-          <span class="pill">⚡ Fast matches</span>
-          <span class="pill">📱 Android</span>
-        </div>
+        <div class="kpi"><span class="pill">🧠 Strategy</span><span class="pill">⚡ Fast matches</span><span class="pill">📱 Android</span></div>
         <div class="gameFooter">
           <div class="divider"></div>
           <h2 style="margin:0 0 4px;font-size:16px;">Highlights</h2>
@@ -954,7 +694,6 @@
         </div>
       </div>
 
-      <!-- King's Rules Ludo -->
       <div class="card warm gameCard reveal">
         <div class="tag">🎲 Board Game • King's Rules Ludo <span class="newBadge">New</span></div>
         <div class="titleRow">
@@ -980,12 +719,7 @@
           <a class="btn warm" href="https://play.google.com/store/apps/details?id=com.rockshellstudios.kingsrulesludo" target="_blank" rel="noopener">👑 Download on Play Store</a>
           <a class="btn" href="#ss-ludo">🖼️ Screenshots</a>
         </div>
-        <div class="kpi">
-          <span class="pill">🎲 Ludo</span>
-          <span class="pill">👑 King's Rules</span>
-          <span class="pill">🤖 AI + 🌐 Online</span>
-          <span class="pill">📱 Android</span>
-        </div>
+        <div class="kpi"><span class="pill">🎲 Ludo</span><span class="pill">👑 King's Rules</span><span class="pill">🤖 AI + 🌐 Online</span><span class="pill">📱 Android</span></div>
         <div class="gameFooter">
           <div class="divider"></div>
           <h2 style="margin:0 0 4px;font-size:16px;">Key Features</h2>
@@ -1025,18 +759,13 @@
               <div class="slide"><img src="assets/Screenshot_20260101-043803.png" alt="Morris Games screenshot 6"></div>
             </div>
             <div class="carouselUI">
-              <div class="navBtnRow">
-                <button class="iconBtn" aria-label="Previous screenshot">⬅️</button>
-                <button class="iconBtn" aria-label="Next screenshot">➡️</button>
-              </div>
+              <div class="navBtnRow"><button class="iconBtn" aria-label="Previous screenshot">⬅️</button><button class="iconBtn" aria-label="Next screenshot">➡️</button></div>
               <div class="dots" aria-label="Screenshot dots"></div>
               <div style="width:92px;"></div>
             </div>
           </div>
           <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:14px;">
-            <span class="pill">⏱️ Auto: 4s</span>
-            <span class="pill">🖱️ Hover pauses</span>
-            <span class="pill">⌨️ Arrow keys</span>
+            <span class="pill">⏱️ Auto: 4s</span><span class="pill">🖱️ Hover pauses</span><span class="pill">⌨️ Arrow keys</span>
           </div>
         </div>
       </div>
@@ -1063,19 +792,13 @@
               <div class="slide"><img src="assets/Screenshot_20260424-135940.png" alt="King's Rules Ludo screenshot 8"></div>
             </div>
             <div class="carouselUI">
-              <div class="navBtnRow">
-                <button class="iconBtn" aria-label="Previous screenshot">⬅️</button>
-                <button class="iconBtn" aria-label="Next screenshot">➡️</button>
-              </div>
+              <div class="navBtnRow"><button class="iconBtn" aria-label="Previous screenshot">⬅️</button><button class="iconBtn" aria-label="Next screenshot">➡️</button></div>
               <div class="dots" aria-label="Screenshot dots"></div>
               <div style="width:92px;"></div>
             </div>
           </div>
           <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:14px;">
-            <span class="pill">⏱️ Auto: 4s</span>
-            <span class="pill">🖱️ Hover pauses</span>
-            <span class="pill">⌨️ Arrow keys</span>
-            <span class="pill">📸 8 shots</span>
+            <span class="pill">⏱️ Auto: 4s</span><span class="pill">🖱️ Hover pauses</span><span class="pill">⌨️ Arrow keys</span><span class="pill">📸 8 shots</span>
           </div>
         </div>
       </div>
@@ -1113,10 +836,7 @@
           <a class="btn" href="https://www.tiktok.com/@rockshell_studios?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">🎵 TikTok</a>
         </div>
         <div class="divider"></div>
-        <p style="margin:0;color:var(--muted);font-size:14px;">
-          CEO: <b style="color:var(--text);">Gadese Samuel</b><br/>
-          Location: <b style="color:var(--text);">Dzodze, Ghana</b>
-        </p>
+        <p style="margin:0;color:var(--muted);font-size:14px;">CEO: <b style="color:var(--text);">Gadese Samuel</b><br/>Location: <b style="color:var(--text);">Dzodze, Ghana</b></p>
       </div>
     </section>
 
@@ -1139,53 +859,12 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    /* ── Reveal on scroll ── */
     const revealEls = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
     }, { threshold: 0.12 });
     revealEls.forEach(el => io.observe(el));
 
-    /* ── Mobile: toggle Arena details ── */
-    function toggleArenaDetails() {
-      const sections = document.querySelectorAll("#arenaStars, #arenaDiff, #arenaStore");
-      const btn = document.getElementById("arenaMoreBtn");
-      const isHidden = sections[0].classList.contains("mobileHide");
-
-      sections.forEach(s => {
-        if (isHidden) {
-          s.classList.remove("mobileHide");
-          s.style.display = "";
-        } else {
-          s.classList.add("mobileHide");
-          // Only apply display:none if we're actually on mobile
-          if (window.innerWidth <= 600) s.style.display = "none";
-        }
-      });
-
-      btn.textContent = isHidden ? "📖 Show Less" : "📖 Show More Details";
-    }
-
-    // Re-hide on resize if user expanded then resized up then back down
-    let prevWidth = window.innerWidth;
-    window.addEventListener("resize", () => {
-      const w = window.innerWidth;
-      const sections = document.querySelectorAll("#arenaStars, #arenaDiff, #arenaStore");
-      const btn = document.getElementById("arenaMoreBtn");
-
-      if (w <= 600 && prevWidth > 600) {
-        // Crossed from desktop to mobile — hide again
-        sections.forEach(s => { s.classList.add("mobileHide"); s.style.display = ""; });
-        btn.textContent = "📖 Show More Details";
-      } else if (w > 600 && prevWidth <= 600) {
-        // Crossed from mobile to desktop — show all
-        sections.forEach(s => { s.classList.remove("mobileHide"); s.style.display = ""; });
-        btn.textContent = "📖 Show More Details";
-      }
-      prevWidth = w;
-    });
-
-    /* ── Carousels ── */
     const carousels = [];
 
     document.querySelectorAll("[data-carousel]").forEach(root => {
@@ -1215,12 +894,7 @@
         dots.forEach((d, i) => d.classList.toggle("active", i === index));
       }
 
-      function goTo(i, userAction) {
-        index = (i + total) % total;
-        updateUI();
-        if (userAction) restartAuto();
-      }
-
+      function goTo(i, userAction) { index = (i + total) % total; updateUI(); if (userAction) restartAuto(); }
       function next() { goTo(index + 1, true); }
       function prev() { goTo(index - 1, true); }
 
@@ -1230,13 +904,7 @@
       let timer = null;
       const INTERVAL = 4000;
 
-      function startAuto() {
-        stopAuto();
-        timer = setInterval(() => {
-          index = (index + 1) % total;
-          updateUI();
-        }, INTERVAL);
-      }
+      function startAuto() { stopAuto(); timer = setInterval(() => { index = (index + 1) % total; updateUI(); }, INTERVAL); }
       function stopAuto() { if (timer) clearInterval(timer); timer = null; }
       function restartAuto() { startAuto(); }
 
